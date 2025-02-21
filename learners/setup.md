@@ -38,12 +38,17 @@ What You'll Learn:
 
 ## Software Setup
 
+
 ::::::::::::::::::::::::::::::::::::::: discussion
 
 ### Details
 
 1. Download the [ThinLinc Client](https://www.cendio.com/thinlinc/download/) and install it to your Laptop.
 2. SSH key setup for different systems is detailed in the expandable sections below.
+3. Open ThinLinc Client, then go to Options -> Security, and select "Public key" in the "Anthentication method" as here: <img width="514" alt="Screenshot 2025-02-21 at 2 27 31 PM" src="https://github.com/user-attachments/assets/1e3e6a5b-8882-4546-b1e3-de313743ad61" />
+4. Input Server, Username(replace XX with your train number) and Key(correct it with your path of key) like here:<img width="469" alt="Screenshot 2025-02-21 at 2 27 11 PM" src="https://github.com/user-attachments/assets/7889bdce-6cbd-4cf0-a2eb-a585d83489c4" />
+5. Hit "Connect".
+
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
