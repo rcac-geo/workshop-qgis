@@ -294,41 +294,62 @@ any links that you are not going to use.
 navigate and utilize QGIS, a powerful open-source Geographic Information
 System (GIS).</p>
 <p>What You’ll Learn:</p>
-<ul><li>Get Started with QGIS.</li>
-</ul><p>We’ll cover the basics of opening QGIS on clusters, loading and
-viewing spatial data, and installing plugins such as QuickMapServices
-and WhiteboxTools.</p>
-<ul><li><p>Introduction</p></li>
-<li><p>Open QGIS on Clusters</p></li>
-<li><p>View Spatial Data</p></li>
-<li><p>Project: Exploring landscape around Purdue</p></li>
-</ul><p>Through a hands-on project, you’ll learn to apply raster analysis
-techniques to explore the landscape around Purdue University.
-Specifically, you’ll work with:</p>
-<ul><li><p>Slope</p></li>
-<li><p>Hill shade</p></li>
-<li><p>Stream and watershed</p></li>
-<li><p>Raster to Vector</p></li>
-<li><p>Coding with QGIS: Python Console</p></li>
-</ul><p>Take your analysis to the next level by learning how to write Python
-scripts using the QGIS Python Console. You’ll learn how to automate
-geospatial tasks, such as replicating the same tasks you performed in
-the “Exploring Landscape around Purdue” project, but this time using
-code. By automating these tasks, you’ll be able to streamline your
-workflow and increase efficiency.</p>
-</section><section><h2 class="section-heading" id="software-setup">Software Setup<a class="anchor" aria-label="anchor" href="#software-setup"></a></h2>
-<hr class="half-width"><div class="section level3">
-<h3 id="ssh-key">SSH Key<a class="anchor" aria-label="anchor" href="#ssh-key"></a></h3>
-<div id="details" class="callout discussion">
+<ol style="list-style-type: decimal"><li>
+<strong>Get Started with QGIS.</strong> We’ll cover the basics of
+opening QGIS on clusters, loading and viewing spatial data, and
+installing plugins such as QuickMapServices and WhiteboxTools.</li>
+</ol><ul><li>Introduction</li>
+<li>Open QGIS on Clusters</li>
+<li>View Spatial Data</li>
+</ul><ol start="2" style="list-style-type: decimal"><li>
+<strong>Project: Exploring landscape around Purdue.</strong> Through
+a hands-on project, you’ll learn to apply raster analysis techniques to
+explore the landscape around Purdue University. Specifically, you’ll
+work with:</li>
+</ol><ul><li>Slope</li>
+<li>Hill shade</li>
+<li>Stream and watershed</li>
+<li>Raster to Vector</li>
+</ul><ol start="3" style="list-style-type: decimal"><li>
+<strong>Coding with QGIS: Python Console.</strong> Take your
+analysis to the next level by learning how to write Python scripts using
+the QGIS Python Console. You’ll learn how to automate geospatial tasks,
+such as replicating the same tasks you performed in the “Exploring
+Landscape around Purdue” project, but this time using code. By
+automating these tasks, you’ll be able to streamline your workflow and
+increase efficiency.</li>
+</ol></section><section><h2 class="section-heading" id="schedule">Schedule<a class="anchor" aria-label="anchor" href="#schedule"></a></h2>
+<hr class="half-width"><table class="table"><thead><tr class="header"><th align="left"><strong>Time</strong></th>
+<th><strong>Session</strong></th>
+</tr></thead><tbody><tr class="odd"><td align="left"><strong>10:00 AM</strong></td>
+<td>Arrival &amp; Setup</td>
+</tr><tr class="even"><td align="left"><strong>10:30 AM</strong></td>
+<td>Introduction &amp; Open QGIS on Clusters</td>
+</tr><tr class="odd"><td align="left"><strong>11:00 AM</strong></td>
+<td>View Spatial Data</td>
+</tr><tr class="even"><td align="left"><strong>12:00 PM</strong></td>
+<td>Lunch Break</td>
+</tr><tr class="odd"><td align="left"><strong>1:00 PM</strong></td>
+<td>Project: Exploring landscape around Purdue</td>
+</tr><tr class="even"><td align="left"><strong>2:30 PM</strong></td>
+<td>Break</td>
+</tr><tr class="odd"><td align="left"><strong>3:00 PM</strong></td>
+<td>Coding with QGIS: Python Console</td>
+</tr><tr class="even"><td align="left"><strong>4:30 PM</strong></td>
+<td>Wrap-Up &amp; Discussion</td>
+</tr></tbody></table></section><section><h2 class="section-heading" id="software-setup">Software Setup<a class="anchor" aria-label="anchor" href="#software-setup"></a></h2>
+<hr class="half-width"><div id="details" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="details" class="callout-inner">
 <h3 class="callout-title">Details</h3>
 <div class="callout-content">
-<p>Download the <a href="https://www.cendio.com/thinlinc/download/" class="external-link">ThinLinc Client</a> and
-install it to your Laptop</p>
-</div>
+<ol style="list-style-type: decimal"><li>Download the <a href="https://www.cendio.com/thinlinc/download/" class="external-link">ThinLinc Client</a> and
+install it to your Laptop.</li>
+<li>SSH key setup for different systems is detailed in the expandable
+sections below.</li>
+</ol></div>
 </div>
 </div>
 <div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
@@ -339,9 +360,15 @@ install it to your Laptop</p>
   Windows
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
-<p>Use PuTTY</p>
+<p>Open a terminal and run:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-b</span> 4096 <span class="at">-t</span> rsa</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="bu">type</span> .ssh<span class="dt">\i</span>d_rsa.pub <span class="kw">|</span> <span class="fu">ssh</span> trainXX@negishi.rcac.purdue.edu <span class="st">"mkdir -p ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys"</span></span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -354,9 +381,15 @@ install it to your Laptop</p>
   MacOS
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
-<p>Use Terminal.app</p>
+<p>Open Terminal and run</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-b</span> 4096 <span class="at">-t</span> rsa</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">cat</span> .ssh/id_rsa.pub <span class="kw">|</span> <span class="fu">ssh</span> trainXX@negishi.rcac.purdue.edu <span class="st">"mkdir -p ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys"</span></span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -369,9 +402,14 @@ install it to your Laptop</p>
   Linux
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
-<p>Use Terminal</p>
+<p>Open a terminal and run:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-b</span> 4096 <span class="at">-t</span> rsa</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">cat</span> .ssh/id_rsa.pub <span class="kw">|</span> <span class="fu">ssh</span> trainXX@negishi.rcac.purdue.edu <span class="st">"mkdir -p ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys"</span></span></code></pre>
 </div>
 </div>
 </div>
