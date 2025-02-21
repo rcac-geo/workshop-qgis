@@ -2,7 +2,7 @@
 title: Agenda
 ---
 
-## Welcome to Hands-on with QGIS
+Welcome to Hands-on with QGIS
 ---
 
 Welcome to the Hands-on with QGIS Workshop, where you'll learn to navigate and utilize QGIS, a powerful open-source Geographic Information System (GIS).
