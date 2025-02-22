@@ -1,39 +1,35 @@
 ---
-title: "Using Markdown"
+title: "Introduction"
 teaching: 10
 exercises: 2
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do you write a lesson using Markdown and `{sandpaper}`?
+- Why QGIS?
+- How to use QGIS on Clusters?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how to use markdown with The Carpentries Workbench
-- Demonstrate how to include pieces of code, figures, and nested challenge blocks
+- Explain why you should use QGIS
+- Demonstrate how to start QGIS on Clusters
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
+## Introduction to QGIS
 
-This is a lesson created via The Carpentries Workbench. It is written in
-[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.html) for static files and
-[R Markdown][r-markdown] for dynamic files that can render code into output. 
-Please refer to the [Introduction to The Carpentries 
-Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.
+GIS stands for ‘Geographical Information System’. We can use a GIS application, such as ArcGIS and QGIS to manipulate spatial information. 
 
-What you need to know is that there are three sections required for a valid
-Carpentries lesson:
+Why QGIS? It's free and flexible.
 
- 1. `questions` are displayed at the beginning of the episode to prime the
-    learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with
-    the questions.
- 3. `keypoints` are displayed at the end of the episode to reinforce the
-    objectives.
+ 1. Cost-Free: Enjoy QGIS without any financial burden. It's completely free, no hidden fees.
+ 2. Free as in "Do It Your Way": You could extend QGIS to meet your specific needs. Sponsor development or contribute your own code.
+ 3. Works Where You Work: Run QGIS on macOS, Windows, and Linux. 
+ 4. Always Getting Better: Benefit from rapid development because anyone can add new features and improve on existing ones.
+ 6. Never Get Stuck: Access extensive documentation and a supportive community are there to help you.
+ 7. Easily integrate Artificial Intelligence (AI) and GeoAI.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
