@@ -67,7 +67,7 @@ Open a terminal and run:
 ssh-keygen -b 4096 -t rsa
 type .ssh\id_rsa.pub | ssh trainXX@negishi.rcac.purdue.edu "mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys"
 ```
-Now you input the password written in the whiteboad, and run:
+Now you input the password written in the whiteboard, and run:
 ```sh
 exit
 ssh trainXX@negishi.rcac.purdue.edu
@@ -84,7 +84,7 @@ Open Terminal and run
 ssh-keygen -b 4096 -t rsa
 cat .ssh/id_rsa.pub | ssh trainXX@negishi.rcac.purdue.edu "mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys"
 ```
-Now you input the password written in the whiteboad, and run:
+Now you input the password written in the whiteboard, and run:
 ```sh
 exit
 ssh trainXX@negishi.rcac.purdue.edu
