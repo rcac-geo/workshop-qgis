@@ -46,10 +46,14 @@ What You'll Learn:
 1. SSH key setup for different systems is detailed in the expandable sections below.
 2. Download the [ThinLinc Client](https://www.cendio.com/thinlinc/download/) and install it to your Laptop.
 3. Open ThinLinc Client, then go to Options -> Security, and select "Public key" in the "Anthentication method" as here:
+   
    <img width="514" alt="Screenshot 2025-02-21 at 2 27 31 PM" src="https://github.com/user-attachments/assets/1e3e6a5b-8882-4546-b1e3-de313743ad61" />
-4. Input Server, Username(replace XX with your train number) and Key(correct it with your path of key) like here:
+   
+5. Input Server, Username(replace XX with your train number) and Key(correct it with your path of key) like here:
+   
    <img width="469" alt="Screenshot 2025-02-21 at 2 27 11 PM" src="https://github.com/user-attachments/assets/7889bdce-6cbd-4cf0-a2eb-a585d83489c4" />
-5. Hit "Connect".
+   
+6. Hit "Connect".
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::: spoiler
@@ -63,7 +67,7 @@ ssh-keygen -b 4096 -t rsa
 type .ssh\id_rsa.pub | ssh trainXX@negishi.rcac.purdue.edu "mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys"
 ```
 Now you input the password written in the whiteboad, and run:
-```
+```sh
 exit
 ssh trainXX@negishi.rcac.purdue.edu
 ```
@@ -72,7 +76,7 @@ You should be able to return to Negishi without password.
 
 :::::::::::::::: spoiler
 
-### MacOS and Linux
+### MacOS / Linux
 
 Open Terminal and run
 ```sh
@@ -80,7 +84,7 @@ ssh-keygen -b 4096 -t rsa
 cat .ssh/id_rsa.pub | ssh trainXX@negishi.rcac.purdue.edu "mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys"
 ```
 Now you input the password written in the whiteboad, and run:
-```
+```sh
 exit
 ssh trainXX@negishi.rcac.purdue.edu
 ```
@@ -93,12 +97,6 @@ You should be able to return to Negishi without password.
 
 Copy data to your scratch directory:
 
-```bash
-rsync -avP /depot/workshop/data/qgis/qgis-data $RCAC_SCRATCH
-```
-
-The worked out folder is available at `/depot/workshop/data/genome-assembly/genome-assembly-data` on the training cluster. You can copy the data to your scratch space using the following command:
-
-```bash
+```sh
 rsync -avP /depot/workshop/data/qgis/qgis-data $RCAC_SCRATCH
 ```
