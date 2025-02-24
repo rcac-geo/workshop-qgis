@@ -13,7 +13,7 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain why you should use QGIS
+- Explain why we should use QGIS
 - Demonstrate how to start QGIS on Clusters
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -24,12 +24,63 @@ GIS stands for ‘Geographical Information System’. We can use a GIS applicati
 
 Why QGIS? It's free and flexible.
 
- 1. Cost-Free: Enjoy QGIS without any financial burden. It's completely free, no hidden fees.
- 2. Free as in "Do It Your Way": You could extend QGIS to meet your specific needs. Sponsor development or contribute your own code.
- 3. Works Where You Work: Run QGIS on macOS, Windows, and Linux. 
- 4. Always Getting Better: Benefit from rapid development because anyone can add new features and improve on existing ones.
- 6. Never Get Stuck: Access extensive documentation and a supportive community are there to help you.
+ 1. Cost-free: Enjoy QGIS without any financial burden. It's completely free, no hidden fees.
+ 2. Free as in "Do It Your Way": You could extend QGIS to meet your specific needs, sponsor development or contribute your own code.
+ 3. Works where you work: Run QGIS on macOS, Windows, and Linux (so available for HPC Clusters). 
+ 4. Always getting better: Benefit from rapid development because anyone can add new features and improve on existing ones.
+ 6. Never get stuck: Access extensive documentation and a supportive community is there for help.
  7. Easily integrate Artificial Intelligence (AI) and GeoAI.
+
+## Open QGIS on Clusters
+
+We can start QGIS via ThinLinc Client or Gateway. 
+
+### Start QGIS via ThinLinc
+
+Follow up with the Setup page, and connect with ThinLinc. To open QGIS as an interactive job, we could go to "Cluster Software" and select "QGIS", as the figure below:
+<img width="391" alt="Picture1" src="https://github.com/user-attachments/assets/1df48747-d717-442e-9af5-c25d4dc9f78d" />
+
+Then select the "workshop" queue as below:
+
+<img width="406" alt="Screenshot 2025-02-24 at 4 15 16 PM" src="https://github.com/user-attachments/assets/72d72419-4484-4e6e-9fed-3ec2fdf4920d" />
+
+Then hit No as below:
+
+<img width="529" alt="Screenshot 2025-02-24 at 4 15 41 PM" src="https://github.com/user-attachments/assets/e3ea5e98-e83e-4d77-ba9c-bba7c62fbea3" />
+
+Now input two cores and five minutes and hit Okay as below. You don't need to specifically request memory because memory will be relocated proportional with cores. But if you do, include unit such as "4G".
+
+<img width="608" alt="Screenshot 2025-02-24 at 4 16 10 PM" src="https://github.com/user-attachments/assets/55a2b0be-3bc1-447c-a44d-04c4ec6a7e60" />
+
+
+::::::::::::::::::::::::::::::::::::: challenge 
+
+## Challenge 1: Look up QGIS version with Terminal?
+
+<img width="184" alt="Screenshot 2025-02-24 at 4 17 38 PM" src="https://github.com/user-attachments/assets/176cc44a-7616-4f3e-9275-40c4a067a016" />
+
+:::::::::::::::::::::::: solution 
+
+```sh
+module spider qgis
+```
+
+:::::::::::::::::::::::::::::::::
+
+## Challenge 2: Start QGIS with Terminal?
+
+How can you open QGIS as an interactive job?
+
+:::::::::::::::::::::::: solution 
+
+```sh
+module load qgis
+qgis
+```
+
+:::::::::::::::::::::::::::::::::
+
+### Start QGIS via Gateway
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
@@ -38,34 +89,9 @@ associated with the lessons. They appear in the "Instructor View"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: challenge 
-
-## Challenge 1: Can you do it?
-
-What is the output of this command?
-
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
-
-:::::::::::::::::::::::: solution 
-
-## Output
- 
-```output
-[1] "This new lesson looks good"
-```
-
-:::::::::::::::::::::::::::::::::
 
 
-## Challenge 2: how do you nest solutions within challenge blocks?
 
-:::::::::::::::::::::::: solution 
-
-You can add a line with at least three colons and a `solution` tag.
-
-:::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Figures
