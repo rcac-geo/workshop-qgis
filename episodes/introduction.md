@@ -57,7 +57,8 @@ Now input two cores and five minutes and hit Okay as below. You don't need to sp
 
 ## Challenge 1: Look up QGIS version with Terminal?
 
-<img width="184" alt="Screenshot 2025-02-24 at 4 17 38 PM" src="https://github.com/user-attachments/assets/176cc44a-7616-4f3e-9275-40c4a067a016" />
+<img width="186" alt="Screenshot 2025-02-25 at 9 51 03 AM" src="https://github.com/user-attachments/assets/c06429f8-15b6-4242-b416-080085cf8f23" />
+
 
 :::::::::::::::::::::::: solution 
 
@@ -69,32 +70,32 @@ module spider qgis
 
 ## Challenge 2: Start QGIS with Terminal?
 
-How can you open QGIS as an interactive job?
+How can you open QGIS as an interactive job with Terminal?
 
 :::::::::::::::::::::::: solution 
 
 ```sh
+sinteractive -A workshop -c4 -t8:00:00
 module load qgis
 qgis
 ```
 
 :::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 ### Start QGIS via Gateway
+
+Gateway, also named Open OnDemand, is a Web interface includes file explorer, interactive apps including QGIS.​ We have to use our own accounts to login Gateway, not the training accounts we used for this workshop. 
+Go to [Negishi Gateway](gateway.negishi.rcac.purdue.edu), login with our purdue accounts (when we have account on Clusters) and connect QGIS as the figure below.
+
+<img width="911" alt="Screenshot 2025-02-25 at 10 05 05 AM" src="https://github.com/user-attachments/assets/f575bf3a-e6bd-468b-92ad-4a3b93405788" />
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
 Inline instructor notes can help inform instructors of timing challenges
 associated with the lessons. They appear in the "Instructor View"
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-## Figures
 
 You can use standard markdown for static figures with the following syntax:
 
@@ -102,15 +103,17 @@ You can use standard markdown for static figures with the following syntax:
 accessibility purposes'}`
 
 ![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-Callout sections can highlight information.
+We could also open QGIS with Gateway, in the way of Chanllege 2. We could start a terminal as below.
 
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
+![Screenshot 2025-02-25 at 10 15 18 AM](https://github.com/user-attachments/assets/aac3d529-c726-4793-b3db-e90e55a260fc)
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
