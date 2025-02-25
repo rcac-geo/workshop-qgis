@@ -301,7 +301,7 @@
         
 <section id="aio-introduction"><p>Content from <a href="introduction.html">Introduction</a></p>
 <hr>
-<p>Last updated on 2025-02-24 |
+<p>Last updated on 2025-02-25 |
 
         <a href="https://github.com/rcac-geo/workshop-qgis/edit/main/episodes/introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -377,7 +377,7 @@ proportional with cores. But if you do, include unit such as “4G”.</p>
 <div id="challenge-1-look-up-qgis-version-with-terminal" class="callout-inner">
 <h3 class="callout-title">Challenge 1: Look up QGIS version with Terminal?</h3>
 <div class="callout-content">
-<figure><img width="184" alt="Screenshot 2025-02-24 at 4 17 38 PM" src="https://github.com/user-attachments/assets/176cc44a-7616-4f3e-9275-40c4a067a016" class="figure mx-auto d-block"></figure>
+<figure><img width="186" alt="Screenshot 2025-02-25 at 9 51 03 AM" src="https://github.com/user-attachments/assets/c06429f8-15b6-4242-b416-080085cf8f23" class="figure mx-auto d-block"></figure>
 </div>
 </div>
 </div>
@@ -386,7 +386,7 @@ proportional with cores. But if you do, include unit such as “4G”.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -404,7 +404,7 @@ proportional with cores. But if you do, include unit such as “4G”.</p>
 <div id="challenge-2-start-qgis-with-terminal" class="callout-inner">
 <h3 class="callout-title">Challenge 2: Start QGIS with Terminal?</h3>
 <div class="callout-content">
-<p>How can you open QGIS as an interactive job?</p>
+<p>How can you open QGIS as an interactive job with Terminal?</p>
 </div>
 </div>
 </div>
@@ -413,63 +413,60 @@ proportional with cores. But if you do, include unit such as “4G”.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">module</span> load qgis</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">qgis</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">sinteractive</span> <span class="at">-A</span> workshop <span class="at">-c4</span> <span class="at">-t8:00:00</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">module</span> load qgis</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="ex">qgis</span></span></code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div id="start-qgis-via-gateway" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="start-qgis-via-gateway" class="callout-inner">
-<h3 class="callout-title">Start QGIS via Gateway</h3>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="section level3">
+<h3 id="start-qgis-via-gateway">Start QGIS via Gateway<a class="anchor" aria-label="anchor" href="#start-qgis-via-gateway"></a>
+</h3>
+<p>Gateway, also named Open OnDemand, is a Web interface includes file
+explorer, interactive apps including QGIS.​ We have to use our own
+accounts to login Gateway, not the training accounts we used for this
+workshop. Go to <a href="../gateway.negishi.rcac.purdue.edu">Negishi
+Gateway</a>, login with our purdue accounts (when we have account on
+Clusters) and connect QGIS as the figure below.</p>
+<figure><img width="911" alt="Screenshot 2025-02-25 at 10 05 05 AM" src="https://github.com/user-attachments/assets/f575bf3a-e6bd-468b-92ad-4a3b93405788" class="figure mx-auto d-block"></figure><div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>Inline instructor notes can help inform instructors of timing
 challenges associated with the lessons. They appear in the “Instructor
 View”</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="figures">Figures<a class="anchor" aria-label="anchor" href="#figures"></a>
-</h2>
-<hr class="half-width">
 <p>You can use standard markdown for static figures with the following
 syntax:</p>
 <p><code>![optional caption that appears below the figure](figure url){alt='alt text for accessibility purposes'}</code></p>
 <figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><div class="figcaption">You belong in The Carpentries!</div>
-</figure><div id="callout1" class="callout">
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div class="callout-inner">
 <h3 class="callout-title">Callout</h3>
 <div class="callout-content">
-<p>Callout sections can highlight information.</p>
-<p>They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present “asides”: content that is
-not central to the narrative of the lesson, e.g. by providing the answer
-to a commonly-asked question.</p>
+<p>We could also open QGIS with Gateway, in the way of Chanllege 2. We
+could start a terminal as below.</p>
+<figure><img src="https://github.com/user-attachments/assets/aac3d529-c726-4793-b3db-e90e55a260fc" alt="Screenshot 2025-02-25 at 10 15 18 AM" class="figure mx-auto d-block"><div class="figcaption">Screenshot 2025-02-25 at 10 15 18 AM</div>
+</figure>
+</div>
 </div>
 </div>
 </div>
