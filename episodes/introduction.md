@@ -37,7 +37,7 @@ We can start QGIS via ThinLinc Client or Gateway.
 
 #### Start QGIS via ThinLinc
 
-Follow up with [the Setup page](https://github.com/rcac-geo/workshop-qgis/edit/main/episodes), and connect with ThinLinc. To open QGIS as an interactive job, we could go to "Cluster Software" and select "QGIS", as the figure below:
+Follow up with [the Setup page](https://rcac-geo.github.io/workshop-qgis/index.html#software-setup), and connect with ThinLinc. To open QGIS as an interactive job, we could go to "Cluster Software" and select "QGIS", as the figure below:
 
 <img width="391" alt="Picture1" src="https://github.com/user-attachments/assets/1df48747-d717-442e-9af5-c25d4dc9f78d" />
 
@@ -88,7 +88,7 @@ qgis
 #### Start QGIS via Gateway
 
 Gateway, also named Open OnDemand, is a Web interface includes file explorer, interactive apps including QGIS.​ We have to use our own accounts to login Gateway, not the training accounts we used for this workshop. 
-Go to [Negishi Gateway](gateway.negishi.rcac.purdue.edu), login with our purdue accounts (when we have account on Clusters) and connect QGIS as the figure below.
+Go to [Negishi Gateway](https://gateway.negishi.rcac.purdue.edu), login with our purdue accounts (when we have account on Clusters) and connect QGIS as the figure below.
 
 <img width="911" alt="Screenshot 2025-02-25 at 10 05 05 AM" src="https://github.com/user-attachments/assets/f575bf3a-e6bd-468b-92ad-4a3b93405788" />
 
@@ -111,7 +111,7 @@ accessibility purposes'}`
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-We could also open QGIS with Gateway, in the way of [Challenge 2](https://github.com/rcac-geo/workshop-qgis/edit/main/episodes/introduction.md#Challenge 2). We could start a terminal as below.
+We could also open QGIS with Gateway, in the way of [Challenge 2](https://rcac-geo.github.io/workshop-qgis/introduction.html#Challenge 2). We could start a terminal as below.
 
 ![Start Terminal in Gateway](https://github.com/user-attachments/assets/aac3d529-c726-4793-b3db-e90e55a260fc)
 
