@@ -209,6 +209,7 @@
         <ul><li><a href="#introduction-to-qgis">Introduction to QGIS</a></li>
 <li><a href="#open-qgis-on-clusters">Open QGIS on Clusters</a></li>
 <li><a href="#view-spatial-data">View Spatial Data</a></li>
+<li><a href="#process-spatial-data">Process Spatial Data</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -471,7 +472,7 @@ Raster data storage size is heavily dependant on resolution.</li>
 </ul><figure><img width="554" alt="Picture2" src="https://github.com/user-attachments/assets/58bc28a8-7fe8-4dfd-8a54-495dbbfe1e6d" class="figure mx-auto d-block"></figure><ul><li>Step2: Input your path of “alaska.shp” and hit “add”</li>
 </ul><figure><img src="https://github.com/user-attachments/assets/b68a9319-68f0-4502-9bb5-d3d6b87b33d0" class="figure mx-auto d-block"></figure><ul><li>Step 3: You will see the shapefile has been added to Layers as
 below.</li>
-</ul><figure><img width="613" alt="Picture3" src="https://github.com/user-attachments/assets/93319b00-98e3-45eb-8d4c-9c4e32ceb72b" class="figure mx-auto d-block"></figure><div id="challenge-1-try-yourself" class="callout challenge">
+</ul><figure><img src="https://github.com/user-attachments/assets/c5ba1734-88ee-4cc8-a79c-dd2f2b0cb1fb" class="figure mx-auto d-block"></figure><div id="challenge-1-try-yourself" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -487,9 +488,25 @@ below.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <figure><img width="613" alt="Picture3" src="https://github.com/user-attachments/assets/f4d958c0-3acb-42a9-855e-4505cbca2c04" class="figure mx-auto d-block"></figure></div>
+</div>
+</div>
+</div>
+<div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout</h3>
+<div class="callout-content">
+<p>Whenever we load a data source, QGIS looks for usable CRS
+information, for example, in the shapefile’s .prj file. If QGIS cannot
+find any usable information, by default, it will ask you to specify the
+CRS manually. This behavior can be changed by going
+to Settings | Options | CRS to always use either the project CRS or a
+default CRS.</p>
 </div>
 </div>
 </div>
@@ -498,38 +515,23 @@ below.</li>
 <h5 id="load-csv-files">(2) Load CSV files<a class="anchor" aria-label="anchor" href="#load-csv-files"></a></h5>
 <ul><li>Add Delimited Text Layer option available via the menu entry by
 going to Layer | Add Layer | Add Delimited Text Layer </li>
-</ul><p><img width="893" alt="Screenshot 2025-02-25 at 2 41 23 PM" src="https://github.com/user-attachments/assets/4ccee5c6-a3d0-4292-8751-04b044d875b0" class="figure"><img width="612" alt="Picture4" src="https://github.com/user-attachments/assets/db0dd043-5c42-48c2-b929-c48f24f010b6" class="figure"></p>
-<p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
-create dynamic reports with {knitr}, so we now use mathjax to describe
-this:</p>
-<p><code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> becomes: <span class="math inline">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span></p>
-<p>Cool, right?</p>
-<div id="keypoints1" class="callout keypoints">
-<div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
-<div class="callout-content">
-<ul><li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
-</ul></div>
-</div>
-</div>
-<div id="challenge-1-look-up-qgis-version-with-terminal" class="callout challenge">
+</ul><figure><img width="893" alt="Screenshot 2025-02-25 at 2 41 23 PM" src="https://github.com/user-attachments/assets/4ccee5c6-a3d0-4292-8751-04b044d875b0" class="figure mx-auto d-block"></figure><ul><li>You will see the shapefile has been added to Layers as below.</li>
+</ul><figure><img width="612" alt="Picture4" src="https://github.com/user-attachments/assets/db0dd043-5c42-48c2-b929-c48f24f010b6" class="figure mx-auto d-block"></figure></div>
+<div class="section level5">
+<h5 id="load-raster-files">(3) Load Raster files<a class="anchor" aria-label="anchor" href="#load-raster-files"></a></h5>
+<ul><li>Step1: Layer | Add Layer | Add Raster Layer</li>
+<li>Step2: Input your path of “landcover.img” and hit “add”</li>
+</ul><figure><img src="https://github.com/user-attachments/assets/6566ea7f-8ca9-4def-96b3-ae16671039bf" class="figure mx-auto d-block"></figure><ul><li>Step 3: You will see the raster has been added to Layers as
+below.</li>
+</ul><figure><img width="428" alt="Picture5" src="https://github.com/user-attachments/assets/a849f162-7ad8-473b-a1e3-d6ad34a82e31" class="figure mx-auto d-block"></figure><div id="challenge-1-try-yourself-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-1-look-up-qgis-version-with-terminal" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Look up QGIS version with Terminal?</h3>
+<div id="challenge-1-try-yourself-1" class="callout-inner">
+<h3 class="callout-title">Challenge 1: Try yourself</h3>
 <div class="callout-content">
-
+<p>try yourself to add SR_50M_alaska_nad.tif (Hillshade GeoTiff) to
+layers.</p>
 </div>
 </div>
 </div>
@@ -538,21 +540,21 @@ locally</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-
+<figure><img src="https://github.com/user-attachments/assets/e10386e9-d1c0-4736-8b9e-6618cf1a5db4" class="figure mx-auto d-block"></figure></div>
 </div>
 </div>
 </div>
-</div>
-<div id="challenge-2-start-qgis-with-terminal" class="callout challenge">
+<div id="challenge-2-a-question" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-2-start-qgis-with-terminal" class="callout-inner">
-<h3 class="callout-title">Challenge 2: Start QGIS with Terminal?</h3>
+<div id="challenge-2-a-question" class="callout-inner">
+<h3 class="callout-title">Challenge 2: A Question?</h3>
 <div class="callout-content">
-<p>How can you open QGIS as an interactive job with Terminal?</p>
+<p>Did you find anything weird about the Hillshade image showing
+above?</p>
 </div>
 </div>
 </div>
@@ -561,7 +563,93 @@ locally</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<p>Yep, the hillshade should be in the North instead of the South. Let’s
+check data Properties and change looking.</p>
+<figure><img src="https://github.com/user-attachments/assets/ff8ff053-8a82-4335-a06d-e4086adb8986" class="figure mx-auto d-block"></figure><figure><img src="https://github.com/user-attachments/assets/67208203-a4ac-40c6-838f-8fe9d0a3ae10" class="figure mx-auto d-block"></figure></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="process-spatial-data">Process Spatial Data<a class="anchor" aria-label="anchor" href="#process-spatial-data"></a></h2>
+<hr class="half-width"><div class="section level4">
+<h4 id="filter-vector-data">Filter Vector Data<a class="anchor" aria-label="anchor" href="#filter-vector-data"></a></h4>
+<p>Scenario: My Grandma wants to have a trip in Alaska but doctor said
+she shouldn’t go to places with high elevation due to the heart problem.
+So I will find airports with low elevantion for her. For example, I
+found the airport with elevation lower than 1000 ft.</p>
+<p>Solution:</p>
+<ul><li>Step1: Right click the data “airports” and select “Filter”</li>
+</ul><figure><img src="https://github.com/user-attachments/assets/b330ca5e-42e5-4d01-b587-4e74762b0375" class="figure mx-auto d-block"></figure><ul><li>Step2: Select “ELEV” from “Fields”, and input the Specific Filter
+Expression as below:</li>
+</ul><figure><img src="https://github.com/user-attachments/assets/98e26b3a-6329-41eb-b769-3cb38434cce5" class="figure mx-auto d-block"></figure><ul><li>Step3: Hit “OK” and now only airport with elevation lower than 1000
+ft show up.</li>
+<li>Step4-Export data: right click the data and selelct “Export” | “Save
+Features As”. Input information as figure below and hit “OK”.</li>
+</ul><figure><img src="https://github.com/user-attachments/assets/5be55894-3ede-42bd-a888-36efda92b202" class="figure mx-auto d-block"></figure></div>
+<div class="section level4">
+<h4 id="raster-calculation">Raster Calculation<a class="anchor" aria-label="anchor" href="#raster-calculation"></a></h4>
+<p>Scenario: I’d like find some sunny slope where my Grandma and I can
+go skiing. So I found the places where Hillshade is smaller than 100,
+for example.</p>
+<p>Solution:</p>
+<ul><li>Step1: Turn on the Processing Toolbox if it’s off, and Search
+“Raster Calculator”.</li>
+</ul><p><img src="https://github.com/user-attachments/assets/fb3965b0-0754-4f43-b7af-d9f30a4c1ac4" class="figure"><img src="https://github.com/user-attachments/assets/26b8ed3a-0484-4c83-be15-a50e89d9c5b9" class="figure"></p>
+<ul><li>Step2: Input the “Input Layers”, “Expression”, “Output CRS”, and
+“Calculated” as the Output file.</li>
+</ul><figure><img src="https://github.com/user-attachments/assets/50d49743-2cb9-466a-806e-a077f31629d0" class="figure mx-auto d-block"></figure><ul><li>Step3: Hit “Run” and change the looking of output.</li>
+</ul><figure><img src="https://github.com/user-attachments/assets/a6e51da6-479c-4008-ad97-05333452897d" class="figure mx-auto d-block"></figure><ul><li>You have already written out the output file. But if you didn’t, you
+could always export the data via right clicking it and select “Export” |
+“Save As”. Then input information as figure below and hit “OK”.</li>
+</ul><figure><img src="https://github.com/user-attachments/assets/8074e204-dc55-4533-af9b-0dc1e85fc0d0" class="figure mx-auto d-block"></figure><div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul><li>QGIS is a free and open-source software that runs on various
+platforms, such as Windows, Mac, and Linux.</li>
+<li>QGIS has a large and active community of users and developers who
+contribute to its features, plugins, documentation, and support.</li>
+<li>We can use QGIS via ThinLinc Client or Gateway on HPC Clusters.</li>
+<li>We learned how to load and visualize vector and raster data.</li>
+<li>We learned how to process data and export them.</li>
+</ul></div>
+</div>
+</div>
+<div id="challenge4" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
+</button>
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div class="accordion-body">
+
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
+</button>
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 
 </div>
@@ -573,7 +661,6 @@ locally</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div>
 </div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
