@@ -111,7 +111,7 @@ accessibility purposes'}`
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-We could also open QGIS with Gateway, in the way of [Challenge 2](#Challenge 2). We could start a terminal as below.
+We could also open QGIS with Gateway, in the way of [Challenge 2](https://github.com/rcac-geo/workshop-qgis/edit/main/episodes/introduction.md#Challenge 2). We could start a terminal as below.
 
 ![Start Terminal in Gateway](https://github.com/user-attachments/assets/aac3d529-c726-4793-b3db-e90e55a260fc)
 
