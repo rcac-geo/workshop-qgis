@@ -146,25 +146,38 @@ In Geographic Information Systems (GIS), data is primarily represented in two fu
 * Storage: Vector often uses less storage for discrete features. Raster data storage size is heavily dependant on resolution.
 
 #### Load Spatial Data
-##### Load vector data from files
+##### (1) Load vector data from files
 * Step1: Layer | Add Layer | Add Vector Layer
   
 <img width="554" alt="Picture2" src="https://github.com/user-attachments/assets/58bc28a8-7fe8-4dfd-8a54-495dbbfe1e6d" />
 
 * Step2: Input your path of "alaska.shp" and hit "add"
   
-![Screenshot 2025-02-25 at 2 51 42 PM](https://github.com/user-attachments/assets/b68a9319-68f0-4502-9bb5-d3d6b87b33d0)
+![](https://github.com/user-attachments/assets/b68a9319-68f0-4502-9bb5-d3d6b87b33d0)
 
 * Step 3: You will see the shapefile has been added to Layers as below.
-![Screenshot 2025-02-25 at 2 57 24 PM](https://github.com/user-attachments/assets/17abd546-920a-403e-9cbc-5f90c3115a9c)
+
+<img width="613" alt="Picture3" src="https://github.com/user-attachments/assets/93319b00-98e3-45eb-8d4c-9c4e32ceb72b" />
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 ## Challenge 1: Try yourself
 try yourself to add airports.shp to layers.
+
 :::::::::::::::::::::::: solution 
+
 <img width="613" alt="Picture3" src="https://github.com/user-attachments/assets/f4d958c0-3acb-42a9-855e-4505cbca2c04" />
+
 :::::::::::::::::::::::::::::::::
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+##### (2) Load CSV files
+* Add Delimited Text Layer option available via the menu entry by going to Layer | Add Layer | Add Delimited Text Layer 
+
+<img width="893" alt="Screenshot 2025-02-25 at 2 41 23 PM" src="https://github.com/user-attachments/assets/4ccee5c6-a3d0-4292-8751-04b044d875b0" />
+<img width="612" alt="Picture4" src="https://github.com/user-attachments/assets/db0dd043-5c42-48c2-b929-c48f24f010b6" />
+
+
   
 One of our episodes contains $\LaTeX$ equations when describing how to create
 dynamic reports with {knitr}, so we now use mathjax to describe this:
