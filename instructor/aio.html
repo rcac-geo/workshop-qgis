@@ -427,9 +427,100 @@ Code Way</a>. We could start a terminal as below.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="math">Math<a class="anchor" aria-label="anchor" href="#math"></a>
+</section><section><h2 class="section-heading" id="view-spatial-data">View Spatial Data<a class="anchor" aria-label="anchor" href="#view-spatial-data"></a>
 </h2>
 <hr class="half-width">
+<p>In Geographic Information Systems (GIS), data is primarily
+represented in two fundamental formats: vector and raster.</p>
+<div class="section level4">
+<h4 id="vector-data">Vector Data<a class="anchor" aria-label="anchor" href="#vector-data"></a>
+</h4>
+<ul>
+<li>Representation:
+<ul>
+<li>Vector data uses geometric objects—points, lines, and polygons—to
+represent spatial features.</li>
+<li>Points represent individual locations (e.g., a city, a tree).</li>
+<li>Lines represent linear features (e.g., roads, rivers).</li>
+<li>Polygons represent areas (e.g., lakes, buildings, administrative
+boundaries).  </li>
+</ul>
+</li>
+<li>Characteristics:
+<ul>
+<li>Precision: Vector data is excellent for representing discrete
+features with clear boundaries, offering high precision.</li>
+<li>Scalability: Vector data can be scaled up or down without losing
+quality.</li>
+<li>Data Storage: Typically, vector data requires less storage space
+than raster data for representing discrete features.</li>
+<li>Use Cases: Best suited for representing features with distinct
+boundaries, such as roads, property lines, and political
+boundaries.</li>
+</ul>
+</li>
+<li>Vector File Types:
+<ul>
+<li>Shapefile (.shp): A very common geospatial vector data format for
+GIS software. It actually consists of several files (.shp, .shx, .dbf,
+etc.)</li>
+<li>GeoJSON (.geojson): A popular open standard format that uses
+JavaScript Object Notation (JSON) to represent geographic features.</li>
+<li>KML/KMZ: Used by Google Earth for displaying geographic data.</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="raster-data">Raster Data<a class="anchor" aria-label="anchor" href="#raster-data"></a>
+</h4>
+<ul>
+<li>Representation:
+<ul>
+<li>Raster data represents spatial information as a grid of cells
+(pixels). Each cell contains a value representing a specific attribute
+(e.g., elevation, temperature, land cover).  </li>
+</ul>
+</li>
+<li>Characteristics:
+<ul>
+<li>Continuous Data: Raster data is ideal for representing continuous
+attributes, such as elevation, temperature, and satellite imagery.</li>
+<li>Data Storage: Raster data can require significant storage space,
+especially at high resolutions.</li>
+<li>Analysis: Raster data is well-suited for spatial analysis involving
+calculations and modeling.</li>
+<li>Use Cases: Best suited for representing continuous surfaces, such as
+elevation models, satellite imagery, and aerial photographs.</li>
+</ul>
+</li>
+<li>Raster File Types:
+<ul>
+<li>TIFF: Basic image format, no geographic information.</li>
+<li>GeoTIFF: A TIFF file with added geospatial metadata, enabling it to
+be used in GIS applications.</li>
+<li>COG (Cloud Optimized GeoTIFF): A type of GeoTIFF with a specific
+data structure optimized for fast access in cloud environments, often
+using tiled data storage.</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="key-differences">Key Differences<a class="anchor" aria-label="anchor" href="#key-differences"></a>
+</h4>
+<ul>
+<li>Structure: Vector data uses geometric shapes, while raster data uses
+a grid of cells.</li>
+<li>Data Type: Vector is for discrete features, raster is for continuous
+phenomena.</li>
+<li>Precision: Vector is generally more precise, while raster’s
+precision depends on cell size.</li>
+<li>Storage: Vector often uses less storage for discrete features.
+Raster data storage size is heavily dependant on resolution.</li>
+</ul>
 <p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
 create dynamic reports with {knitr}, so we now use mathjax to describe
 this:</p>
@@ -471,7 +562,7 @@ locally</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 
 </div>
@@ -494,7 +585,7 @@ locally</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 
 </div>
@@ -506,7 +597,7 @@ locally</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>Inline instructor notes can help inform instructors of timing
 challenges associated with the lessons. They appear in the “Instructor
@@ -524,6 +615,7 @@ syntax:</p>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></section>
 </div>
     </main>
