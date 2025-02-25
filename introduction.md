@@ -35,9 +35,13 @@ Why QGIS? It's free and flexible.
 
 We can start QGIS via ThinLinc Client or Gateway. 
 
-#### Start QGIS via ThinLinc
+#### 1. Start QGIS via ThinLinc
 
-Follow up with [the Setup page](https://rcac-geo.github.io/workshop-qgis/index.html#software-setup), and connect with ThinLinc. To open QGIS as an interactive job, we could go to "Cluster Software" and select "QGIS", as the figure below:
+Follow up with [the Setup page](https://rcac-geo.github.io/workshop-qgis/index.html#software-setup), and connect with ThinLinc. There are two ways to start QGIS via ThinLinc. The two ways are fundamentally the same but one is interactive, and the other is typing code.
+
+##### (1) Interactive Way
+
+To open QGIS as an interactive job, we could go to "Cluster Software" and select "QGIS", as the figure below:
 
 <img width="391" alt="Picture1" src="https://github.com/user-attachments/assets/1df48747-d717-442e-9af5-c25d4dc9f78d" />
 
@@ -53,27 +57,19 @@ Now input two cores and five minutes and hit Okay. You don't need to specificall
 
 <img width="608" alt="Screenshot 2025-02-24 at 4 16 10 PM" src="https://github.com/user-attachments/assets/55a2b0be-3bc1-447c-a44d-04c4ec6a7e60" />
 
+##### (2) Typing Code Way
 
-::::::::::::::::::::::::::::::::::::: challenge 
-
-## Challenge 1: Look up QGIS version with Terminal?
+We could start the Terminal as below:
 
 <img width="186" alt="Screenshot 2025-02-25 at 9 51 03 AM" src="https://github.com/user-attachments/assets/c06429f8-15b6-4242-b416-080085cf8f23" />
 
-
-:::::::::::::::::::::::: solution 
+To look up QGIS module, we could do:
 
 ```sh
 module spider qgis
 ```
 
-:::::::::::::::::::::::::::::::::
-
-## Challenge 2: Start QGIS with Terminal?
-
-How can you open QGIS as an interactive job with Terminal?
-
-:::::::::::::::::::::::: solution 
+To start an interactive job and open QGIS:
 
 ```sh
 sinteractive -A workshop -c4 -t8:00:00
@@ -81,11 +77,9 @@ module load qgis
 qgis
 ```
 
-:::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::::::::::::::
 
-#### Start QGIS via Gateway
+#### 2. Start QGIS via Gateway
 
 Gateway, also named Open OnDemand, is a Web interface includes file explorer, interactive apps including QGIS.​ We have to use our own accounts to login Gateway, not the training accounts we used for this workshop. 
 Go to [Negishi Gateway](https://gateway.negishi.rcac.purdue.edu), login with our purdue accounts (when we have account on Clusters) and connect QGIS as the figure below.
@@ -111,7 +105,7 @@ accessibility purposes'}`
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-We could also open QGIS with Gateway, in the way of [Challenge 2](https://rcac-geo.github.io/workshop-qgis/introduction.html#Challenge 2). We could start a terminal as below.
+We could also open QGIS with Gateway, in the [Typing Code Way](https://rcac-geo.github.io/workshop-qgis/introduction.html#Typing Code Way). We could start a terminal as below.
 
 ![Start Terminal in Gateway](https://github.com/user-attachments/assets/aac3d529-c726-4793-b3db-e90e55a260fc)
 
@@ -138,3 +132,29 @@ Cool, right?
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 [r-markdown]: https://rmarkdown.rstudio.com/
+
+
+::::::::::::::::::::::::::::::::::::: challenge 
+
+## Challenge 1: Look up QGIS version with Terminal?
+
+
+
+
+:::::::::::::::::::::::: solution 
+
+
+
+:::::::::::::::::::::::::::::::::
+
+## Challenge 2: Start QGIS with Terminal?
+
+How can you open QGIS as an interactive job with Terminal?
+
+:::::::::::::::::::::::: solution 
+
+
+
+:::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
