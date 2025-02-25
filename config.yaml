@@ -68,12 +68,14 @@ contact: 'rcac-help@purdue.edu'
 # Order of episodes in your lesson
 episodes: 
 - introduction.md
+- project.md
+- coding.md
 
 # Information for Learners
 learners: 
 
 # Information for Instructors
-instructors: 
+instructors: Xiao Liu
 
 # Learner Profiles
 profiles: 
