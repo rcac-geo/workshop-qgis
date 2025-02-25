@@ -420,7 +420,8 @@ etc.)</li>
 <li>GeoJSON (.geojson): A popular open standard format that uses
 JavaScript Object Notation (JSON) to represent geographic features.</li>
 <li>KML/KMZ: Used by Google Earth for displaying geographic data.</li>
-<li>…</li>
+<li>File format is handled by GDAL/OGR package with a <a href="https://gdal.org/en/stable/drivers/vector/" class="external-link">full list</a>
+</li>
 </ul></li>
 </ul></div>
 <div class="section level4">
@@ -447,7 +448,8 @@ be used in GIS applications.</li>
 <li>COG (Cloud Optimized GeoTIFF): A type of GeoTIFF with a specific
 data structure optimized for fast access in cloud environments, often
 using tiled data storage.</li>
-<li>…</li>
+<li>File format is handled by GDAL/OGR package with a <a href="https://gdal.org/en/stable/drivers/raster/" class="external-link">full list</a>
+</li>
 </ul></li>
 </ul></div>
 <div class="section level4">
@@ -460,7 +462,31 @@ phenomena.</li>
 precision depends on cell size.</li>
 <li>Storage: Vector often uses less storage for discrete features.
 Raster data storage size is heavily dependant on resolution.</li>
-</ul><p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
+</ul></div>
+<div class="section level4">
+<h4 id="load-spatial-data">Load Spatial Data<a class="anchor" aria-label="anchor" href="#load-spatial-data"></a></h4>
+<div class="section level5">
+<h5 id="load-vector-data-from-files">Load vector data from files<a class="anchor" aria-label="anchor" href="#load-vector-data-from-files"></a></h5>
+<ul><li>Step1: Layer | Add Layer | Add Vector Layer</li>
+</ul><figure><img width="554" alt="Picture2" src="https://github.com/user-attachments/assets/58bc28a8-7fe8-4dfd-8a54-495dbbfe1e6d" class="figure mx-auto d-block"></figure><ul><li>Step2: Input your path of “alaska.shp” and hit “add”</li>
+</ul><figure><img src="https://github.com/user-attachments/assets/b68a9319-68f0-4502-9bb5-d3d6b87b33d0" alt="Screenshot 2025-02-25 at 2 51 42 PM" class="figure mx-auto d-block"><div class="figcaption">Screenshot 2025-02-25 at 2 51 42 PM</div>
+</figure><ul><li>Step 3: You will see the shapefile has been added to Layers as
+below. <img src="https://github.com/user-attachments/assets/17abd546-920a-403e-9cbc-5f90c3115a9c" alt="Screenshot 2025-02-25 at 2 57 24 PM" class="figure"></li>
+</ul><div id="challenge-1-try-yourself" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="challenge-1-try-yourself" class="callout-inner">
+<h3 class="callout-title">Challenge 1: Try yourself</h3>
+<div class="callout-content">
+<p>try yourself to add airports.shp to layers. ::::::::::::::::::::::::
+solution
+<img width="613" alt="Picture3" src="https://github.com/user-attachments/assets/f4d958c0-3acb-42a9-855e-4505cbca2c04" class="figure"></p>
+</div>
+</div>
+</div>
+<p>::::::::::::::::::::::::::::::::::::::::::::::::</p>
+<p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
 create dynamic reports with {knitr}, so we now use mathjax to describe
 this:</p>
 <p><code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> becomes: <span class="math inline">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span></p>
@@ -499,7 +525,7 @@ locally</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 
 </div>
@@ -522,7 +548,7 @@ locally</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 
 </div>
@@ -534,6 +560,7 @@ locally</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
