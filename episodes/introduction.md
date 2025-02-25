@@ -119,7 +119,9 @@ In Geographic Information Systems (GIS), data is primarily represented in two fu
   - Shapefile (.shp): A very common geospatial vector data format for GIS software. It actually consists of several files (.shp, .shx, .dbf, etc.)
   - GeoJSON (.geojson): A popular open standard format that uses JavaScript Object Notation (JSON) to represent geographic features.
   - KML/KMZ: Used by Google Earth for displaying geographic data.
-  - ... 
+  - File format is handled by GDAL/OGR package with a [full list](https://gdal.org/en/stable/drivers/vector/)
+
+
 
 #### Raster Data
 
@@ -134,7 +136,7 @@ In Geographic Information Systems (GIS), data is primarily represented in two fu
   - TIFF: Basic image format, no geographic information.
   - GeoTIFF: A TIFF file with added geospatial metadata, enabling it to be used in GIS applications.
   - COG (Cloud Optimized GeoTIFF): A type of GeoTIFF with a specific data structure optimized for fast access in cloud environments, often using tiled data storage.
-  - ...
+  - File format is handled by GDAL/OGR package with a [full list](https://gdal.org/en/stable/drivers/raster/)
  
 #### Key Differences 
 
@@ -143,6 +145,27 @@ In Geographic Information Systems (GIS), data is primarily represented in two fu
 * Precision: Vector is generally more precise, while raster's precision depends on cell size.
 * Storage: Vector often uses less storage for discrete features. Raster data storage size is heavily dependant on resolution.
 
+#### Load Spatial Data
+##### Load vector data from files
+* Step1: Layer | Add Layer | Add Vector Layer
+  
+<img width="554" alt="Picture2" src="https://github.com/user-attachments/assets/58bc28a8-7fe8-4dfd-8a54-495dbbfe1e6d" />
+
+* Step2: Input your path of "alaska.shp" and hit "add"
+  
+![Screenshot 2025-02-25 at 2 51 42 PM](https://github.com/user-attachments/assets/b68a9319-68f0-4502-9bb5-d3d6b87b33d0)
+
+* Step 3: You will see the shapefile has been added to Layers as below.
+![Screenshot 2025-02-25 at 2 57 24 PM](https://github.com/user-attachments/assets/17abd546-920a-403e-9cbc-5f90c3115a9c)
+
+::::::::::::::::::::::::::::::::::::: challenge 
+## Challenge 1: Try yourself
+try yourself to add airports.shp to layers.
+:::::::::::::::::::::::: solution 
+<img width="613" alt="Picture3" src="https://github.com/user-attachments/assets/f4d958c0-3acb-42a9-855e-4505cbca2c04" />
+:::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
+  
 One of our episodes contains $\LaTeX$ equations when describing how to create
 dynamic reports with {knitr}, so we now use mathjax to describe this:
 
