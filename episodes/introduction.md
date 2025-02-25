@@ -157,7 +157,8 @@ In Geographic Information Systems (GIS), data is primarily represented in two fu
 
 * Step 3: You will see the shapefile has been added to Layers as below.
 
-<img width="613" alt="Picture3" src="https://github.com/user-attachments/assets/93319b00-98e3-45eb-8d4c-9c4e32ceb72b" />
+![](https://github.com/user-attachments/assets/c5ba1734-88ee-4cc8-a79c-dd2f2b0cb1fb)
+
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 ## Challenge 1: Try yourself
@@ -171,38 +172,119 @@ try yourself to add airports.shp to layers.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::::::::::::::::::: callout
+
+Whenever we load a data source, QGIS looks for usable CRS information, for example, in the shapefile's .prj file. 
+If QGIS cannot find any usable information, by default, it will ask you to specify the CRS manually. 
+This behavior can be changed by going to Settings | Options | CRS to always use either the project CRS or a default CRS.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 ##### (2) Load CSV files
 * Add Delimited Text Layer option available via the menu entry by going to Layer | Add Layer | Add Delimited Text Layer 
 
 <img width="893" alt="Screenshot 2025-02-25 at 2 41 23 PM" src="https://github.com/user-attachments/assets/4ccee5c6-a3d0-4292-8751-04b044d875b0" />
+
+* You will see the shapefile has been added to Layers as below.
+  
 <img width="612" alt="Picture4" src="https://github.com/user-attachments/assets/db0dd043-5c42-48c2-b929-c48f24f010b6" />
 
+##### (3) Load Raster files
+* Step1: Layer | Add Layer | Add Raster Layer
+* Step2: Input your path of "landcover.img" and hit "add"
 
-  
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
+![](https://github.com/user-attachments/assets/6566ea7f-8ca9-4def-96b3-ae16671039bf)
 
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
+* Step 3: You will see the raster has been added to Layers as below.
 
-Cool, right?
+<img width="428" alt="Picture5" src="https://github.com/user-attachments/assets/a849f162-7ad8-473b-a1e3-d6ad34a82e31" />
 
-::::::::::::::::::::::::::::::::::::: keypoints 
+::::::::::::::::::::::::::::::::::::: challenge 
+## Challenge 1: Try yourself
+try yourself to add SR_50M_alaska_nad.tif (Hillshade GeoTiff) to layers.
 
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
+:::::::::::::::::::::::: solution 
+
+![](https://github.com/user-attachments/assets/e10386e9-d1c0-4736-8b9e-6618cf1a5db4)
+
+:::::::::::::::::::::::::::::::::
+## Challenge 2: A Question?
+
+Did you find anything weird about the Hillshade image showing above?
+
+:::::::::::::::::::::::: solution 
+
+Yep, the hillshade should be in the North instead of the South. Let's check data Properties and change looking.
+
+![](https://github.com/user-attachments/assets/ff8ff053-8a82-4335-a06d-e4086adb8986)
+
+![](https://github.com/user-attachments/assets/67208203-a4ac-40c6-838f-8fe9d0a3ae10)
+
+:::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-[r-markdown]: https://rmarkdown.rstudio.com/
+## Process Spatial Data
+#### Filter Vector Data
+
+Scenario: My Grandma wants to have a trip in Alaska but doctor said she shouldn't go to places with high elevation due to the heart problem. So I will find airports with low elevantion for her. For example, I found the airport with elevation lower than 1000 ft.
+
+Solution: 
+
+* Step1: Right click the data "airports" and select "Filter"
+
+![](https://github.com/user-attachments/assets/b330ca5e-42e5-4d01-b587-4e74762b0375)
+
+
+* Step2: Select "ELEV" from "Fields", and input the Specific Filter Expression as below:
+
+![](https://github.com/user-attachments/assets/98e26b3a-6329-41eb-b769-3cb38434cce5)
+
+* Step3: Hit "OK" and now only airport with elevation lower than 1000 ft show up.
+* Step4-Export data: right click the data and selelct "Export" | "Save Features As". Input information as figure below and hit "OK".
+
+![](https://github.com/user-attachments/assets/5be55894-3ede-42bd-a888-36efda92b202)
+  
+#### Raster Calculation
+
+Scenario: I'd like find some sunny slope where my Grandma and I can go skiing. So I found the places where Hillshade is smaller than 100, for example.
+
+Solution:
+
+* Step1: Turn on the Processing Toolbox if it's off, and Search "Raster Calculator".
+
+![](https://github.com/user-attachments/assets/fb3965b0-0754-4f43-b7af-d9f30a4c1ac4)
+![](https://github.com/user-attachments/assets/26b8ed3a-0484-4c83-be15-a50e89d9c5b9)
+
+
+* Step2: Input the "Input Layers", "Expression", "Output CRS", and "Calculated" as the Output file.
+
+![](https://github.com/user-attachments/assets/50d49743-2cb9-466a-806e-a077f31629d0)
+
+
+* Step3: Hit "Run" and change the looking of output.
+
+![](https://github.com/user-attachments/assets/a6e51da6-479c-4008-ad97-05333452897d)
+
+* You have already written out the output file. But if you didn't, you could always export the data via right clicking it and select "Export" | "Save As". Then input information as figure below and hit "OK".
+
+![](https://github.com/user-attachments/assets/8074e204-dc55-4533-af9b-0dc1e85fc0d0)
+
+  
+::::::::::::::::::::::::::::::::::::: keypoints 
+
+- QGIS is a free and open-source software that runs on various platforms, such as Windows, Mac, and Linux.
+- QGIS has a large and active community of users and developers who contribute to its features, plugins, documentation, and support. 
+- We can use QGIS via ThinLinc Client or Gateway on HPC Clusters. 
+- We learned how to load and visualize vector and raster data.
+- We learned how to process data and export them.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 
 
 ::::::::::::::::::::::::::::::::::::: challenge 
-
-## Challenge 1: Look up QGIS version with Terminal?
-
-
 
 
 :::::::::::::::::::::::: solution 
@@ -211,9 +293,6 @@ Cool, right?
 
 :::::::::::::::::::::::::::::::::
 
-## Challenge 2: Start QGIS with Terminal?
-
-How can you open QGIS as an interactive job with Terminal?
 
 :::::::::::::::::::::::: solution 
 
@@ -228,6 +307,12 @@ How can you open QGIS as an interactive job with Terminal?
 Inline instructor notes can help inform instructors of timing challenges
 associated with the lessons. They appear in the "Instructor View"
 
+One of our episodes contains $\LaTeX$ equations when describing how to create
+dynamic reports with {knitr}, so we now use mathjax to describe this:
+
+`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
+
+Cool, right?
 
 You can use standard markdown for static figures with the following syntax:
 
