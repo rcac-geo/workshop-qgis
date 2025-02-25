@@ -35,20 +35,21 @@ Why QGIS? It's free and flexible.
 
 We can start QGIS via ThinLinc Client or Gateway. 
 
-### Start QGIS via ThinLinc
+#### Start QGIS via ThinLinc
 
-Follow up with the Setup page, and connect with ThinLinc. To open QGIS as an interactive job, we could go to "Cluster Software" and select "QGIS", as the figure below:
+Follow up with [the Setup page](https://github.com/rcac-geo/workshop-qgis/edit/main/episodes), and connect with ThinLinc. To open QGIS as an interactive job, we could go to "Cluster Software" and select "QGIS", as the figure below:
+
 <img width="391" alt="Picture1" src="https://github.com/user-attachments/assets/1df48747-d717-442e-9af5-c25d4dc9f78d" />
 
 Then select the "workshop" queue as below:
 
 <img width="406" alt="Screenshot 2025-02-24 at 4 15 16 PM" src="https://github.com/user-attachments/assets/72d72419-4484-4e6e-9fed-3ec2fdf4920d" />
 
-Then hit No as below:
+Then hit "No":
 
 <img width="529" alt="Screenshot 2025-02-24 at 4 15 41 PM" src="https://github.com/user-attachments/assets/e3ea5e98-e83e-4d77-ba9c-bba7c62fbea3" />
 
-Now input two cores and five minutes and hit Okay as below. You don't need to specifically request memory because memory will be relocated proportional with cores. But if you do, include unit such as "4G".
+Now input two cores and five minutes and hit Okay. You don't need to specifically request memory because memory will be relocated proportional with cores. But if you do, include unit such as "4G".
 
 <img width="608" alt="Screenshot 2025-02-24 at 4 16 10 PM" src="https://github.com/user-attachments/assets/55a2b0be-3bc1-447c-a44d-04c4ec6a7e60" />
 
@@ -84,7 +85,7 @@ qgis
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Start QGIS via Gateway
+#### Start QGIS via Gateway
 
 Gateway, also named Open OnDemand, is a Web interface includes file explorer, interactive apps including QGIS.​ We have to use our own accounts to login Gateway, not the training accounts we used for this workshop. 
 Go to [Negishi Gateway](gateway.negishi.rcac.purdue.edu), login with our purdue accounts (when we have account on Clusters) and connect QGIS as the figure below.
@@ -110,9 +111,9 @@ accessibility purposes'}`
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-We could also open QGIS with Gateway, in the way of Chanllege 2. We could start a terminal as below.
+We could also open QGIS with Gateway, in the way of [Challenge 2](#Challenge 2). We could start a terminal as below.
 
-![Screenshot 2025-02-25 at 10 15 18 AM](https://github.com/user-attachments/assets/aac3d529-c726-4793-b3db-e90e55a260fc)
+![Start Terminal in Gateway](https://github.com/user-attachments/assets/aac3d529-c726-4793-b3db-e90e55a260fc)
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
