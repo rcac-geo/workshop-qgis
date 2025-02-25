@@ -22,13 +22,15 @@ exercises: 2
 
 GIS stands for ‘Geographical Information System’. We can use a GIS application, such as ArcGIS and QGIS to manipulate spatial information. 
 
+QGIS is a free and open-source software that runs on various operating systems. It offers a wide range of functionality, such as vector and raster analysis, geoprocessing, geocoding, georeferencing, web mapping, and 3D visualization. QGIS also supports many data formats and standards, such as Shapefile, GeoTIFF, GeoJSON, WMS, WFS, and PostGIS.
+
 Why QGIS? It's free and flexible.
 
  1. Cost-free: Enjoy QGIS without any financial burden. It's completely free, no hidden fees.
  2. Free as in "Do It Your Way": You could extend QGIS to meet your specific needs, sponsor development or contribute your own code.
  3. Works where you work: Run QGIS on macOS, Windows, and Linux (so available for HPC Clusters). 
  4. Always getting better: Benefit from rapid development because anyone can add new features and improve on existing ones.
- 6. Never get stuck: Access extensive documentation and a supportive community is there for help.
+ 6. Never get stuck: Access extensive documentation and a large and active supportive community is there for help. 
  7. Easily integrate Artificial Intelligence (AI) and GeoAI.
 
 ## Open QGIS on Clusters
