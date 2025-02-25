@@ -99,7 +99,49 @@ We could also open QGIS with Gateway, in the [Typing Code Way](https://rcac-geo.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## Math
+## View Spatial Data
+
+In Geographic Information Systems (GIS), data is primarily represented in two fundamental formats: vector and raster.
+
+#### Vector Data
+
+* Representation:
+   - Vector data uses geometric objects—points, lines, and polygons—to represent spatial features.
+   - Points represent individual locations (e.g., a city, a tree).
+   - Lines represent linear features (e.g., roads, rivers).
+   - Polygons represent areas (e.g., lakes, buildings, administrative boundaries).   
+* Characteristics:
+  - Precision: Vector data is excellent for representing discrete features with clear boundaries, offering high precision.
+  - Scalability: Vector data can be scaled up or down without losing quality.
+  - Data Storage: Typically, vector data requires less storage space than raster data for representing discrete features.
+  - Use Cases: Best suited for representing features with distinct boundaries, such as roads, property lines, and political boundaries.
+* Vector File Types:
+  - Shapefile (.shp): A very common geospatial vector data format for GIS software. It actually consists of several files (.shp, .shx, .dbf, etc.)
+  - GeoJSON (.geojson): A popular open standard format that uses JavaScript Object Notation (JSON) to represent geographic features.
+  - KML/KMZ: Used by Google Earth for displaying geographic data.
+  - ... 
+
+#### Raster Data
+
+* Representation:
+  - Raster data represents spatial information as a grid of cells (pixels). Each cell contains a value representing a specific attribute (e.g., elevation, temperature, land cover).   
+* Characteristics:
+  - Continuous Data: Raster data is ideal for representing continuous attributes, such as elevation, temperature, and satellite imagery.
+  - Data Storage: Raster data can require significant storage space, especially at high resolutions.
+  - Analysis: Raster data is well-suited for spatial analysis involving calculations and modeling.
+  - Use Cases: Best suited for representing continuous surfaces, such as elevation models, satellite imagery, and aerial photographs.
+* Raster File Types:
+  - TIFF: Basic image format, no geographic information.
+  - GeoTIFF: A TIFF file with added geospatial metadata, enabling it to be used in GIS applications.
+  - COG (Cloud Optimized GeoTIFF): A type of GeoTIFF with a specific data structure optimized for fast access in cloud environments, often using tiled data storage.
+  - ...
+ 
+#### Key Differences 
+
+* Structure: Vector data uses geometric shapes, while raster data uses a grid of cells.
+* Data Type: Vector is for discrete features, raster is for continuous phenomena.
+* Precision: Vector is generally more precise, while raster's precision depends on cell size.
+* Storage: Vector often uses less storage for discrete features. Raster data storage size is heavily dependant on resolution.
 
 One of our episodes contains $\LaTeX$ equations when describing how to create
 dynamic reports with {knitr}, so we now use mathjax to describe this:
