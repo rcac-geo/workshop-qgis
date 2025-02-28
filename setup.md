@@ -18,9 +18,6 @@ title: Setup
 
 ## Software Setup
 
-
-### Details
-
 1. SSH key setup for different systems is detailed in the expandable sections below.
 2. Download the [ThinLinc Client](https://www.cendio.com/thinlinc/download/) and install it to your Laptop.
 3. Open ThinLinc Client, then go to Options -> Security, and select "Public key" in the "Anthentication method" as here:
@@ -47,7 +44,7 @@ Open a terminal locally on your laptop and run:
 ssh-keygen -b 4096 -t rsa
 ```
 
-:::::::::::::::: callout
+:::::::::::::::: spoiler
 this generates the ssh key
 ::::::::::::::::::::::::
 
@@ -56,11 +53,11 @@ type .ssh\id_rsa.pub | ssh trainXX@negishi.rcac.purdue.edu "mkdir -p ~/.ssh; cat
 ```
 Now you input the password written in the whiteboard
 
-:::::::::::::::: callout
+:::::::::::::::: spoiler
 this copies the ssh key to trainXX on Negishi
 ::::::::::::::::::::::::
 
-then run:
+Now run:
 
 ```sh
 ssh trainXX@negishi.rcac.purdue.edu
@@ -76,10 +73,20 @@ Open Terminal locally on your laptop and run
 ```sh
 ssh-keygen -b 4096 -t rsa
 ```
+:::::::::::::::: spoiler
+this generates the ssh key
+::::::::::::::::::::::::
+
 ```sh
 cat .ssh/id_rsa.pub | ssh trainXX@negishi.rcac.purdue.edu "mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys"
 ```
-Now you input the password written in the whiteboard, and run:
+Now you input the password written in the whiteboard, 
+
+:::::::::::::::: spoiler
+this copies the ssh key to trainXX on Negishi
+::::::::::::::::::::::::
+
+Now run:
 
 ```sh
 ssh trainXX@negishi.rcac.purdue.edu
