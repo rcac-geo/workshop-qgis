@@ -371,8 +371,12 @@ sections below.</li>
 </button>
 <div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
-<p>Generating public/private rsa key pair. Enter file in which to save
-the key (/home/liu4201/.ssh/id_rsa):</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Generating public/private rsa key pair.
+Enter file in which to save the key (/home/liu4201/.ssh/id_rsa):</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -385,7 +389,11 @@ the key (/home/liu4201/.ssh/id_rsa):</p>
 </button>
 <div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
-<p>Enter passphrase (empty for no passphrase):</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Enter passphrase (empty for no passphrase):</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -399,13 +407,26 @@ passphrase in this case).</p>
 </button>
 <div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
 <div class="accordion-body">
-<p>Your identification has been saved in
-/Users/your_laptop_account/.ssh/id_rsa Your public key has been saved in
-/Users/your_laptop_account/.ssh/id_rsa.pub The key fingerprint is:
-SHA256:0vHGCotXkhEg4IKmpJvM92ivPFFyB81l2XgIFTkdsZ8 <a href="mailto:your_laptop_account@pal-nat187-15-102.itap.purdue.edu" class="email">your_laptop_account@pal-nat187-15-102.itap.purdue.edu</a>
-The key’s randomart image is: +—[RSA 4096]—-+ |… ..+.+=Ooo | |o . . +.*
-+. | |o+ o . o. | |* . o = + . . | |o + * S + E | |oo . . * o | |oo .o o
-. | | ooo. | | .++o | +—-[SHA256]—–+</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Your identification has been saved in /Users/your_laptop_account/.ssh/id_rsa
+Your public key has been saved in /Users/your_laptop_account/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:0vHGCotXkhEg4IKmpJvM92ivPFFyB81l2XgIFTkdsZ8 your_laptop_account@pal-nat187-15-102.itap.purdue.edu
+The key's randomart image is:
++---[RSA 4096]----+
+|... ..+.+=Ooo    |
+|o  . . +.* +.    |
+|o+    o . o.     |
+|*  . o = +  . .  |
+|o   + * S +  E   |
+|oo . . * o       |
+|oo .o o .        |
+|  ooo.           |
+|  .++o           |
++----[SHA256]-----+</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -418,10 +439,10 @@ The key’s randomart image is: +—[RSA 4096]—-+ |… ..+.+=Ooo | |o . . +.*
 </button>
 <div id="collapseSpoiler5" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler5" aria-labelledby="headingSpoiler5">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb2">
+<div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="bu">type</span> .ssh<span class="dt">\i</span>d_rsa.pub <span class="kw">|</span> <span class="fu">ssh</span> trainXX@negishi.rcac.purdue.edu <span class="st">"mkdir -p ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys"</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="bu">type</span> .ssh<span class="dt">\i</span>d_rsa.pub <span class="kw">|</span> <span class="fu">ssh</span> trainXX@negishi.rcac.purdue.edu <span class="st">"mkdir -p ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys"</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -434,10 +455,10 @@ The key’s randomart image is: +—[RSA 4096]—-+ |… ..+.+=Ooo | |o . . +.*
 </button>
 <div id="collapseSpoiler6" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler6" aria-labelledby="headingSpoiler6">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb3">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">cat</span> .ssh/id_rsa.pub <span class="kw">|</span> <span class="fu">ssh</span> trainXX@negishi.rcac.purdue.edu <span class="st">"mkdir -p ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys"</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">cat</span> .ssh/id_rsa.pub <span class="kw">|</span> <span class="fu">ssh</span> trainXX@negishi.rcac.purdue.edu <span class="st">"mkdir -p ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys"</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -457,10 +478,10 @@ The key’s randomart image is: +—[RSA 4096]—-+ |… ..+.+=Ooo | |o . . +.*
 </div>
 </div>
 <p>and then run:</p>
-<div class="codewrapper sourceCode" id="cb4">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">ssh</span> trainXX@negishi.rcac.purdue.edu</span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">ssh</span> trainXX@negishi.rcac.purdue.edu</span></code></pre>
 </div>
 <div id="accordionSpoiler8" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
@@ -492,10 +513,10 @@ Key(correct it with your path of key) like here:</p>
 <li><p>Hit “Connect”.</p></li>
 </ol></section><section><h2 class="section-heading" id="data-sets">Data Sets<a class="anchor" aria-label="anchor" href="#data-sets"></a></h2>
 <hr class="half-width"><p>Copy data to your scratch directory:</p>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-avP</span> /depot/workshop/data/qgis/qgis-data <span class="va">$RCAC_SCRATCH</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-avP</span> /depot/workshop/data/qgis/qgis-data <span class="va">$RCAC_SCRATCH</span></span></code></pre>
 </div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
