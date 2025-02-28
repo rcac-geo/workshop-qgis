@@ -100,7 +100,10 @@ ssh trainXX@negishi.rcac.purdue.edu
 this connects negishi with ssh
 ::::::::::::::::::::::::
 
-You should be able to land on Negishi without password.
+You should be able to land on Negishi without password, which means you will see:
+```output
+TrainXX@login0X.negishi:[~] $
+```
 ::::::::::::::::::::::::
 
 2. Download the [ThinLinc Client](https://www.cendio.com/thinlinc/download/) and install it to your Laptop.
