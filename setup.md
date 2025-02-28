@@ -38,7 +38,7 @@ this generates the ssh key
 ### Output
 ```output
 Generating public/private rsa key pair.
-Enter file in which to save the key (/home/liu4201/.ssh/id_rsa):
+Enter file in which to save the key (/Users/your_laptop_account/.ssh/id_rsa):
 ```
 ::::::::::::::::::::::::
 
@@ -48,6 +48,7 @@ Now you hit "enter",
 ### Output
 ```output
 Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
 ```
 ::::::::::::::::::::::::
 
