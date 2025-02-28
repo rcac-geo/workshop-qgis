@@ -34,28 +34,20 @@ ssh-keygen -b 4096 -t rsa
 this generates the ssh key
 ::::::::::::::::::::::::
 
-:::::::::::::::: spoiler
-### Output
 ```output
 Generating public/private rsa key pair.
 Enter file in which to save the key (/Users/your_laptop_account/.ssh/id_rsa):
 ```
-::::::::::::::::::::::::
 
 Now you hit "enter",
 
-:::::::::::::::: spoiler
-### Output
 ```output
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
 ```
-::::::::::::::::::::::::
 
 Now you hit "enter" again twice to confirm your input passphrase (no passphrase in this case).
 
-:::::::::::::::: spoiler
-### Output
 ```output
 Your identification has been saved in /Users/your_laptop_account/.ssh/id_rsa
 Your public key has been saved in /Users/your_laptop_account/.ssh/id_rsa.pub
@@ -74,7 +66,6 @@ The key's randomart image is:
 |  .++o           |
 +----[SHA256]-----+
 ```
-::::::::::::::::::::::::
 
 Now you run:
 
