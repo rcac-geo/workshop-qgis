@@ -8,7 +8,7 @@ title: Setup
 |:---|-------------|
 | 10:00 AM | Arrival & Setup  |
 | 10:30 AM | Introduction & Open QGIS on Clusters |
-| 11:00 AM | View Spatial Data |
+| 11:00 AM | View and Process Spatial Data |
 | 12:00 PM | Lunch Break |
 | 1:00 PM | Project: 	Exploring landscape around Purdue |
 | 2:30 PM | Break |
