@@ -22,6 +22,7 @@ title: Setup
 
 
 :::::::::::::::: spoiler
+
 Open a terminal locally on your laptop and run:
 
 ```sh
@@ -75,7 +76,7 @@ Now you run:
 ```sh
 type .ssh\id_rsa.pub | ssh trainXX@negishi.rcac.purdue.edu "mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys"
 ```
-:::::::::::::::: spoiler
+::::::::::::::::::::::::
 
 :::::::::::::::: spoiler
 ### MacOS / Linux
