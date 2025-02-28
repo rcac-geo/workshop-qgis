@@ -1,5 +1,5 @@
 ---
-title: "Project: Exploring landscape around Purdue"
+title: "Project"
 teaching: 10
 exercises: 2
 ---
@@ -34,9 +34,6 @@ A DEM is essentially a 3D representation of a terrain's surface. It's a raster d
 
 Slope refers to the steepness or gradient of the terrain. It's typically expressed in degrees (0 to 90) or as a percentage. A slope of 0 degrees indicates a flat surface, while a slope of 90 degrees represents a vertical surface.
 
-<img width="535" alt="Screenshot 2025-02-28 at 12 45 44 PM" src="https://github.com/user-attachments/assets/6ee78881-4395-4197-a73f-3c88d1245fbe" />
-
-
 Slope maps are derived from DEMs and are useful for analyzing things like:
 * Erosion risk
 * Water runoff
@@ -45,6 +42,8 @@ Slope maps are derived from DEMs and are useful for analyzing things like:
 #### 3. Hillshade:
 
 Hillshade refers to simulating how sunlight would illuminate the terrain. It enhances the visualization of landforms by showing how light and shadow interact with the surface. The hillshade effect is created by setting an azimuth and vertical angle for a light source. The Azimuth is the direction the light is coming from, and the altitude is the angle of the light source above the horizon.
+
+<img width="535" alt="Screenshot 2025-02-28 at 12 45 44 PM" src="https://github.com/user-attachments/assets/6ee78881-4395-4197-a73f-3c88d1245fbe" />
 
 Hillshade maps are also derived from DEMs and are valuable for:
 * Visualizing terrain features
