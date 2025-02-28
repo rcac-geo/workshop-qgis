@@ -244,6 +244,30 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="project.html">2. Project: Exploring landscape around Purdue</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="coding.html">3. Coding</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -792,7 +816,179 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </div>
-</section></section>
+</section></section><section id="aio-project"><p>Content from <a href="project.html">Project: Exploring landscape around Purdue</a></p>
+<hr>
+<p>Last updated on 2025-02-28 |
+
+        <a href="https://github.com/rcac-geo/workshop-qgis/edit/main/episodes/project.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>Why QGIS?</li>
+<li>How to start QGIS on HPC Clusters?</li>
+<li>How to load and visualize data in QGIS?</li>
+<li>How to process and export data in QGIS?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Explain why we should use QGIS</li>
+<li>Demonstrate how to start QGIS on HPC Clusters</li>
+<li>Demonstrate how to load and visualize data in QGIS</li>
+<li>Demonstrate how to process and export data in QGIS</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="preliminary-knowledge">Preliminary Knowledge<a class="anchor" aria-label="anchor" href="#preliminary-knowledge"></a>
+</h2>
+<hr class="half-width">
+<div class="section level4">
+<h4 id="dem-digital-elevation-model">1. DEM (Digital Elevation Model):<a class="anchor" aria-label="anchor" href="#dem-digital-elevation-model"></a>
+</h4>
+<p>A DEM is essentially a 3D representation of a terrain’s surface. It’s
+a raster dataset, meaning it’s made up of a grid of cells (pixels),
+where each cell contains an elevation value. * Think of it as a digital
+map that shows the height of the land at every point. * DEMs are the
+foundation for creating slope, hillshade maps and analyzing
+hydrology.</p>
+</div>
+<div class="section level4">
+<h4 id="slope">2. Slope:<a class="anchor" aria-label="anchor" href="#slope"></a>
+</h4>
+<p>Slope refers to the steepness or gradient of the terrain. It’s
+typically expressed in degrees (0 to 90) or as a percentage. A slope of
+0 degrees indicates a flat surface, while a slope of 90 degrees
+represents a vertical surface.</p>
+<figure><img width="535" alt="Screenshot 2025-02-28 at 12 45 44 PM" src="https://github.com/user-attachments/assets/6ee78881-4395-4197-a73f-3c88d1245fbe" class="figure mx-auto d-block"></figure><p>Slope maps are derived from DEMs and are useful for analyzing things
+like: * Erosion risk * Water runoff * Suitability for construction</p>
+</div>
+<div class="section level4">
+<h4 id="hillshade">3. Hillshade:<a class="anchor" aria-label="anchor" href="#hillshade"></a>
+</h4>
+<p>Hillshade refers to simulating how sunlight would illuminate the
+terrain. It enhances the visualization of landforms by showing how light
+and shadow interact with the surface. The hillshade effect is created by
+setting an azimuth and vertical angle for a light source. The Azimuth is
+the direction the light is coming from, and the altitude is the angle of
+the light source above the horizon.</p>
+<p>Hillshade maps are also derived from DEMs and are valuable for: *
+Visualizing terrain features * Identifying subtle topographic details *
+Creating visually appealing maps</p>
+</div>
+<div class="section level4">
+<h4 id="analyzing-hydrology">4. Analyzing hydrology<a class="anchor" aria-label="anchor" href="#analyzing-hydrology"></a>
+</h4>
+<p>The workflow: DEM Input → Fill Sinks → Flow Direction → Flow
+Accumulation → Stream Extraction -&gt; Watersheds</p>
+<ul>
+<li>Before calculating flow, the DEM needs to be preprocessed to remove
+any small depressions (sinks) that may trap water. These are often
+errors in the data or natural terrain features that disrupt continuous
+flow.</li>
+<li>The flow direction represents the direction in which water will move
+from each cell based on elevation. The most common method assigns flow
+using the D8 algorithm, where water moves to the steepest downward slope
+among the eight neighboring cells.</li>
+<li>The flow accumulation raster represents the number of upstream cells
+contributing flow to each cell. This helps identify areas with higher
+accumulated flow, which can indicate potential stream paths.
+<ul>
+<li>Low accumulation values: Represent hilltops or ridges.</li>
+<li>High accumulation values: Represent valleys or stream networks.</li>
+</ul>
+</li>
+<li>Streams are extracted by applying a threshold to the flow
+accumulation raster. A threshold defines the minimum number of
+contributing cells required to form a stream.
+<ul>
+<li>Higher thresholds result in fewer, larger streams.</li>
+<li>Lower thresholds detect smaller streams, but may introduce
+noise.</li>
+</ul>
+</li>
+<li>Last step is to extract Watersheds, an area of land that drains all
+precipitation and surface runoff to a common outlet(such as a river,
+lake, or ocean).
+<ul>
+<li>It is defined by topographic divides (ridges or hills) that separate
+it from adjacent watersheds.</li>
+<li>Watersheds can be small (for example, a stream watershed) or large
+(covering multiple rivers).</li>
+<li>Same concept as Catchments and Basins, but they are in different
+scales: ** Basin ** → contains multiple → ** Sub-Basins ** → made up of
+→ ** Watersheds ** → includes smaller → ** Catchments **</li>
+</ul>
+</li>
+</ul>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div>
+</section></section><section id="aio-coding"><p>Content from <a href="coding.html">Coding</a></p>
+<hr>
+<p>Last updated on 2025-02-28 |
+
+        <a href="https://github.com/rcac-geo/workshop-qgis/edit/main/episodes/coding.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>Why QGIS?</li>
+<li>How to start QGIS on HPC Clusters?</li>
+<li>How to load and visualize data in QGIS?</li>
+<li>How to process and export data in QGIS?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Explain why we should use QGIS</li>
+<li>Demonstrate how to start QGIS on HPC Clusters</li>
+<li>Demonstrate how to load and visualize data in QGIS</li>
+<li>Demonstrate how to process and export data in QGIS</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction-to-qgis">Introduction to QGIS<a class="anchor" aria-label="anchor" href="#introduction-to-qgis"></a>
+</h2>
+<hr class="half-width">
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ --></section></section>
 </div>
     </main>
 </div>
@@ -840,8 +1036,8 @@ any links that you are not going to use.
   "url": "https://rcac-geo.github.io/workshop-qgis/instructor/aio.html",
   "identifier": "https://rcac-geo.github.io/workshop-qgis/instructor/aio.html",
   "dateCreated": "2025-02-18",
-  "dateModified": "2025-02-25",
-  "datePublished": "2025-02-25"
+  "dateModified": "2025-02-28",
+  "datePublished": "2025-02-28"
 }
 
   </script><script>
