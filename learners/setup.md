@@ -19,8 +19,6 @@ title: Setup
 ## Software Setup
 
 
-::::::::::::::::::::::::::::::::::::::: discussion
-
 ### Details
 
 1. SSH key setup for different systems is detailed in the expandable sections below.
@@ -34,6 +32,8 @@ title: Setup
    <img width="469" alt="Screenshot 2025-02-21 at 2 27 11 PM" src="https://github.com/user-attachments/assets/7889bdce-6cbd-4cf0-a2eb-a585d83489c4" />
    
 6. Hit "Connect".
+
+::::::::::::::::::::::::::::::::::::::: discussion
    
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -41,35 +41,50 @@ title: Setup
 
 ### Windows
 
-Open a terminal and run:
+Open a terminal locally on your laptop and run:
 
 ```sh
 ssh-keygen -b 4096 -t rsa
+```
+
+:::::::::::::::: callout
+this generates the ssh key
+::::::::::::::::::::::::
+
+```sh
 type .ssh\id_rsa.pub | ssh trainXX@negishi.rcac.purdue.edu "mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys"
 ```
-Now you input the password written in the whiteboard, and run:
+Now you input the password written in the whiteboard
+
+:::::::::::::::: callout
+this copies the ssh key to trainXX on Negishi
+::::::::::::::::::::::::
+
+then run:
+
 ```sh
-exit
 ssh trainXX@negishi.rcac.purdue.edu
 ```
-You should be able to return to Negishi without password.
+You should be able to land on Negishi without password.
 ::::::::::::::::::::::::
 
 :::::::::::::::: spoiler
 
 ### MacOS / Linux
 
-Open Terminal and run
+Open Terminal locally on your laptop and run
 ```sh
 ssh-keygen -b 4096 -t rsa
+```
+```sh
 cat .ssh/id_rsa.pub | ssh trainXX@negishi.rcac.purdue.edu "mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys"
 ```
 Now you input the password written in the whiteboard, and run:
+
 ```sh
-exit
 ssh trainXX@negishi.rcac.purdue.edu
 ```
-You should be able to return to Negishi without password.
+You should be able to land on Negishi without password.
 ::::::::::::::::::::::::
 
 
