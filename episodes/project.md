@@ -9,16 +9,15 @@ exercises: 2
 - What is DEM?
 - What types of downstream information can be derived from a DEM?
 - What is the topographic landscape around Purdue?
-- WWhat are the hydrological features around Purdue?
+- What are the hydrological features around Purdue?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain why we should use QGIS
-- Demonstrate how to start QGIS on HPC Clusters
-- Demonstrate how to load and visualize data in QGIS
-- Demonstrate how to process and export data in QGIS
+- Define and explain the preliminary knowledge.
+- Identify the types of downstream information that can be derived from a DEM.
+- Demonstrate how to analyze topographic landscape and hydrological features with QGIS.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
