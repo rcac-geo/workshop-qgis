@@ -6,10 +6,10 @@ exercises: 2
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Why QGIS?
-- How to start QGIS on HPC Clusters?
-- How to load and visualize data in QGIS?
-- How to process and export data in QGIS?
+- What is DEM?
+- What types of downstream information can be derived from a DEM?
+- What is the topographic landscape around Purdue?
+- WWhat are the hydrological features around Purdue?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -29,7 +29,8 @@ exercises: 2
 A DEM is essentially a 3D representation of a terrain's surface. It's a raster dataset, meaning it's made up of a grid of cells (pixels), where each cell contains an elevation value.
 
 * Think of it as a digital map that shows the height of the land at every point.
-* DEMs are the foundation for creating slope, hillshade maps and analyzing hydrology.  
+* DEMs are the foundation for creating slope, hillshade maps and analyzing hydrology.
+* The DEM we used today is LiDAR (Light Detection and Ranging) data with one meter resolution from [USGS](https://apps.nationalmap.gov/downloader/), which uses laser pulses from aircraft or drones to measure terrain elevation accurately. 
 
 #### 2. Slope:
 
