@@ -27,6 +27,7 @@ exercises: 2
 #### 1. DEM (Digital Elevation Model):
 
 A DEM is essentially a 3D representation of a terrain's surface. It's a raster dataset, meaning it's made up of a grid of cells (pixels), where each cell contains an elevation value.
+
 * Think of it as a digital map that shows the height of the land at every point.
 * DEMs are the foundation for creating slope, hillshade maps and analyzing hydrology.  
 
@@ -35,21 +36,22 @@ A DEM is essentially a 3D representation of a terrain's surface. It's a raster d
 Slope refers to the steepness or gradient of the terrain. It's typically expressed in degrees (0 to 90) or as a percentage. A slope of 0 degrees indicates a flat surface, while a slope of 90 degrees represents a vertical surface.
 
 Slope maps are derived from DEMs and are useful for analyzing things like:
+
 * Erosion risk
 * Water runoff
 * Suitability for construction
 
 #### 3. Hillshade:
 
-Hillshade refers to simulating how sunlight would illuminate the terrain. It enhances the visualization of landforms by showing how light and shadow interact with the surface. The hillshade effect is created by setting an azimuth and vertical angle for a light source. The Azimuth is the direction the light is coming from, and the altitude is the angle of the light source above the horizon.
+Hillshade refers to simulating how sunlight would illuminate the terrain. It enhances the visualization of landforms by showing how light and shadow interact with the surface. The hillshade effect is created by setting an azimuth and vertical angle for a light source. The Azimuth is the direction the light is coming from, and the vertical angle is the angle of the light source above the horizon.
 
 <img width="535" alt="Screenshot 2025-02-28 at 12 45 44 PM" src="https://github.com/user-attachments/assets/6ee78881-4395-4197-a73f-3c88d1245fbe" />
 
 Hillshade maps are also derived from DEMs and are valuable for:
-* Visualizing terrain features
-* Identifying subtle topographic details
-* Creating visually appealing maps
 
+* Visualizing terrain features and creating visually appealing maps
+* Identifying subtle topographic details
+  
 #### 4. Analyzing hydrology
 
 The workflow: DEM Input → Fill Sinks → Flow Direction → Flow Accumulation → Stream Extraction -> Watersheds
@@ -66,3 +68,11 @@ The workflow: DEM Input → Fill Sinks → Flow Direction → Flow Accumulation 
   - It is defined by topographic divides (ridges or hills) that separate it from adjacent watersheds.
   - Watersheds can be small (for example, a stream watershed) or large (covering multiple rivers).
   - Same concept as Catchments and Basins, but they are in different scales: ** Basin ** → contains multiple → ** Sub-Basins ** → made up of → ** Watersheds ** → includes smaller → ** Catchments **
+ 
+## Install Plugins
+
+## Merge DEM Data
+## Calculate Slope
+## Calculate Hillshade
+## Analyze Hydrology
+## Calculate Topographic Index
