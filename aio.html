@@ -581,7 +581,7 @@ below.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <figure><img width="613" alt="Picture3" src="https://github.com/user-attachments/assets/f4d958c0-3acb-42a9-855e-4505cbca2c04" class="figure mx-auto d-block"></figure>
 </div>
@@ -645,7 +645,7 @@ layers.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <figure><img src="https://github.com/user-attachments/assets/e10386e9-d1c0-4736-8b9e-6618cf1a5db4" class="figure mx-auto d-block"></figure>
 </div>
@@ -669,7 +669,7 @@ above?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Yep, the hillshade should be in the North instead of the South. Let’s
 check data Properties and change looking.</p>
@@ -765,7 +765,7 @@ contribute to its features, plugins, documentation, and support.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 
 </div>
@@ -777,7 +777,7 @@ contribute to its features, plugins, documentation, and support.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 
 </div>
@@ -792,7 +792,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-project"><p>Content from <a href="project.html">Project</a></p>
 <hr>
-<p>Last updated on 2025-02-28 |
+<p>Last updated on 2025-03-03 |
 
         <a href="https://github.com/rcac-geo/workshop-qgis/edit/main/episodes/project.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -837,10 +837,13 @@ any links that you are not going to use.
 </h4>
 <p>A DEM is essentially a 3D representation of a terrain’s surface. It’s
 a raster dataset, meaning it’s made up of a grid of cells (pixels),
-where each cell contains an elevation value. * Think of it as a digital
-map that shows the height of the land at every point. * DEMs are the
-foundation for creating slope, hillshade maps and analyzing
-hydrology.</p>
+where each cell contains an elevation value.</p>
+<ul>
+<li>Think of it as a digital map that shows the height of the land at
+every point.</li>
+<li>DEMs are the foundation for creating slope, hillshade maps and
+analyzing hydrology.</li>
+</ul>
 </div>
 <div class="section level4">
 <h4 id="slope">2. Slope:<a class="anchor" aria-label="anchor" href="#slope"></a>
@@ -850,7 +853,12 @@ typically expressed in degrees (0 to 90) or as a percentage. A slope of
 0 degrees indicates a flat surface, while a slope of 90 degrees
 represents a vertical surface.</p>
 <p>Slope maps are derived from DEMs and are useful for analyzing things
-like: * Erosion risk * Water runoff * Suitability for construction</p>
+like:</p>
+<ul>
+<li>Erosion risk</li>
+<li>Water runoff</li>
+<li>Suitability for construction</li>
+</ul>
 </div>
 <div class="section level4">
 <h4 id="hillshade">3. Hillshade:<a class="anchor" aria-label="anchor" href="#hillshade"></a>
@@ -859,11 +867,14 @@ like: * Erosion risk * Water runoff * Suitability for construction</p>
 terrain. It enhances the visualization of landforms by showing how light
 and shadow interact with the surface. The hillshade effect is created by
 setting an azimuth and vertical angle for a light source. The Azimuth is
-the direction the light is coming from, and the altitude is the angle of
-the light source above the horizon.</p>
-<figure><img width="535" alt="Screenshot 2025-02-28 at 12 45 44 PM" src="https://github.com/user-attachments/assets/6ee78881-4395-4197-a73f-3c88d1245fbe" class="figure mx-auto d-block"></figure><p>Hillshade maps are also derived from DEMs and are valuable for: *
-Visualizing terrain features * Identifying subtle topographic details *
-Creating visually appealing maps</p>
+the direction the light is coming from, and the vertical angle is the
+angle of the light source above the horizon.</p>
+<figure><img width="535" alt="Screenshot 2025-02-28 at 12 45 44 PM" src="https://github.com/user-attachments/assets/6ee78881-4395-4197-a73f-3c88d1245fbe" class="figure mx-auto d-block"></figure><p>Hillshade maps are also derived from DEMs and are valuable for:</p>
+<ul>
+<li>Visualizing terrain features and creating visually appealing
+maps</li>
+<li>Identifying subtle topographic details</li>
+</ul>
 </div>
 <div class="section level4">
 <h4 id="analyzing-hydrology">4. Analyzing hydrology<a class="anchor" aria-label="anchor" href="#analyzing-hydrology"></a>
@@ -910,12 +921,24 @@ scales: ** Basin ** → contains multiple → ** Sub-Basins ** → made up of
 </ul>
 </li>
 </ul>
+</div>
+</section><section><h2 class="section-heading" id="install-plugins">Install Plugins<a class="anchor" aria-label="anchor" href="#install-plugins"></a>
+</h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="merge-dem-data">Merge DEM Data<a class="anchor" aria-label="anchor" href="#merge-dem-data"></a>
+</h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="calculate-slope">Calculate Slope<a class="anchor" aria-label="anchor" href="#calculate-slope"></a>
+</h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="calculate-hillshade">Calculate Hillshade<a class="anchor" aria-label="anchor" href="#calculate-hillshade"></a>
+</h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="analyze-hydrology">Analyze Hydrology<a class="anchor" aria-label="anchor" href="#analyze-hydrology"></a>
+</h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="calculate-topographic-index">Calculate Topographic Index<a class="anchor" aria-label="anchor" href="#calculate-topographic-index"></a>
+</h2>
+<hr class="half-width">
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- -->
-</div>
-</section></section><section id="aio-coding"><p>Content from <a href="coding.html">Coding</a></p>
+ --></section></section><section id="aio-coding"><p>Content from <a href="coding.html">Coding</a></p>
 <hr>
 <p>Last updated on 2025-02-28 |
 
@@ -1008,8 +1031,8 @@ any links that you are not going to use.
   "url": "https://rcac-geo.github.io/workshop-qgis/aio.html",
   "identifier": "https://rcac-geo.github.io/workshop-qgis/aio.html",
   "dateCreated": "2025-02-18",
-  "dateModified": "2025-02-28",
-  "datePublished": "2025-02-28"
+  "dateModified": "2025-03-03",
+  "datePublished": "2025-03-03"
 }
 
   </script><script>

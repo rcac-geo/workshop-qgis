@@ -216,6 +216,12 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#preliminary-knowledge">Preliminary Knowledge</a></li>
+<li><a href="#install-plugins">Install Plugins</a></li>
+<li><a href="#merge-dem-data">Merge DEM Data</a></li>
+<li><a href="#calculate-slope">Calculate Slope</a></li>
+<li><a href="#calculate-hillshade">Calculate Hillshade</a></li>
+<li><a href="#analyze-hydrology">Analyze Hydrology</a></li>
+<li><a href="#calculate-topographic-index">Calculate Topographic Index</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -289,7 +295,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Project</h1>
-        <p>Last updated on 2025-02-28 |
+        <p>Last updated on 2025-03-03 |
 
         <a href="https://github.com/rcac-geo/workshop-qgis/edit/main/episodes/project.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -333,11 +339,12 @@
 <h4 id="dem-digital-elevation-model">1. DEM (Digital Elevation Model):<a class="anchor" aria-label="anchor" href="#dem-digital-elevation-model"></a></h4>
 <p>A DEM is essentially a 3D representation of a terrain’s surface. It’s
 a raster dataset, meaning it’s made up of a grid of cells (pixels),
-where each cell contains an elevation value. * Think of it as a digital
-map that shows the height of the land at every point. * DEMs are the
-foundation for creating slope, hillshade maps and analyzing
-hydrology.</p>
-</div>
+where each cell contains an elevation value.</p>
+<ul><li>Think of it as a digital map that shows the height of the land at
+every point.</li>
+<li>DEMs are the foundation for creating slope, hillshade maps and
+analyzing hydrology.</li>
+</ul></div>
 <div class="section level4">
 <h4 id="slope">2. Slope:<a class="anchor" aria-label="anchor" href="#slope"></a></h4>
 <p>Slope refers to the steepness or gradient of the terrain. It’s
@@ -345,20 +352,24 @@ typically expressed in degrees (0 to 90) or as a percentage. A slope of
 0 degrees indicates a flat surface, while a slope of 90 degrees
 represents a vertical surface.</p>
 <p>Slope maps are derived from DEMs and are useful for analyzing things
-like: * Erosion risk * Water runoff * Suitability for construction</p>
-</div>
+like:</p>
+<ul><li>Erosion risk</li>
+<li>Water runoff</li>
+<li>Suitability for construction</li>
+</ul></div>
 <div class="section level4">
 <h4 id="hillshade">3. Hillshade:<a class="anchor" aria-label="anchor" href="#hillshade"></a></h4>
 <p>Hillshade refers to simulating how sunlight would illuminate the
 terrain. It enhances the visualization of landforms by showing how light
 and shadow interact with the surface. The hillshade effect is created by
 setting an azimuth and vertical angle for a light source. The Azimuth is
-the direction the light is coming from, and the altitude is the angle of
-the light source above the horizon.</p>
-<figure><img width="535" alt="Screenshot 2025-02-28 at 12 45 44 PM" src="https://github.com/user-attachments/assets/6ee78881-4395-4197-a73f-3c88d1245fbe" class="figure mx-auto d-block"></figure><p>Hillshade maps are also derived from DEMs and are valuable for: *
-Visualizing terrain features * Identifying subtle topographic details *
-Creating visually appealing maps</p>
-</div>
+the direction the light is coming from, and the vertical angle is the
+angle of the light source above the horizon.</p>
+<figure><img width="535" alt="Screenshot 2025-02-28 at 12 45 44 PM" src="https://github.com/user-attachments/assets/6ee78881-4395-4197-a73f-3c88d1245fbe" class="figure mx-auto d-block"></figure><p>Hillshade maps are also derived from DEMs and are valuable for:</p>
+<ul><li>Visualizing terrain features and creating visually appealing
+maps</li>
+<li>Identifying subtle topographic details</li>
+</ul></div>
 <div class="section level4">
 <h4 id="analyzing-hydrology">4. Analyzing hydrology<a class="anchor" aria-label="anchor" href="#analyzing-hydrology"></a></h4>
 <p>The workflow: DEM Input → Fill Sinks → Flow Direction → Flow
@@ -395,11 +406,17 @@ it from adjacent watersheds.</li>
 scales: ** Basin ** → contains multiple → ** Sub-Basins ** → made up of
 → ** Watersheds ** → includes smaller → ** Catchments **</li>
 </ul></li>
-</ul><!--
+</ul></div>
+</section><section><h2 class="section-heading" id="install-plugins">Install Plugins<a class="anchor" aria-label="anchor" href="#install-plugins"></a></h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="merge-dem-data">Merge DEM Data<a class="anchor" aria-label="anchor" href="#merge-dem-data"></a></h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="calculate-slope">Calculate Slope<a class="anchor" aria-label="anchor" href="#calculate-slope"></a></h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="calculate-hillshade">Calculate Hillshade<a class="anchor" aria-label="anchor" href="#calculate-hillshade"></a></h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="analyze-hydrology">Analyze Hydrology<a class="anchor" aria-label="anchor" href="#analyze-hydrology"></a></h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="calculate-topographic-index">Calculate Topographic Index<a class="anchor" aria-label="anchor" href="#calculate-topographic-index"></a></h2>
+<hr class="half-width"><!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></div>
-</section></div> <!-- / div.lesson-content -->
+ --></section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="introduction.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="coding.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -457,8 +474,8 @@ any links that you are not going to use.
   "url": "https://rcac-geo.github.io/workshop-qgis/project.html",
   "identifier": "https://rcac-geo.github.io/workshop-qgis/project.html",
   "dateCreated": "2025-02-18",
-  "dateModified": "2025-02-28",
-  "datePublished": "2025-02-28"
+  "dateModified": "2025-03-03",
+  "datePublished": "2025-03-03"
 }
 
   </script><script>
