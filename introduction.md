@@ -78,7 +78,7 @@ module spider qgis
 To start an interactive job and open QGIS:
 
 ```sh
-sinteractive -A workshop -c4 -t8:00:00
+sinteractive -A workshop -N1 -c4 -t8:00:00
 module load qgis
 qgis
 ```
