@@ -123,5 +123,5 @@ TrainXX@login0X.negishi:[~] $
 Copy data to your scratch directory:
 
 ```sh
-rsync -avP /depot/workshop/data/qgis/qgis-data $RCAC_SCRATCH
+rsync -avP /depot/workshop/data/qgis/data $RCAC_SCRATCH
 ```
