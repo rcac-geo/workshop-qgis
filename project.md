@@ -69,10 +69,55 @@ The workflow: DEM Input → Fill Sinks → Flow Direction → Flow Accumulation 
   - It is defined by topographic divides (ridges or hills) that separate it from adjacent watersheds.
   - Watersheds can be small (for example, a stream watershed) or large (covering multiple rivers).
   - Same concept as Catchments and Basins, but they are in different scales:
+    
     ** Basin ** → contains multiple → ** Sub-Basins ** → made up of → ** Watersheds ** → includes smaller → ** Catchments **
  
 ## Install Plugins
 
+#### Install QuickMapServices
+
+* go to Plugins | Manage and Install Plugins
+* search "QuickMapSevices" and click "Install Plugin"
+* Now click "Search QMS" and search "Google Maps", as below.
+  
+<img width="1355" alt="Screenshot 2025-03-04 at 12 11 27 PM" src="https://github.com/user-attachments/assets/07c1ee52-da62-4c9f-8918-4f1b6f234117" />
+
+<img width="257" alt="Screenshot 2025-03-04 at 12 11 54 PM" src="https://github.com/user-attachments/assets/d7f3ddf9-624e-46a8-9267-120d63e56d5c" />
+
+<img width="278" alt="Picture6" src="https://github.com/user-attachments/assets/098c0340-c254-4bbd-ad98-21ca9cf31849" />
+
+#### Install WhiteboxTools
+
+* Step 1: Install WhiteboxTools for QGIS
+  - go to Plugins | Manage and Install Plugins
+  - search "WhiteboxTools for QGIS" and click "Install Plugin"
+* Step 2: Install Whitebox Executables
+  - option 1: go to [WhiteboxTools](https://www.whiteboxgeo.com/download-direct/) and download.
+  - option 2: run the command below:
+    
+  ```sh
+  wget https://www.whiteboxgeo.com/WBT_Linux/WhiteboxTools_linux_amd64.zip
+  ```
+* Step 3: Unzip it by running
+  
+  ```sh
+  unzip WhiteboxTools_linux_amd64.zip
+  ```
+* Step 4: Configurate it
+  - go to Settings | options | Processing | providers | WhiteboxTools
+  - go to WhiteboxTools executable and double click the content and click "..." to set it as "whitebox_tools" in your unzipped directory(the executable).
+    
+    your executable should be as below (you can also copy and paste):
+    ```sh
+    /home/trainXX/WhiteboxTools_linux_amd64/WBT/whitebox_tools
+    ```
+<img width="1031" alt="Screenshot 2025-03-04 at 11 57 25 AM" src="https://github.com/user-attachments/assets/ca8d085c-05a4-4a2d-98b6-9cad9050bff5" />
+
+* Step 5: Now you could see WhiteboxTools show up at the bottom of the Processing Toolbox as below.
+  
+  <img width="256" alt="Screenshot 2025-03-04 at 12 07 08 PM" src="https://github.com/user-attachments/assets/bd000367-0013-4d19-b994-a1dd6e744a52" />
+
+  
 ## Merge DEM Data
 ## Calculate Slope
 ## Calculate Hillshade
