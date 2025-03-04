@@ -1,7 +1,7 @@
 ---
 title: "Introduction"
 teaching: 10
-exercises: 2
+exercises: 3
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -284,44 +284,3 @@ Solution:
 - We learned how to process data and export them.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-
-
-::::::::::::::::::::::::::::::::::::: challenge 
-
-
-:::::::::::::::::::::::: solution 
-
-
-
-:::::::::::::::::::::::::::::::::
-
-
-:::::::::::::::::::::::: solution 
-
-
-
-:::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
-
-Inline instructor notes can help inform instructors of timing challenges
-associated with the lessons. They appear in the "Instructor View"
-
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
-
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
-
-Cool, right?
-
-You can use standard markdown for static figures with the following syntax:
-
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
-
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
