@@ -18,7 +18,7 @@ exercises: 2
 - Define and explain the preliminary knowledge.
 - Identify the types of downstream information that can be derived from a DEM.
 - Demonstrate how to analyze topographic landscape and hydrological features with QGIS.
-- Show how to convert raster to vector
+- Explain the process of converting raster data to vector data.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
