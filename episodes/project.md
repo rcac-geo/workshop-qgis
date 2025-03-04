@@ -90,8 +90,10 @@ Let's first load the two rasters in data directory.
 
 #### Install QuickMapServices
 
-* go to Plugins | Manage and Install Plugins
-* search "QuickMapSevices" and click "Install Plugin"
+QuickMapServices (QMS) is a valuable plugin for QGIS that simplifies the process of adding and using a vast array of online basemaps and web mapping services. 
+
+* Go to Plugins | Manage and Install Plugins
+* Search "QuickMapSevices" and click "Install Plugin"
 * Now click "Search QMS" and search "Google Maps", as below.
   
 <img width="1355" alt="Screenshot 2025-03-04 at 12 11 27 PM" src="https://github.com/user-attachments/assets/07c1ee52-da62-4c9f-8918-4f1b6f234117" />
@@ -101,6 +103,8 @@ Let's first load the two rasters in data directory.
 <img width="278" alt="Picture6" src="https://github.com/user-attachments/assets/098c0340-c254-4bbd-ad98-21ca9cf31849" />
 
 #### Install WhiteboxTools
+
+WhiteboxTools is a powerful, open-source geospatial data analysis platform that offers a wide range of geospatial analysis tasks including DEM analysis, hydrological modeling and more.
 
 * Step 1: Install WhiteboxTools for QGIS
   - go to Plugins | Manage and Install Plugins
@@ -142,9 +146,9 @@ Let's first load the two rasters in data directory.
   
 <img width="612" alt="image" src="https://github.com/user-attachments/assets/0a29fa99-1799-4d19-91a6-2262bdcc324e" />
 
-* Type the output and hit "Run"
+* Type the output name in your scratch directory and hit "Run".
 
-![](https://github.com/user-attachments/assets/3cc82073-b091-41d1-a955-c0aa40df1747)
+![Output file will be added to layers if you check "Open outputfile after running algorithm"](https://github.com/user-attachments/assets/3cc82073-b091-41d1-a955-c0aa40df1747)
 
 * Now you could merged DEM in your Layers as below
 
@@ -153,8 +157,92 @@ Let's first load the two rasters in data directory.
 
 ## Calculate Slope
 
+Search "Slope" in Processing Toolbox, select the elevation layer, type the output file, and hit "Run" as below.
+
+  ![](https://github.com/user-attachments/assets/631190c2-30e9-4fff-944a-7618c4f670ad)
+
+::::::::::::::::::::::::::::::::::::::: callout
+
+Spend two minutes to explore the slope where your are familar and see if it makes sense.
+For example, I used it to find a nice slope to snow sled.
+
+<img width="613" alt="image" src="https://github.com/user-attachments/assets/8984ebc8-b8ea-45d2-8af8-90af9132a639" />
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::
+
 ## Calculate Hillshade
 
+Search "Hillshade" in Processing Toolbox, and input the elevation layer, parameters, and output as the figure below.
+
+![](https://github.com/user-attachments/assets/fcddfdc5-0859-405d-873d-913f2ee6c1db)
+
 ## Analyze Hydrology
+
+#### (1) Fill Sinks
+
+* Step 1: type a few words to search "FillDepressionsWangAndLiu" as below
+  
+  ![](https://github.com/user-attachments/assets/f6123400-3abe-4265-a011-9ef0cf7f0404)
+  
+* Step 2: select dem, type output file, and hit "Run"
+  
+  ![](https://github.com/user-attachments/assets/fff8333b-59e8-4d56-9b81-8413314747d9)
+  
+* Step 3: hit close after the progress reach 100%, as below
+
+  ![](https://github.com/user-attachments/assets/7c4bdd9f-7902-460c-bbd9-2f6af9c0bd6e)
+
+#### (2) Flow Direction
+
+* Step 1: search "d8" to find "D8Pointer" in the Processing Toolbox.
+* Step 2: select "fillsinks" outputed from above procedure as the input DEM file and type the output as below
+
+![](https://github.com/user-attachments/assets/16a3ccc4-a910-4c55-a812-94ab3bbe66a0)
+
+* Step 3: hit close after the progress reach 100%; you will see the flowdirection layer has been added to Layers.
+
+#### (3) Flow Accumulation
+
+* Step 1: type a few words to search "D8FlowAccumulation" in the Processing Toolbox.
+* Step 2: select "flowdirec" outputed from above procedure as the input and type output
+
+![check "Is input the D8 flow pointer"](https://github.com/user-attachments/assets/5ff0050b-f064-46ef-b2fa-e698a2d4f925)
+
+* Step 3: hit close after the progress reach 100%; you will see the flowaccum layer has been added to Layers.
+
+#### (4) ExtractStreams
+
+* Step 1: search "ExtractStreams" in the Processing Toolbox.
+* Step 2: select "flowaccum" outputed from above procedure as the input and type output, set the Channelization Threshold as 1000,000, as below
+
+  ![](https://github.com/user-attachments/assets/78cec102-ddaf-42dc-ac85-015b1e487435)
+
+* Step 3: hit close after the progress reach 100%; you will see the stream10_6 layer has been added to Layers.
+
+::::::::::::::::::::::::::::::::::::::: callout
+
+
+To better see the streams, you could uncheck other layers except the google map layer, and zoom in to compare the generated streams with the ones on the map.
+
+Or we have convert it to vector: Go to Raster | Conversion | Polygonize (Raster to Vector), as below
+
+![](https://github.com/user-attachments/assets/a66ba8b9-90c8-4996-9062-291162c9f7b5)
+
+![](https://github.com/user-attachments/assets/70fa3c47-ce96-4256-9b2c-18cd91ee0a32)
+
+![you can choose different file format of vector](https://github.com/user-attachments/assets/3cf31f5f-78f4-427c-b045-e53013f5b33e)
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: challenge 
+
+You could try different Channelization Threshold and compared the extracted streams.
+:::::::::::::::::::::::: solution 
+
+![](https://github.com/user-attachments/assets/c8d469dd-babe-44a8-8f48-e9800d0a79dd)
+
+:::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Calculate Topographic Index
