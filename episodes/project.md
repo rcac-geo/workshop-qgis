@@ -68,7 +68,8 @@ The workflow: DEM Input → Fill Sinks → Flow Direction → Flow Accumulation 
 * Last step is to extract Watersheds, an area of land that drains all precipitation and surface runoff to a common outlet(such as a river, lake, or ocean).
   - It is defined by topographic divides (ridges or hills) that separate it from adjacent watersheds.
   - Watersheds can be small (for example, a stream watershed) or large (covering multiple rivers).
-  - Same concept as Catchments and Basins, but they are in different scales: ** Basin ** → contains multiple → ** Sub-Basins ** → made up of → ** Watersheds ** → includes smaller → ** Catchments **
+  - Same concept as Catchments and Basins, but they are in different scales:
+    ** Basin ** → contains multiple → ** Sub-Basins ** → made up of → ** Watersheds ** → includes smaller → ** Catchments **
  
 ## Install Plugins
 
