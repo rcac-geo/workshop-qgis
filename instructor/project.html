@@ -436,7 +436,7 @@ includes smaller → <strong>Catchments</strong></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <figure><img width="1003" alt="Screenshot 2025-03-04 at 2 21 14 PM" src="https://github.com/user-attachments/assets/c6e10ffc-1d6c-458d-aa8e-b415181acd22" class="figure mx-auto d-block"></figure></div>
 </div>
@@ -446,12 +446,18 @@ includes smaller → <strong>Catchments</strong></p>
 </section><section><h2 class="section-heading" id="install-plugins">Install Plugins<a class="anchor" aria-label="anchor" href="#install-plugins"></a></h2>
 <hr class="half-width"><div class="section level4">
 <h4 id="install-quickmapservices">Install QuickMapServices<a class="anchor" aria-label="anchor" href="#install-quickmapservices"></a></h4>
-<ul><li>go to Plugins | Manage and Install Plugins</li>
-<li>search “QuickMapSevices” and click “Install Plugin”</li>
+<p>QuickMapServices (QMS) is a valuable plugin for QGIS that simplifies
+the process of adding and using a vast array of online basemaps and web
+mapping services.</p>
+<ul><li>Go to Plugins | Manage and Install Plugins</li>
+<li>Search “QuickMapSevices” and click “Install Plugin”</li>
 <li>Now click “Search QMS” and search “Google Maps”, as below.</li>
 </ul><figure><img width="1355" alt="Screenshot 2025-03-04 at 12 11 27 PM" src="https://github.com/user-attachments/assets/07c1ee52-da62-4c9f-8918-4f1b6f234117" class="figure mx-auto d-block"></figure><figure><img width="257" alt="Screenshot 2025-03-04 at 12 11 54 PM" src="https://github.com/user-attachments/assets/d7f3ddf9-624e-46a8-9267-120d63e56d5c" class="figure mx-auto d-block"></figure><figure><img width="278" alt="Picture6" src="https://github.com/user-attachments/assets/098c0340-c254-4bbd-ad98-21ca9cf31849" class="figure mx-auto d-block"></figure></div>
 <div class="section level4">
 <h4 id="install-whiteboxtools">Install WhiteboxTools<a class="anchor" aria-label="anchor" href="#install-whiteboxtools"></a></h4>
+<p>WhiteboxTools is a powerful, open-source geospatial data analysis
+platform that offers a wide range of geospatial analysis tasks including
+DEM analysis, hydrological modeling and more.</p>
 <ul><li>
 <p>Step 1: Install WhiteboxTools for QGIS</p>
 <ul><li>go to Plugins | Manage and Install Plugins</li>
@@ -502,12 +508,105 @@ the Processing Toolbox as below.</p>
 <p>Search “merge” in Processing Toolbox as below</p>
 <figure><img width="151" alt="image" src="https://github.com/user-attachments/assets/eb21a3ec-5ba2-4c53-94c1-dc26097bf189" class="figure mx-auto d-block"></figure></li>
 <li><p>Select the two rasters as input</p></li>
-</ul><figure><img width="612" alt="image" src="https://github.com/user-attachments/assets/0a29fa99-1799-4d19-91a6-2262bdcc324e" class="figure mx-auto d-block"></figure><ul><li>Type the output and hit “Run”</li>
-</ul><figure><img src="https://github.com/user-attachments/assets/3cc82073-b091-41d1-a955-c0aa40df1747" class="figure mx-auto d-block"></figure><ul><li>Now you could merged DEM in your Layers as below</li>
+</ul><figure><img width="612" alt="image" src="https://github.com/user-attachments/assets/0a29fa99-1799-4d19-91a6-2262bdcc324e" class="figure mx-auto d-block"></figure><ul><li>Type the output name in your scratch directory and hit “Run”.</li>
+</ul><figure><img src="https://github.com/user-attachments/assets/3cc82073-b091-41d1-a955-c0aa40df1747" alt="Output file will be added to layers if you check “Open outputfile after running algorithm”" class="figure mx-auto d-block"><div class="figcaption">Output file will be added to layers if you check
+“Open outputfile after running algorithm”</div>
+</figure><ul><li>Now you could merged DEM in your Layers as below</li>
 </ul><figure><img width="337" alt="image" src="https://github.com/user-attachments/assets/384ea49d-923c-4a0a-8f2b-b6e91bc217d4" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="calculate-slope">Calculate Slope<a class="anchor" aria-label="anchor" href="#calculate-slope"></a></h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="calculate-hillshade">Calculate Hillshade<a class="anchor" aria-label="anchor" href="#calculate-hillshade"></a></h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="analyze-hydrology">Analyze Hydrology<a class="anchor" aria-label="anchor" href="#analyze-hydrology"></a></h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="calculate-topographic-index">Calculate Topographic Index<a class="anchor" aria-label="anchor" href="#calculate-topographic-index"></a></h2>
+<hr class="half-width"><p>Search “Slope” in Processing Toolbox, select the elevation layer,
+type the output file, and hit “Run” as below.</p>
+<figure><img src="https://github.com/user-attachments/assets/631190c2-30e9-4fff-944a-7618c4f670ad" class="figure mx-auto d-block"></figure><div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout</h3>
+<div class="callout-content">
+<p>Spend two minutes to explore the slope where your are familar and see
+if it makes sense. For example, I used it to find a nice slope to snow
+sled.</p>
+<figure><img width="613" alt="image" src="https://github.com/user-attachments/assets/8984ebc8-b8ea-45d2-8af8-90af9132a639" class="figure mx-auto d-block"></figure></div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="calculate-hillshade">Calculate Hillshade<a class="anchor" aria-label="anchor" href="#calculate-hillshade"></a></h2>
+<hr class="half-width"><p>Search “Hillshade” in Processing Toolbox, and input the elevation
+layer, parameters, and output as the figure below.</p>
+<figure><img src="https://github.com/user-attachments/assets/fcddfdc5-0859-405d-873d-913f2ee6c1db" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="analyze-hydrology">Analyze Hydrology<a class="anchor" aria-label="anchor" href="#analyze-hydrology"></a></h2>
+<hr class="half-width"><div class="section level4">
+<h4 id="fill-sinks">(1) Fill Sinks<a class="anchor" aria-label="anchor" href="#fill-sinks"></a></h4>
+<ul><li>
+<p>Step 1: type a few words to search “FillDepressionsWangAndLiu” as
+below</p>
+<figure><img src="https://github.com/user-attachments/assets/f6123400-3abe-4265-a011-9ef0cf7f0404" class="figure mx-auto d-block"></figure></li>
+<li>
+<p>Step 2: select dem, type output file, and hit “Run”</p>
+<figure><img src="https://github.com/user-attachments/assets/fff8333b-59e8-4d56-9b81-8413314747d9" class="figure mx-auto d-block"></figure></li>
+<li>
+<p>Step 3: hit close after the progress reach 100%, as below</p>
+<figure><img src="https://github.com/user-attachments/assets/7c4bdd9f-7902-460c-bbd9-2f6af9c0bd6e" class="figure mx-auto d-block"></figure></li>
+</ul></div>
+<div class="section level4">
+<h4 id="flow-direction">(2) Flow Direction<a class="anchor" aria-label="anchor" href="#flow-direction"></a></h4>
+<ul><li>Step 1: search “d8” to find “D8Pointer” in the Processing
+Toolbox.</li>
+<li>Step 2: select “fillsinks” outputed from above procedure as the
+input DEM file and type the output as below</li>
+</ul><figure><img src="https://github.com/user-attachments/assets/16a3ccc4-a910-4c55-a812-94ab3bbe66a0" class="figure mx-auto d-block"></figure><ul><li>Step 3: hit close after the progress reach 100%; you will see the
+flowdirection layer has been added to Layers.</li>
+</ul></div>
+<div class="section level4">
+<h4 id="flow-accumulation">(3) Flow Accumulation<a class="anchor" aria-label="anchor" href="#flow-accumulation"></a></h4>
+<ul><li>Step 1: type a few words to search “D8FlowAccumulation” in the
+Processing Toolbox.</li>
+<li>Step 2: select “flowdirec” outputed from above procedure as the
+input and type output</li>
+</ul><figure><img src="https://github.com/user-attachments/assets/5ff0050b-f064-46ef-b2fa-e698a2d4f925" alt="check “Is input the D8 flow pointer”" class="figure mx-auto d-block"><div class="figcaption">check “Is input the D8 flow pointer”</div>
+</figure><ul><li>Step 3: hit close after the progress reach 100%; you will see the
+flowaccum layer has been added to Layers.</li>
+</ul></div>
+<div class="section level4">
+<h4 id="extractstreams">(4) ExtractStreams<a class="anchor" aria-label="anchor" href="#extractstreams"></a></h4>
+<ul><li><p>Step 1: search “ExtractStreams” in the Processing
+Toolbox.</p></li>
+<li>
+<p>Step 2: select “flowaccum” outputed from above procedure as the
+input and type output, set the Channelization Threshold as 1000,000, as
+below</p>
+<figure><img src="https://github.com/user-attachments/assets/78cec102-ddaf-42dc-ac85-015b1e487435" class="figure mx-auto d-block"></figure></li>
+<li><p>Step 3: hit close after the progress reach 100%; you will see the
+stream10_6 layer has been added to Layers.</p></li>
+</ul><div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout</h3>
+<div class="callout-content">
+<p>To better see the streams, you could uncheck other layers except the
+google map layer, and zoom in to compare the generated streams with the
+ones on the map.</p>
+<p>Or we have convert it to vector: Go to Raster | Conversion |
+Polygonize (Raster to Vector), as below</p>
+<figure><img src="https://github.com/user-attachments/assets/a66ba8b9-90c8-4996-9062-291162c9f7b5" class="figure mx-auto d-block"></figure><figure><img src="https://github.com/user-attachments/assets/70fa3c47-ce96-4256-9b2c-18cd91ee0a32" class="figure mx-auto d-block"></figure><figure><img src="https://github.com/user-attachments/assets/3cf31f5f-78f4-427c-b045-e53013f5b33e" alt="you can choose different file format of vector" class="figure mx-auto d-block"><div class="figcaption">you can choose different file format of
+vector</div>
+</figure></div>
+</div>
+</div>
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>You could try different Channelization Threshold and compared the
+extracted streams. :::::::::::::::::::::::: solution</p>
+<figure><img src="https://github.com/user-attachments/assets/c8d469dd-babe-44a8-8f48-e9800d0a79dd" class="figure mx-auto d-block"></figure></div>
+</div>
+</div>
+<p>::::::::::::::::::::::::::::::::::::::::::::::::</p>
+</div>
+</section><section><h2 class="section-heading" id="calculate-topographic-index">Calculate Topographic Index<a class="anchor" aria-label="anchor" href="#calculate-topographic-index"></a></h2>
 <hr class="half-width"><!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
