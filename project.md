@@ -16,6 +16,7 @@ exercises: 2
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Define and explain the preliminary knowledge.
+- Show how to install plugins with QGIS.
 - Identify the types of downstream information that can be derived from a DEM.
 - Demonstrate how to analyze topographic landscape and hydrological features with QGIS.
 - Explain the process of converting raster data to vector data.
@@ -70,8 +71,21 @@ The workflow: DEM Input → Fill Sinks → Flow Direction → Flow Accumulation 
   - Watersheds can be small (for example, a stream watershed) or large (covering multiple rivers).
   - Same concept as Catchments and Basins, but they are in different scales:
     
-    ** Basin ** → contains multiple → ** Sub-Basins ** → made up of → ** Watersheds ** → includes smaller → ** Catchments **
- 
+    **Basin** → contains multiple → **Sub-Basins** → made up of → **Watersheds** → includes smaller → **Catchments**
+
+::::::::::::::::::::::::::::::::::::: challenge 
+Load Data:
+
+Let's first load the two rasters in data directory.
+
+:::::::::::::::::::::::: solution 
+
+<img width="1003" alt="Screenshot 2025-03-04 at 2 21 14 PM" src="https://github.com/user-attachments/assets/c6e10ffc-1d6c-458d-aa8e-b415181acd22" />
+
+:::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 ## Install Plugins
 
 #### Install QuickMapServices
@@ -119,7 +133,28 @@ The workflow: DEM Input → Fill Sinks → Flow Direction → Flow Accumulation 
 
   
 ## Merge DEM Data
+
+* Search "merge" in Processing Toolbox as below
+  
+  <img width="151" alt="image" src="https://github.com/user-attachments/assets/eb21a3ec-5ba2-4c53-94c1-dc26097bf189" />
+  
+* Select the two rasters as input
+  
+<img width="612" alt="image" src="https://github.com/user-attachments/assets/0a29fa99-1799-4d19-91a6-2262bdcc324e" />
+
+* Type the output and hit "Run"
+
+![](https://github.com/user-attachments/assets/3cc82073-b091-41d1-a955-c0aa40df1747)
+
+* Now you could merged DEM in your Layers as below
+
+<img width="337" alt="image" src="https://github.com/user-attachments/assets/384ea49d-923c-4a0a-8f2b-b6e91bc217d4" />
+
+
 ## Calculate Slope
+
 ## Calculate Hillshade
+
 ## Analyze Hydrology
+
 ## Calculate Topographic Index
