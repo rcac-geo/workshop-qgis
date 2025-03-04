@@ -8,6 +8,6 @@
 "episodes/project.md" "44ed46c9c22e78337f0282ccfb318f48" "site/built/project.md" "2025-03-04"
 "episodes/coding.md" "43d2902b58bb0c70543f7e4368aaaa45" "site/built/coding.md" "2025-03-04"
 "instructors/instructor-notes.md" "cae72b6712578d74a49fea7513099f8c" "site/built/instructor-notes.md" "2023-03-16"
-"learners/reference.md" "1c7cc4e229304d9806a13f69ca1b8ba4" "site/built/reference.md" "2023-03-16"
+"learners/reference.md" "b7611444221a4307efa7148bc4c24242" "site/built/reference.md" "2025-03-04"
 "learners/setup.md" "475690bff6e4cfb89f613f9c7e6b85aa" "site/built/setup.md" "2025-02-28"
 "profiles/learner-profiles.md" "60b93493cf1da06dfd63255d73854461" "site/built/learner-profiles.md" "2022-04-22"
