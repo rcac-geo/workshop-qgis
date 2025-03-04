@@ -917,20 +917,92 @@ noise.</li>
 precipitation and surface runoff to a common outlet(such as a river,
 lake, or ocean).
 <ul>
-<li>It is defined by topographic divides (ridges or hills) that separate
-it from adjacent watersheds.</li>
-<li>Watersheds can be small (for example, a stream watershed) or large
-(covering multiple rivers).</li>
-<li>Same concept as Catchments and Basins, but they are in different
-scales: ** Basin ** → contains multiple → ** Sub-Basins ** → made up of
-→ ** Watersheds ** → includes smaller → ** Catchments **</li>
+<li><p>It is defined by topographic divides (ridges or hills) that
+separate it from adjacent watersheds.</p></li>
+<li><p>Watersheds can be small (for example, a stream watershed) or
+large (covering multiple rivers).</p></li>
+<li>
+<p>Same concept as Catchments and Basins, but they are in different
+scales:</p>
+<p>** Basin ** → contains multiple → ** Sub-Basins ** → made up of → **
+Watersheds ** → includes smaller → ** Catchments **</p>
+</li>
 </ul>
 </li>
 </ul>
 </div>
 </section><section><h2 class="section-heading" id="install-plugins">Install Plugins<a class="anchor" aria-label="anchor" href="#install-plugins"></a>
 </h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="merge-dem-data">Merge DEM Data<a class="anchor" aria-label="anchor" href="#merge-dem-data"></a>
+<hr class="half-width">
+<div class="section level4">
+<h4 id="install-quickmapservices">Install QuickMapServices<a class="anchor" aria-label="anchor" href="#install-quickmapservices"></a>
+</h4>
+<ul>
+<li>go to Plugins | Manage and Install Plugins</li>
+<li>search “QuickMapSevices” and click “Install Plugin”</li>
+<li>Now click “Search QMS” and search “Google Maps”, as below.</li>
+</ul>
+<figure><img width="1355" alt="Screenshot 2025-03-04 at 12 11 27 PM" src="https://github.com/user-attachments/assets/07c1ee52-da62-4c9f-8918-4f1b6f234117" class="figure mx-auto d-block"></figure><figure><img width="257" alt="Screenshot 2025-03-04 at 12 11 54 PM" src="https://github.com/user-attachments/assets/d7f3ddf9-624e-46a8-9267-120d63e56d5c" class="figure mx-auto d-block"></figure><figure><img width="278" alt="Picture6" src="https://github.com/user-attachments/assets/098c0340-c254-4bbd-ad98-21ca9cf31849" class="figure mx-auto d-block"></figure>
+</div>
+<div class="section level4">
+<h4 id="install-whiteboxtools">Install WhiteboxTools<a class="anchor" aria-label="anchor" href="#install-whiteboxtools"></a>
+</h4>
+<ul>
+<li>
+<p>Step 1: Install WhiteboxTools for QGIS</p>
+<ul>
+<li>go to Plugins | Manage and Install Plugins</li>
+<li>search “WhiteboxTools for QGIS” and click “Install Plugin”</li>
+</ul>
+</li>
+<li>
+<p>Step 2: Install Whitebox Executables</p>
+<ul>
+<li>option 1: go to <a href="https://www.whiteboxgeo.com/download-direct/" class="external-link">WhiteboxTools</a>
+and download.</li>
+<li>option 2: run the command below:</li>
+</ul>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">wget</span> https://www.whiteboxgeo.com/WBT_Linux/WhiteboxTools_linux_amd64.zip</span></code></pre>
+</div>
+</li>
+<li>
+<p>Step 3: Unzip it by running</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">unzip</span> WhiteboxTools_linux_amd64.zip</span></code></pre>
+</div>
+</li>
+<li>
+<p>Step 4: Configurate it</p>
+<ul>
+<li><p>go to Settings | options | Processing | providers |
+WhiteboxTools</p></li>
+<li>
+<p>go to WhiteboxTools executable and double click the content and
+click “…” to set it as “whitebox_tools” in your unzipped directory(the
+executable).</p>
+<p>your executable should be as below (you can also copy and paste):</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">/home/trainXX/WhiteboxTools_linux_amd64/WBT/whitebox_tools</span></span></code></pre>
+</div>
+<figure><img width="1031" alt="Screenshot 2025-03-04 at 11 57 25 AM" src="https://github.com/user-attachments/assets/ca8d085c-05a4-4a2d-98b6-9cad9050bff5" class="figure mx-auto d-block"></figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Step 5: Now you could see WhiteboxTools show up at the bottom of
+the Processing Toolbox as below.</p>
+<figure><img width="256" alt="Screenshot 2025-03-04 at 12 07 08 PM" src="https://github.com/user-attachments/assets/bd000367-0013-4d19-b994-a1dd6e744a52" class="figure mx-auto d-block"></figure>
+</li>
+</ul>
+</div>
+</section><section><h2 class="section-heading" id="merge-dem-data">Merge DEM Data<a class="anchor" aria-label="anchor" href="#merge-dem-data"></a>
 </h2>
 <hr class="half-width"></section><section><h2 class="section-heading" id="calculate-slope">Calculate Slope<a class="anchor" aria-label="anchor" href="#calculate-slope"></a>
 </h2>
