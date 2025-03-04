@@ -326,6 +326,7 @@
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul><li>Define and explain the preliminary knowledge.</li>
+<li>Show how to install plugins with QGIS.</li>
 <li>Identify the types of downstream information that can be derived
 from a DEM.</li>
 <li>Demonstrate how to analyze topographic landscape and hydrological
@@ -411,11 +412,35 @@ large (covering multiple rivers).</p></li>
 <li>
 <p>Same concept as Catchments and Basins, but they are in different
 scales:</p>
-<p>** Basin ** → contains multiple → ** Sub-Basins ** → made up of → **
-Watersheds ** → includes smaller → ** Catchments **</p>
+<p><strong>Basin</strong> → contains multiple →
+<strong>Sub-Basins</strong> → made up of → <strong>Watersheds</strong> →
+includes smaller → <strong>Catchments</strong></p>
 </li>
 </ul></li>
-</ul></div>
+</ul><div id="challenge1" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>Load Data:</p>
+<p>Let’s first load the two rasters in data directory.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<figure><img width="1003" alt="Screenshot 2025-03-04 at 2 21 14 PM" src="https://github.com/user-attachments/assets/c6e10ffc-1d6c-458d-aa8e-b415181acd22" class="figure mx-auto d-block"></figure></div>
+</div>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="install-plugins">Install Plugins<a class="anchor" aria-label="anchor" href="#install-plugins"></a></h2>
 <hr class="half-width"><div class="section level4">
 <h4 id="install-quickmapservices">Install QuickMapServices<a class="anchor" aria-label="anchor" href="#install-quickmapservices"></a></h4>
@@ -471,7 +496,13 @@ the Processing Toolbox as below.</p>
 <figure><img width="256" alt="Screenshot 2025-03-04 at 12 07 08 PM" src="https://github.com/user-attachments/assets/bd000367-0013-4d19-b994-a1dd6e744a52" class="figure mx-auto d-block"></figure></li>
 </ul></div>
 </section><section><h2 class="section-heading" id="merge-dem-data">Merge DEM Data<a class="anchor" aria-label="anchor" href="#merge-dem-data"></a></h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="calculate-slope">Calculate Slope<a class="anchor" aria-label="anchor" href="#calculate-slope"></a></h2>
+<hr class="half-width"><ul><li>
+<p>Search “merge” in Processing Toolbox as below</p>
+<figure><img width="151" alt="image" src="https://github.com/user-attachments/assets/eb21a3ec-5ba2-4c53-94c1-dc26097bf189" class="figure mx-auto d-block"></figure></li>
+<li><p>Select the two rasters as input</p></li>
+</ul><figure><img width="612" alt="image" src="https://github.com/user-attachments/assets/0a29fa99-1799-4d19-91a6-2262bdcc324e" class="figure mx-auto d-block"></figure><ul><li>Type the output and hit “Run”</li>
+</ul><figure><img src="https://github.com/user-attachments/assets/3cc82073-b091-41d1-a955-c0aa40df1747" class="figure mx-auto d-block"></figure><ul><li>Now you could merged DEM in your Layers as below</li>
+</ul><figure><img width="337" alt="image" src="https://github.com/user-attachments/assets/384ea49d-923c-4a0a-8f2b-b6e91bc217d4" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="calculate-slope">Calculate Slope<a class="anchor" aria-label="anchor" href="#calculate-slope"></a></h2>
 <hr class="half-width"></section><section><h2 class="section-heading" id="calculate-hillshade">Calculate Hillshade<a class="anchor" aria-label="anchor" href="#calculate-hillshade"></a></h2>
 <hr class="half-width"></section><section><h2 class="section-heading" id="analyze-hydrology">Analyze Hydrology<a class="anchor" aria-label="anchor" href="#analyze-hydrology"></a></h2>
 <hr class="half-width"></section><section><h2 class="section-heading" id="calculate-topographic-index">Calculate Topographic Index<a class="anchor" aria-label="anchor" href="#calculate-topographic-index"></a></h2>
