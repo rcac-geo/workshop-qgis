@@ -1,8 +1,6 @@
 ---
-title: 'Reference'
+title: 'Reference and Additional Reading'
 ---
-
-## Additional Reading
 
 [QGIS User Guide](https://docs.qgis.org/3.40/en/docs/user_manual/index.html)
 
