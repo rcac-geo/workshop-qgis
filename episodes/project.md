@@ -254,7 +254,7 @@ Or we have convert it to vector: Go to Raster | Conversion | Polygonize (Raster 
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::: spoiler
-### Try me
+### Exercise
 Try different Channelization Threshold and compared the extracted streams.
 ![](https://github.com/user-attachments/assets/c8d469dd-babe-44a8-8f48-e9800d0a79dd)
 
@@ -305,7 +305,7 @@ All algorithms (including models) can be executed as a batch process. That is, t
   ![](https://github.com/user-attachments/assets/ee910f75-b1d1-439b-800d-7bc79a023dc4)
 
 :::::::::::::::: spoiler
-### Try me
+### Exercise
 
 the smaller Channelization Threshold is, the more channels you generated, and the high resolution you got (As below shows more accurate Wetness Index)
 
