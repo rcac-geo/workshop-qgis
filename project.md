@@ -92,8 +92,7 @@ Load Data:
 
 Let's first load the two rasters in data directory.
 
-:::::::::::::::::::::::: spoiler
-### Output
+:::::::::::::::::::::::: solution
 
 <img width="1003" alt="Screenshot 2025-03-04 at 2 21 14 PM" src="https://github.com/user-attachments/assets/c6e10ffc-1d6c-458d-aa8e-b415181acd22" />
 
@@ -255,7 +254,7 @@ Or we have convert it to vector: Go to Raster | Conversion | Polygonize (Raster 
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::: spoiler
-### Note
+### Try me
 Try different Channelization Threshold and compared the extracted streams.
 ![](https://github.com/user-attachments/assets/c8d469dd-babe-44a8-8f48-e9800d0a79dd)
 
@@ -306,7 +305,7 @@ All algorithms (including models) can be executed as a batch process. That is, t
   ![](https://github.com/user-attachments/assets/ee910f75-b1d1-439b-800d-7bc79a023dc4)
 
 :::::::::::::::: spoiler
-### Note
+### Try me
 
 the smaller Channelization Threshold is, the more channels you generated, and the high resolution you got (As below shows more accurate Wetness Index)
 
@@ -315,3 +314,13 @@ the smaller Channelization Threshold is, the more channels you generated, and th
 ::::::::::::::::::::::::
 
 ::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: keypoints 
+
+- DEMs are the foundation for creating slope, hillshade maps and analyzing hydrology.
+- Install plugins with QGIS, for example, QuickMapServices (QMS) offers a variety of base maps and WhiteboxTools offers a wide range of geospatial analysis tasks.
+- Demonstrate how to analyze topographic landscape and hydrological features with QGIS.
+- We can choose different file format to vectorize raster data.
+- "Run as Batch Process" can run multiple instances in one shot.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
