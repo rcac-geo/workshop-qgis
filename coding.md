@@ -31,7 +31,72 @@ exercises: 2
 
 <img width="1048" alt="Screenshot 2025-03-04 at 11 00 04 AM" src="https://github.com/user-attachments/assets/79248436-7123-46cc-814c-d09074375c7f" />
 
+Replace trainXX with your training account
+
+```sh
+mkdir -p /scratch/negishi/trainXX/project/code_output
+```
+
+```python
+# change work directory
+path ="/scratch/negishi/trainXX/project/code_output"
+os.chdir(path)
+```
+
 ## Load Data
+
+There are two ways to load the data. 
+
+#### The first way
+
+When you create a QgsVectorLayer or QgsRasterLayer object, it's just a layer in memory. It doesn't automatically get added to the QGIS map canvas.
+You have more control over the layer's properties and how it's loaded. You can set things like the layer's CRS, geometry type, and other options before adding it to the map.
+
+##### (1) Load Vector Data
+
+```python
+vectorfile ="/scratch/negishi/liu4201/project/output/stream10_6.geojson"
+
+# The format is:
+# vlayer = QgsVectorLayer(data_source, layer_name, provider_name)
+
+vlayer = QgsVectorLayer(vectorfile, "stream10_6", "ogr")
+if not vlayer.isValid():
+    print("Layer failed to load!")
+else:
+    QgsProject.instance().addMapLayer(vlayer) # load the layer
+```
+
+##### (2) Load Raster Data
+
+```python
+#use the firt way to load rasterfile 1 
+path_to_tif = rasterpath + "USGS_1M_16_x50y448_IN_Indiana_Statewide_LiDAR_2017_B17.tif"
+rlayer = QgsRasterLayer(path_to_tif, "dem")
+if not rlayer.isValid():
+    print("Layer failed to load!")
+else:
+    QgsProject.instance().addMapLayer(rlayer) # load the layer
+```
+
+#### The second way
+
+##### (1) Load Vector Data
+It loads a vector or raster layer and immediately adds it to the map canvas
+
+```python
+vlayer = iface.addVectorLayer(vectorfile, "stream10_6", "ogr")
+if not vlayer:
+  print("Layer failed to load!")
+```
+
+##### (2) Load Raster Data
+
+```python
+#use the second way to load rasterfile 2
+path_to_tif2 = rasterpath + "USGS_1M_16_x50y449_IN_Indiana_Statewide_LiDAR_2017_B17.tif"   
+iface.addRasterLayer(path_to_tif2, "dem2")
+```
 
 ## Merge DEM Data
 
