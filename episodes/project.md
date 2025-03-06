@@ -210,7 +210,7 @@ Search "Hillshade" in Processing Toolbox, and input the elevation layer, paramet
 
 * Step 3: hit close after the progress reach 100%; you will see the flowaccum layer has been added to Layers.
 
-#### (4) ExtractStreams
+#### (4) Extract Streams
 
 * Step 1: search "ExtractStreams" in the Processing Toolbox.
 * Step 2: select "flowaccum" outputed from above procedure as the input and type output, set the Channelization Threshold as 1000,000, as below
@@ -228,9 +228,14 @@ Or we have convert it to vector: Go to Raster | Conversion | Polygonize (Raster 
 
 ![](https://github.com/user-attachments/assets/a66ba8b9-90c8-4996-9062-291162c9f7b5)
 
-![](https://github.com/user-attachments/assets/70fa3c47-ce96-4256-9b2c-18cd91ee0a32)
+![you can choose different file format of vector](https://github.com/user-attachments/assets/70fa3c47-ce96-4256-9b2c-18cd91ee0a32)
 
-![you can choose different file format of vector](https://github.com/user-attachments/assets/3cf31f5f-78f4-427c-b045-e53013f5b33e)
+:::::::::::::::: spoiler
+
+Output
+![](https://github.com/user-attachments/assets/3cf31f5f-78f4-427c-b045-e53013f5b33e)
+
+::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -242,6 +247,46 @@ Try different Channelization Threshold and compared the extracted streams.
 
 ::::::::::::::::::::::::
 
+#### (5) Watershed
 
+* Step 1: search "Subbasins" in the Processing Toolbox.
+* Step 2: select "flowdirect" as the D8 Pointer File, stream10_6 as the InputStreams File and type output, as below
+
+![](https://github.com/user-attachments/assets/77487b6f-4abf-4f9c-927a-18bfdc883b44)
+
+:::::::::::::::: spoiler
+
+Output
+![](https://github.com/user-attachments/assets/0f01bd47-2b98-4710-bd7e-b7c5e0e2adda)
+
+::::::::::::::::::::::::
+
+:::::::::::::::: callout
+
+* You could also click "Run as Batch Process" and parallel your tasks, as below
+
+![](https://github.com/user-attachments/assets/f28bc6c8-aca3-4bbf-ab75-fc2163fb3086)
+
+::::::::::::::::::::::::
 
 ## Calculate Topographic Index
+
+* Step 1: search "WetnessIndex" in the Processing Toolbox.
+* Step 2: select "subbasins10_6" calculated from the above procedure as the SCA File, slope as the Input Slope File and type output, as below
+
+  ![](https://github.com/user-attachments/assets/1ae7032a-7a75-44b2-bffa-cf190da3f961)
+
+* Step 3: After the calculation finishs, right click the output Layer, and select "Properties" and set as below
+  
+  ![](https://github.com/user-attachments/assets/89f4f76f-5356-4c50-83c4-80de46a1dd06)
+
+:::::::::::::::: callout 
+Output
+
+  ![](https://github.com/user-attachments/assets/ee910f75-b1d1-439b-800d-7bc79a023dc4)
+
+Note: the smaller Channelization Threshold is, the more channels you generated, and the high resolution you got (As below shows more accurate Wetness Index)
+
+  ![](https://github.com/user-attachments/assets/cfb23011-aab6-4214-98dc-6b8874c0a679)
+
+::::::::::::::::::::::::
