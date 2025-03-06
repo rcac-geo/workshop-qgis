@@ -584,7 +584,7 @@ below.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <figure><img width="613" alt="Picture3" src="https://github.com/user-attachments/assets/f4d958c0-3acb-42a9-855e-4505cbca2c04" class="figure mx-auto d-block"></figure>
 </div>
@@ -648,7 +648,7 @@ layers.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <figure><img src="https://github.com/user-attachments/assets/e10386e9-d1c0-4736-8b9e-6618cf1a5db4" class="figure mx-auto d-block"></figure>
 </div>
@@ -672,7 +672,7 @@ above?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Yep, the hillshade should be in the North instead of the South. Let’s
 check data Properties and change looking.</p>
@@ -1435,9 +1435,32 @@ canvas</p>
 </div>
 </section><section><h2 class="section-heading" id="merge-dem-data">Merge DEM Data<a class="anchor" aria-label="anchor" href="#merge-dem-data"></a>
 </h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="calculate-slope">Calculate Slope<a class="anchor" aria-label="anchor" href="#calculate-slope"></a>
+<hr class="half-width">
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>rlayer <span class="op">=</span> QgsRasterLayer(path_to_tif, <span class="st">"dem"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>rlayer2 <span class="op">=</span> QgsRasterLayer(path_to_tif2, <span class="st">"dem2"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co"># Merge rasters</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>processing.run(<span class="st">"gdal:merge"</span>, {<span class="st">"INPUT"</span>: [rlayer, rlayer2], <span class="st">"OUTPUT"</span>: <span class="st">"merged_dem.tif"</span>})</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#check the merged_dem</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>iface.addRasterLayer(<span class="st">"merged_dem.tif"</span>,<span class="st">"merged_dem"</span>)</span></code></pre>
+</div>
+</section><section><h2 class="section-heading" id="calculate-slope">Calculate Slope<a class="anchor" aria-label="anchor" href="#calculate-slope"></a>
 </h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="calculate-hillshade">Calculate Hillshade<a class="anchor" aria-label="anchor" href="#calculate-hillshade"></a>
+<hr class="half-width">
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Calcualting slope</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>processing.run(<span class="st">"qgis:slope"</span>, {<span class="st">"INPUT"</span>: <span class="st">"merged_dem.tif"</span>, <span class="st">"OUTPUT"</span>: <span class="st">"slope.tif"</span>})</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#check it </span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>iface.addRasterLayer(<span class="st">"slope.tif"</span>,<span class="st">"slope"</span>)</span></code></pre>
+</div>
+</section><section><h2 class="section-heading" id="calculate-hillshade">Calculate Hillshade<a class="anchor" aria-label="anchor" href="#calculate-hillshade"></a>
 </h2>
 <hr class="half-width"></section><section><h2 class="section-heading" id="analyze-hydrology">Analyze Hydrology<a class="anchor" aria-label="anchor" href="#analyze-hydrology"></a>
 </h2>

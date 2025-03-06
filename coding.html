@@ -423,8 +423,29 @@ canvas</p>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="merge-dem-data">Merge DEM Data<a class="anchor" aria-label="anchor" href="#merge-dem-data"></a></h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="calculate-slope">Calculate Slope<a class="anchor" aria-label="anchor" href="#calculate-slope"></a></h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="calculate-hillshade">Calculate Hillshade<a class="anchor" aria-label="anchor" href="#calculate-hillshade"></a></h2>
+<hr class="half-width"><div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>rlayer <span class="op">=</span> QgsRasterLayer(path_to_tif, <span class="st">"dem"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>rlayer2 <span class="op">=</span> QgsRasterLayer(path_to_tif2, <span class="st">"dem2"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co"># Merge rasters</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>processing.run(<span class="st">"gdal:merge"</span>, {<span class="st">"INPUT"</span>: [rlayer, rlayer2], <span class="st">"OUTPUT"</span>: <span class="st">"merged_dem.tif"</span>})</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#check the merged_dem</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>iface.addRasterLayer(<span class="st">"merged_dem.tif"</span>,<span class="st">"merged_dem"</span>)</span></code></pre>
+</div>
+</section><section><h2 class="section-heading" id="calculate-slope">Calculate Slope<a class="anchor" aria-label="anchor" href="#calculate-slope"></a></h2>
+<hr class="half-width"><div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Calcualting slope</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>processing.run(<span class="st">"qgis:slope"</span>, {<span class="st">"INPUT"</span>: <span class="st">"merged_dem.tif"</span>, <span class="st">"OUTPUT"</span>: <span class="st">"slope.tif"</span>})</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#check it </span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>iface.addRasterLayer(<span class="st">"slope.tif"</span>,<span class="st">"slope"</span>)</span></code></pre>
+</div>
+</section><section><h2 class="section-heading" id="calculate-hillshade">Calculate Hillshade<a class="anchor" aria-label="anchor" href="#calculate-hillshade"></a></h2>
 <hr class="half-width"></section><section><h2 class="section-heading" id="analyze-hydrology">Analyze Hydrology<a class="anchor" aria-label="anchor" href="#analyze-hydrology"></a></h2>
 <hr class="half-width"></section><section><h2 class="section-heading" id="calculate-topograhic-index">Calculate Topograhic Index<a class="anchor" aria-label="anchor" href="#calculate-topograhic-index"></a></h2>
 <hr class="half-width"><!--
