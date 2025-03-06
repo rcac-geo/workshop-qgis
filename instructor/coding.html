@@ -295,7 +295,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Coding</h1>
-        <p>Last updated on 2025-03-04 |
+        <p>Last updated on 2025-03-06 |
 
         <a href="https://github.com/rcac-geo/workshop-qgis/edit/main/episodes/coding.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -345,8 +345,86 @@ directly.</p>
 <p>The screenshots below show how to open QGIS Python Console, and how
 it looks like.</p>
 </li>
-</ul><figure><img width="595" alt="Screenshot 2025-03-04 at 10 58 51 AM" src="https://github.com/user-attachments/assets/3157328b-18c8-43bf-b0a7-a434496de234" class="figure mx-auto d-block"></figure><figure><img width="1048" alt="Screenshot 2025-03-04 at 11 00 04 AM" src="https://github.com/user-attachments/assets/79248436-7123-46cc-814c-d09074375c7f" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="load-data">Load Data<a class="anchor" aria-label="anchor" href="#load-data"></a></h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="merge-dem-data">Merge DEM Data<a class="anchor" aria-label="anchor" href="#merge-dem-data"></a></h2>
+</ul><figure><img width="595" alt="Screenshot 2025-03-04 at 10 58 51 AM" src="https://github.com/user-attachments/assets/3157328b-18c8-43bf-b0a7-a434496de234" class="figure mx-auto d-block"></figure><figure><img width="1048" alt="Screenshot 2025-03-04 at 11 00 04 AM" src="https://github.com/user-attachments/assets/79248436-7123-46cc-814c-d09074375c7f" class="figure mx-auto d-block"></figure><p>Replace trainXX with your training account</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /scratch/negishi/trainXX/project/code_output</span></code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># change work directory</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>path <span class="op">=</span><span class="st">"/scratch/negishi/trainXX/project/code_output"</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>os.chdir(path)</span></code></pre>
+</div>
+</section><section><h2 class="section-heading" id="load-data">Load Data<a class="anchor" aria-label="anchor" href="#load-data"></a></h2>
+<hr class="half-width"><p>There are two ways to load the data.</p>
+<div class="section level4">
+<h4 id="the-first-way">The first way<a class="anchor" aria-label="anchor" href="#the-first-way"></a></h4>
+<p>When you create a QgsVectorLayer or QgsRasterLayer object, it’s just
+a layer in memory. It doesn’t automatically get added to the QGIS map
+canvas. You have more control over the layer’s properties and how it’s
+loaded. You can set things like the layer’s CRS, geometry type, and
+other options before adding it to the map.</p>
+<div class="section level5">
+<h5 id="load-vector-data">(1) Load Vector Data<a class="anchor" aria-label="anchor" href="#load-vector-data"></a></h5>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>vectorfile <span class="op">=</span><span class="st">"/scratch/negishi/liu4201/project/output/stream10_6.geojson"</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co"># The format is:</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># vlayer = QgsVectorLayer(data_source, layer_name, provider_name)</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>vlayer <span class="op">=</span> QgsVectorLayer(vectorfile, <span class="st">"stream10_6"</span>, <span class="st">"ogr"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> vlayer.isValid():</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Layer failed to load!"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>    QgsProject.instance().addMapLayer(vlayer) <span class="co"># load the layer</span></span></code></pre>
+</div>
+</div>
+<div class="section level5">
+<h5 id="load-raster-data">(2) Load Raster Data<a class="anchor" aria-label="anchor" href="#load-raster-data"></a></h5>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co">#use the firt way to load rasterfile 1 </span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>path_to_tif <span class="op">=</span> rasterpath <span class="op">+</span> <span class="st">"USGS_1M_16_x50y448_IN_Indiana_Statewide_LiDAR_2017_B17.tif"</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>rlayer <span class="op">=</span> QgsRasterLayer(path_to_tif, <span class="st">"dem"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> rlayer.isValid():</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Layer failed to load!"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>    QgsProject.instance().addMapLayer(rlayer) <span class="co"># load the layer</span></span></code></pre>
+</div>
+</div>
+</div>
+<div class="section level4">
+<h4 id="the-second-way">The second way<a class="anchor" aria-label="anchor" href="#the-second-way"></a></h4>
+<div class="section level5">
+<h5 id="load-vector-data-1">(1) Load Vector Data<a class="anchor" aria-label="anchor" href="#load-vector-data-1"></a></h5>
+<p>It loads a vector or raster layer and immediately adds it to the map
+canvas</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>vlayer <span class="op">=</span> iface.addVectorLayer(vectorfile, <span class="st">"stream10_6"</span>, <span class="st">"ogr"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> vlayer:</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Layer failed to load!"</span>)</span></code></pre>
+</div>
+</div>
+<div class="section level5">
+<h5 id="load-raster-data-1">(2) Load Raster Data<a class="anchor" aria-label="anchor" href="#load-raster-data-1"></a></h5>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co">#use the second way to load rasterfile 2</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>path_to_tif2 <span class="op">=</span> rasterpath <span class="op">+</span> <span class="st">"USGS_1M_16_x50y449_IN_Indiana_Statewide_LiDAR_2017_B17.tif"</span>   </span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>iface.addRasterLayer(path_to_tif2, <span class="st">"dem2"</span>)</span></code></pre>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="merge-dem-data">Merge DEM Data<a class="anchor" aria-label="anchor" href="#merge-dem-data"></a></h2>
 <hr class="half-width"></section><section><h2 class="section-heading" id="calculate-slope">Calculate Slope<a class="anchor" aria-label="anchor" href="#calculate-slope"></a></h2>
 <hr class="half-width"></section><section><h2 class="section-heading" id="calculate-hillshade">Calculate Hillshade<a class="anchor" aria-label="anchor" href="#calculate-hillshade"></a></h2>
 <hr class="half-width"></section><section><h2 class="section-heading" id="analyze-hydrology">Analyze Hydrology<a class="anchor" aria-label="anchor" href="#analyze-hydrology"></a></h2>
@@ -412,7 +490,7 @@ any links that you are not going to use.
   "url": "https://rcac-geo.github.io/workshop-qgis/instructor/coding.html",
   "identifier": "https://rcac-geo.github.io/workshop-qgis/instructor/coding.html",
   "dateCreated": "2025-02-18",
-  "dateModified": "2025-03-04",
+  "dateModified": "2025-03-06",
   "datePublished": "2025-03-06"
 }
 
