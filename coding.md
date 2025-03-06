@@ -100,7 +100,27 @@ iface.addRasterLayer(path_to_tif2, "dem2")
 
 ## Merge DEM Data
 
+```python
+rlayer = QgsRasterLayer(path_to_tif, "dem")
+rlayer2 = QgsRasterLayer(path_to_tif2, "dem2")
+
+# Merge rasters
+processing.run("gdal:merge", {"INPUT": [rlayer, rlayer2], "OUTPUT": "merged_dem.tif"})
+
+#check the merged_dem
+iface.addRasterLayer("merged_dem.tif","merged_dem")
+```
+
 ## Calculate Slope
+
+```python
+# Calcualting slope
+processing.run("qgis:slope", {"INPUT": "merged_dem.tif", "OUTPUT": "slope.tif"})
+
+#check it 
+iface.addRasterLayer("slope.tif","slope")
+```
+
 
 ## Calculate Hillshade
 
