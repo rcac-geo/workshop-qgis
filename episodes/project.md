@@ -234,16 +234,14 @@ Or we have convert it to vector: Go to Raster | Conversion | Polygonize (Raster 
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: challenge 
+:::::::::::::::: spoiler
 
-You could try different Channelization Threshold and compared the extracted streams.
-:::::::::::::::::::::::: solution 
-
+Channelization Threshold
+Try different Channelization Threshold and compared the extracted streams.
 ![](https://github.com/user-attachments/assets/c8d469dd-babe-44a8-8f48-e9800d0a79dd)
 
-:::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 ## Calculate Topographic Index
