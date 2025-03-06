@@ -25,6 +25,8 @@ exercises: 2
 
 ## Preliminary Knowledge 
 
+![Knowledge Graph](https://github.com/user-attachments/assets/60561490-e645-482a-8078-cd81914be475)
+
 #### 1. DEM (Digital Elevation Model):
 
 A DEM is essentially a 3D representation of a terrain's surface. It's a raster dataset, meaning it's made up of a grid of cells (pixels), where each cell contains an elevation value.
@@ -56,7 +58,7 @@ Hillshade maps are also derived from DEMs and are valuable for:
   
 #### 4. Analyzing hydrology
 
-The workflow: DEM Input → Fill Sinks → Flow Direction → Flow Accumulation → Stream Extraction -> Watersheds
+The workflow: DEM Input → Fill Sinks → Flow Direction → Flow Accumulation → Stream Extraction -> Subbasins
 
 * Before calculating flow, the DEM needs to be preprocessed to remove any small depressions (sinks) that may trap water. These are often errors in the data or natural terrain features that disrupt continuous flow.
 * The flow direction represents the direction in which water will move from each cell based on elevation. The most common method assigns flow using the D8 algorithm, where water moves to the steepest downward slope among the eight neighboring cells.
@@ -66,12 +68,23 @@ The workflow: DEM Input → Fill Sinks → Flow Direction → Flow Accumulation 
 * Streams are extracted by applying a threshold to the flow accumulation raster. A threshold defines the minimum number of contributing cells required to form a stream.
   - Higher thresholds result in fewer, larger streams.
   - Lower thresholds detect smaller streams, but may introduce noise.
-* Last step is to extract Watersheds, an area of land that drains all precipitation and surface runoff to a common outlet(such as a river, lake, or ocean).
+* Last step is to extract Watersheds/Subbasins, an area of land that drains all precipitation and surface runoff to a common outlet(such as a river, lake, or ocean).
   - It is defined by topographic divides (ridges or hills) that separate it from adjacent watersheds.
   - Watersheds can be small (for example, a stream watershed) or large (covering multiple rivers).
   - Same concept as Catchments and Basins, but they are in different scales:
     
     **Basin** → contains multiple → **Sub-Basins** → made up of → **Watersheds** → includes smaller → **Catchments**
+
+#### 5. Wetness Index
+
+The Wetness Index, often referred to as the Topographic Wetness Index (TWI), is a terrain attribute that quantifies the propensity of a location to accumulate water. It's a crucial tool in hydrological and ecological modeling, providing insights into soil moisture, runoff potential, and habitat distribution.
+
+* The TWI is based on the principle that areas with a large upslope contributing area and a shallow slope are more likely to accumulate water.
+* It combines information about the upslope contributing area (the area that drains into a given point) and the slope gradient.
+
+* $ TWI = ln(\dfrac{\alpha}{(tan(\beta)})$
+  where $\alpha$ is specific catchment area (i.e. the upslope contributing area per unit contour length), $\beta$ is the local slope angle.
+
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 Load Data:
@@ -269,7 +282,7 @@ Output
 
 ::::::::::::::::::::::::
 
-## Calculate Topographic Index
+## Calculate Topographic Wetness Index
 
 * Step 1: search "WetnessIndex" in the Processing Toolbox.
 * Step 2: select "subbasins10_6" calculated from the above procedure as the SCA File, slope as the Input Slope File and type output, as below
