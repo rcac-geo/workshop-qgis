@@ -92,7 +92,8 @@ Load Data:
 
 Let's first load the two rasters in data directory.
 
-:::::::::::::::::::::::: solution 
+:::::::::::::::::::::::: spoiler
+### Output
 
 <img width="1003" alt="Screenshot 2025-03-04 at 2 21 14 PM" src="https://github.com/user-attachments/assets/c6e10ffc-1d6c-458d-aa8e-b415181acd22" />
 
@@ -245,7 +246,7 @@ Or we have convert it to vector: Go to Raster | Conversion | Polygonize (Raster 
 ![you can choose different file format of vector](https://github.com/user-attachments/assets/70fa3c47-ce96-4256-9b2c-18cd91ee0a32)
 
 :::::::::::::::: spoiler
-Output
+### Output
 
 ![](https://github.com/user-attachments/assets/3cf31f5f-78f4-427c-b045-e53013f5b33e)
 
@@ -254,8 +255,7 @@ Output
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::: spoiler
-
-Channelization Threshold
+### Note
 Try different Channelization Threshold and compared the extracted streams.
 ![](https://github.com/user-attachments/assets/c8d469dd-babe-44a8-8f48-e9800d0a79dd)
 
@@ -269,7 +269,7 @@ Try different Channelization Threshold and compared the extracted streams.
 ![](https://github.com/user-attachments/assets/77487b6f-4abf-4f9c-927a-18bfdc883b44)
 
 :::::::::::::::: spoiler
-Output
+### Output
 
 ![](https://github.com/user-attachments/assets/0f01bd47-2b98-4710-bd7e-b7c5e0e2adda)
 
@@ -301,12 +301,13 @@ All algorithms (including models) can be executed as a batch process. That is, t
   ![](https://github.com/user-attachments/assets/89f4f76f-5356-4c50-83c4-80de46a1dd06)
 
 :::::::::::::::: callout 
-Output
+### Output
 
   ![](https://github.com/user-attachments/assets/ee910f75-b1d1-439b-800d-7bc79a023dc4)
 
 :::::::::::::::: spoiler
-Note:
+### Note
+
 the smaller Channelization Threshold is, the more channels you generated, and the high resolution you got (As below shows more accurate Wetness Index)
 
   ![](https://github.com/user-attachments/assets/cfb23011-aab6-4214-98dc-6b8874c0a679)
