@@ -276,9 +276,15 @@ Output
 
 :::::::::::::::: callout
 
-* You could also click "Run as Batch Process" and parallel your tasks, as below
+* You could also click "Run as Batch Process" and run multiple instances in one shot, as below
 
 ![](https://github.com/user-attachments/assets/f28bc6c8-aca3-4bbf-ab75-fc2163fb3086)
+
+:::::::::::::::: spoiler
+
+All algorithms (including models) can be executed as a batch process. That is, they can be executed using not just a single set of inputs, but several of them, executing the algorithm as many times as needed. This is useful when processing large amounts of data, since it is not necessary to launch the algorithm many times from the toolbox.
+
+::::::::::::::::::::::::
 
 ::::::::::::::::::::::::
 
