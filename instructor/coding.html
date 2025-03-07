@@ -225,12 +225,7 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#qgis-python-console">QGIS Python Console</a></li>
-<li><a href="#load-data">Load Data</a></li>
-<li><a href="#merge-dem-data">Merge DEM Data</a></li>
-<li><a href="#calculate-slope">Calculate Slope</a></li>
-<li><a href="#calculate-hillshade">Calculate Hillshade</a></li>
-<li><a href="#analyze-hydrology">Analyze Hydrology</a></li>
-<li><a href="#calculate-topograhic-index">Calculate Topograhic Index</a></li>
+<li><a href="#using-processing-from-the-command-line">Using processing from the command line</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -326,7 +321,9 @@
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul><li>Demonstrate how to use QGIS Python Console.</li>
-<li>Demonstrate how to automate QGIS tasks with Python coding.</li>
+<li>Demonstrate how to automate QGIS tasks with Python coding and using
+processing from the command line.</li>
+<li>Demonstrate how to monitor CPU and memory usage.</li>
 </ul></div>
 </div>
 </div>
@@ -358,8 +355,9 @@ it looks like.</p>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>path <span class="op">=</span><span class="st">"/scratch/negishi/trainXX/project/code_output"</span></span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>os.chdir(path)</span></code></pre>
 </div>
-</section><section><h2 class="section-heading" id="load-data">Load Data<a class="anchor" aria-label="anchor" href="#load-data"></a></h2>
-<hr class="half-width"><p>There are two ways to load the data.</p>
+<div class="section level3">
+<h3 id="load-data">Load Data<a class="anchor" aria-label="anchor" href="#load-data"></a></h3>
+<p>There are two ways to load the data.</p>
 <div class="section level4">
 <h4 id="the-first-way">The first way<a class="anchor" aria-label="anchor" href="#the-first-way"></a></h4>
 <p>There are two steps to load data. * First, data is loaded in memory.
@@ -461,8 +459,10 @@ canvas</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="merge-dem-data">Merge DEM Data<a class="anchor" aria-label="anchor" href="#merge-dem-data"></a></h2>
-<hr class="half-width"><div class="codewrapper sourceCode" id="cb9">
+</div>
+<div class="section level3">
+<h3 id="merge-dem-data">Merge DEM Data<a class="anchor" aria-label="anchor" href="#merge-dem-data"></a></h3>
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>rlayer <span class="op">=</span> QgsRasterLayer(path_to_tif, <span class="st">"dem"</span>)</span>
@@ -474,8 +474,10 @@ canvas</p>
 <span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="co">#check the merged_dem</span></span>
 <span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>iface.addRasterLayer(<span class="st">"merged_dem.tif"</span>,<span class="st">"merged_dem"</span>)</span></code></pre>
 </div>
-</section><section><h2 class="section-heading" id="calculate-slope">Calculate Slope<a class="anchor" aria-label="anchor" href="#calculate-slope"></a></h2>
-<hr class="half-width"><div class="codewrapper sourceCode" id="cb10">
+</div>
+<div class="section level3">
+<h3 id="calculate-slope">Calculate Slope<a class="anchor" aria-label="anchor" href="#calculate-slope"></a></h3>
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Calcualting slope</span></span>
@@ -484,13 +486,94 @@ canvas</p>
 <span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co">#check it </span></span>
 <span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>iface.addRasterLayer(<span class="st">"slope.tif"</span>,<span class="st">"slope"</span>)</span></code></pre>
 </div>
-</section><section><h2 class="section-heading" id="calculate-hillshade">Calculate Hillshade<a class="anchor" aria-label="anchor" href="#calculate-hillshade"></a></h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="analyze-hydrology">Analyze Hydrology<a class="anchor" aria-label="anchor" href="#analyze-hydrology"></a></h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="calculate-topograhic-index">Calculate Topograhic Index<a class="anchor" aria-label="anchor" href="#calculate-topograhic-index"></a></h2>
-<hr class="half-width"><!--
+</div>
+<div class="section level3">
+<h3 id="calculate-hillshade">Calculate Hillshade<a class="anchor" aria-label="anchor" href="#calculate-hillshade"></a></h3>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>processing.run(<span class="st">"native:hillshade"</span>, {<span class="st">'INPUT'</span>:<span class="st">'merged_dem.tif'</span>,<span class="st">'Z_FACTOR'</span>:<span class="dv">1</span>,<span class="st">'AZIMUTH'</span>:<span class="dv">300</span>,<span class="st">'V_ANGLE'</span>:<span class="dv">40</span>,<span class="st">'OUTPUT'</span>:<span class="st">'hillshade.tif'</span>})</span></code></pre>
+</div>
+<p>You may wonder how to easily write the python code to perform tasks.
+Well, QGIS provide a smart way.</p>
+<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
+  <h3 class="accordion-header" id="headingSpoiler3">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
+</button>
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div class="accordion-body">
+<p>Step 1: Go to <a href="https://rcac-geo.github.io/workshop-qgis/project.html#calculate-hillshade" class="external-link">Hillshade
+Processing Tool</a> Step 2: Click “Advanced”, and select “Copy as Python
+Command”. Step 3: Paste it to run in the python console.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="using-processing-from-the-command-line">Using processing from the command line<a class="anchor" aria-label="anchor" href="#using-processing-from-the-command-line"></a></h2>
+<hr class="half-width"><p>QGIS comes with a tool called QGIS Processing Executor which allows
+you to run Processing algorithms and models (built-in or provided by
+plugins) directly from the command line without starting QGIS Desktop
+itself. To use it, Let first close QGIS application and submit an
+interactive job.</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">sinteractive</span> <span class="at">-A</span> workshop <span class="at">-N1</span> <span class="at">-c16</span> <span class="at">-t</span> 15:00</span></code></pre>
+</div>
+<div class="section level3">
+<h3 id="analyze-hydrology-and-calculate-wetness-index">Analyze Hydrology and Calculate Wetness Index<a class="anchor" aria-label="anchor" href="#analyze-hydrology-and-calculate-wetness-index"></a></h3>
+<pre class="myjob"><code>module load qgis
+module load monitor
+
+monitor cpu percent --sample-rate 10 &gt; cpu.log &amp;
+monitor cpu memory --sample-rate 10 &gt; mem.log &amp;
+
+workdir=/scratch/negishi/liu4201/project/code_output
+
+qgis_process run wbt:FillDepressionsWangAndLiu  -- dem=$workdir/merged_dem.tif output=$workdir/fillsinks.tif
+qgis_process run wbt:D8Pointer  -- dem=$workdir/fillsinks.tif output=$workdir/flowdirect.tif
+qgis_process run wbt:D8FlowAccumulation --distance_units=meters --area_units=m2 --ellipsoid=EPSG:7030 --input=$workdir/flowdirect.tif --out_type=0 --log=false --clip=false --pntr=true --esri_pntr=false --output=$workdir/flowaccum.tif
+qgis_process run wbt:ExtractStreams --distance_units=meters --area_units=m2 --ellipsoid=EPSG:7030 --flow_accum=$workdir/flowaccum.tif --threshold=10000 --zero_background=false --output=$workdir/stream10_4.tif
+qgis_process run wbt:Subbasins --distance_units=meters --area_units=m2 --ellipsoid=EPSG:7030 --d8_pntr=$workdir/flowdirect.tif --streams=$workdir/stream10_4.tif --esri_pntr=false --output=$workdir/subbasins10_4.tif
+qgis_process run wbt:WetnessIndex --distance_units=meters --area_units=m2 --ellipsoid=EPSG:7030 --sca=$workdir/subbasins10_4.tif --slope=$workdir/slope.tif --output=$workdir/wetnessIndex10_4.tif</code></pre>
+<p>When you land on the compute node, just run the code below.</p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">sh</span> myjob</span></code></pre>
+</div>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout</h3>
+<div class="callout-content">
+<p>monitor is a module to monitor your resources, such as cpu and
+memory. You can look up for help after loading the module, as below.</p>
+<p>To look up help for “monitor”, after “module load monitor”, run</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">monitor</span> <span class="at">--help</span></span></code></pre>
+</div>
+<p>To look up help for “qgis_process”, after “module load qgis”, run</p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">qgis_process</span> <span class="at">--help</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></section></div> <!-- / div.lesson-content -->
+ -->
+</div>
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/project.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
