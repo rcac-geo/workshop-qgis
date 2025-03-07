@@ -49,8 +49,9 @@ There are two ways to load the data.
 
 #### The first way
 
-When you create a QgsVectorLayer or QgsRasterLayer object, it's just a layer in memory. It doesn't automatically get added to the QGIS map canvas.
-You have more control over the layer's properties and how it's loaded. You can set things like the layer's CRS, geometry type, and other options before adding it to the map.
+There are two steps to load data. 
+* First, data is loaded in memory.
+* Second, the data is added to QGIS map canvas. This is not necessary.
 
 ##### (1) Load Vector Data
 
@@ -61,18 +62,38 @@ vectorfile ="/scratch/negishi/liu4201/project/output/stream10_6.geojson"
 # vlayer = QgsVectorLayer(data_source, layer_name, provider_name)
 
 vlayer = QgsVectorLayer(vectorfile, "stream10_6", "ogr")
+```
+
+:::::::::::::::::::::::: spoiler 
+
+When you create a QgsVectorLayer or QgsRasterLayer object, it's just a layer in memory. It doesn't automatically get added to the QGIS map canvas.
+You have more control over the layer's properties and how it's loaded. You can even choose to not load it. You can also set things like the layer's CRS, geometry type, and other options before adding it to the map.
+
+:::::::::::::::::::::::::::::::::
+
+```python 
 if not vlayer.isValid():
     print("Layer failed to load!")
 else:
     QgsProject.instance().addMapLayer(vlayer) # load the layer
 ```
+:::::::::::::::::::::::: spoiler 
+
+Now it get added to the QGIS map canvas.
+
+:::::::::::::::::::::::::::::::::
 
 ##### (2) Load Raster Data
 
 ```python
-#use the firt way to load rasterfile 1 
+# use the firt way to load rasterfile 1
+# load raster to memory
 path_to_tif = rasterpath + "USGS_1M_16_x50y448_IN_Indiana_Statewide_LiDAR_2017_B17.tif"
 rlayer = QgsRasterLayer(path_to_tif, "dem")
+```
+
+```python
+# added raster to the QGIS map canvas
 if not rlayer.isValid():
     print("Layer failed to load!")
 else:
@@ -123,6 +144,7 @@ iface.addRasterLayer("slope.tif","slope")
 
 
 ## Calculate Hillshade
+
 
 ## Analyze Hydrology
 
