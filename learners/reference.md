@@ -10,5 +10,7 @@ title: 'Reference and Additional Reading'
 
 [PyQGIS Developer Cookbook](https://docs.qgis.org/3.40/en/docs/pyqgis_developer_cookbook/index.html)
 
+[WhiteBoxTools](https://www.whiteboxgeo.com/manual/wbt_book/available_tools/index.html)
+
 QGIS: Becoming a GIS Power User, By Anita Graser, Ben Mearns, Alex Mandel, Víctor Olaya Ferrero, Alexander Bruy (2017)
 
