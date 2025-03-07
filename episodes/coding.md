@@ -14,7 +14,8 @@ exercises: 2
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Demonstrate how to use QGIS Python Console.
-- Demonstrate how to automate QGIS tasks with Python coding.
+- Demonstrate how to automate QGIS tasks with Python coding and using processing from the command line.
+- Demonstrate how to monitor CPU and memory usage.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -43,7 +44,7 @@ path ="/scratch/negishi/trainXX/project/code_output"
 os.chdir(path)
 ```
 
-## Load Data
+### Load Data
 
 There are two ways to load the data. 
 
@@ -119,7 +120,7 @@ path_to_tif2 = rasterpath + "USGS_1M_16_x50y449_IN_Indiana_Statewide_LiDAR_2017_
 iface.addRasterLayer(path_to_tif2, "dem2")
 ```
 
-## Merge DEM Data
+### Merge DEM Data
 
 ```python
 rlayer = QgsRasterLayer(path_to_tif, "dem")
@@ -132,7 +133,7 @@ processing.run("gdal:merge", {"INPUT": [rlayer, rlayer2], "OUTPUT": "merged_dem.
 iface.addRasterLayer("merged_dem.tif","merged_dem")
 ```
 
-## Calculate Slope
+### Calculate Slope
 
 ```python
 # Calcualting slope
@@ -143,10 +144,66 @@ iface.addRasterLayer("slope.tif","slope")
 ```
 
 
-## Calculate Hillshade
+### Calculate Hillshade
 
+```python
+processing.run("native:hillshade", {'INPUT':'merged_dem.tif','Z_FACTOR':1,'AZIMUTH':300,'V_ANGLE':40,'OUTPUT':'hillshade.tif'})
 
-## Analyze Hydrology
+```
 
-## Calculate Topograhic Index
+You may wonder how to easily write the python code to perform tasks. Well, QGIS provide a smart way.
 
+:::::::::::::::::::::::: spoiler 
+
+Step 1: Go to [Hillshade Processing Tool](https://rcac-geo.github.io/workshop-qgis/project.html#calculate-hillshade)
+Step 2: Click "Advanced", and select "Copy as Python Command".
+Step 3: Paste it to run in the python console. 
+
+:::::::::::::::::::::::::::::::::
+
+## Using processing from the command line
+
+QGIS comes with a tool called QGIS Processing Executor which allows you to run Processing algorithms and models (built-in or provided by plugins) directly from the command line without starting QGIS Desktop itself.
+To use it, Let first close QGIS application and submit an interactive job.
+
+```sh
+sinteractive -A workshop -N1 -c16 -t 15:00
+```
+
+### Analyze Hydrology and Calculate Wetness Index
+
+```myjob
+module load qgis
+module load monitor
+
+monitor cpu percent --sample-rate 10 > cpu.log &
+monitor cpu memory --sample-rate 10 > mem.log &
+
+workdir=/scratch/negishi/liu4201/project/code_output
+
+qgis_process run wbt:FillDepressionsWangAndLiu  -- dem=$workdir/merged_dem.tif output=$workdir/fillsinks.tif
+qgis_process run wbt:D8Pointer  -- dem=$workdir/fillsinks.tif output=$workdir/flowdirect.tif
+qgis_process run wbt:D8FlowAccumulation --distance_units=meters --area_units=m2 --ellipsoid=EPSG:7030 --input=$workdir/flowdirect.tif --out_type=0 --log=false --clip=false --pntr=true --esri_pntr=false --output=$workdir/flowaccum.tif
+qgis_process run wbt:ExtractStreams --distance_units=meters --area_units=m2 --ellipsoid=EPSG:7030 --flow_accum=$workdir/flowaccum.tif --threshold=10000 --zero_background=false --output=$workdir/stream10_4.tif
+qgis_process run wbt:Subbasins --distance_units=meters --area_units=m2 --ellipsoid=EPSG:7030 --d8_pntr=$workdir/flowdirect.tif --streams=$workdir/stream10_4.tif --esri_pntr=false --output=$workdir/subbasins10_4.tif
+qgis_process run wbt:WetnessIndex --distance_units=meters --area_units=m2 --ellipsoid=EPSG:7030 --sca=$workdir/subbasins10_4.tif --slope=$workdir/slope.tif --output=$workdir/wetnessIndex10_4.tif
+```
+When you land on the compute node, just run the code below.
+
+```sh
+sh myjob
+```
+
+:::::::::::::::::::::::: callout 
+
+monitor is a module to monitor your resources, such as cpu and memory. You can look up for help after loading the module, as below.
+
+To look up help for "monitor", after "module load monitor", run
+```sh
+monitor --help
+```
+To look up help for "qgis_process", after "module load qgis", run
+```sh
+qgis_process --help
+```
+:::::::::::::::::::::::::::::::::
