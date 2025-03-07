@@ -154,8 +154,9 @@ processing.run("native:hillshade", {'INPUT':'merged_dem.tif','Z_FACTOR':1,'AZIMU
 You may wonder how to easily write the python code to perform tasks. Well, QGIS provide a smart way.
 
 :::::::::::::::::::::::: spoiler 
+### Hint
 
-Step 1: Go to [Hillshade Processing Tool](https://rcac-geo.github.io/workshop-qgis/project.html#calculate-hillshade)
+Step 1: Search the processing in the Processing Toolbox([Hillshade Processing Tool](https://rcac-geo.github.io/workshop-qgis/project.html#calculate-hillshade)) with QGIS interface, and fill in all the parameters.
 Step 2: Click "Advanced", and select "Copy as Python Command".
 Step 3: Paste it to run in the python console. 
 
@@ -187,7 +188,18 @@ qgis_process run wbt:D8FlowAccumulation --distance_units=meters --area_units=m2 
 qgis_process run wbt:ExtractStreams --distance_units=meters --area_units=m2 --ellipsoid=EPSG:7030 --flow_accum=$workdir/flowaccum.tif --threshold=10000 --zero_background=false --output=$workdir/stream10_4.tif
 qgis_process run wbt:Subbasins --distance_units=meters --area_units=m2 --ellipsoid=EPSG:7030 --d8_pntr=$workdir/flowdirect.tif --streams=$workdir/stream10_4.tif --esri_pntr=false --output=$workdir/subbasins10_4.tif
 qgis_process run wbt:WetnessIndex --distance_units=meters --area_units=m2 --ellipsoid=EPSG:7030 --sca=$workdir/subbasins10_4.tif --slope=$workdir/slope.tif --output=$workdir/wetnessIndex10_4.tif
+
 ```
+
+:::::::::::::::::::::::: spoiler 
+### Hint
+
+Step 1: Search the processing in the Processing Toolbox with QGIS interface, and fill in all the parameters.
+Step 2: Click "Advanced", and select "Copy as qgis_process Command".
+Step 3: Paste it to run in the job script. 
+
+:::::::::::::::::::::::::::::::::
+
 When you land on the compute node, just run the code below.
 
 ```sh
