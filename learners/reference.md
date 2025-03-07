@@ -12,5 +12,7 @@ title: 'Reference and Additional Reading'
 
 [WhiteBoxTools User Manual](https://www.whiteboxgeo.com/manual/wbt_book/available_tools/index.html)
 
+[Monitor Manual](https://resource-monitor.readthedocs.io/en/latest/getting_started.html)
+
 QGIS: Becoming a GIS Power User, By Anita Graser, Ben Mearns, Alex Mandel, Víctor Olaya Ferrero, Alexander Bruy (2017)
 
