@@ -1365,9 +1365,9 @@ it looks like.</p>
 </h4>
 <p>There are two steps to load data.</p>
 <ul>
-<li><p>First, data is loaded in memory.</p></li>
-<li><p>Second, the data is added to QGIS map canvas. This is not
-necessary.</p></li>
+<li><p>Step 1: data is loaded in memory.</p></li>
+<li><p>Step 2: the data is added to QGIS map canvas. This is not
+necessary if you just do computation and do not visualize data.</p></li>
 </ul>
 <div class="section level5">
 <h5 id="load-vector-data">(1) Load Vector Data<a class="anchor" aria-label="anchor" href="#load-vector-data"></a>
@@ -1499,15 +1499,6 @@ canvas</p>
 <span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co">#check it </span></span>
 <span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>iface.addRasterLayer(<span class="st">"slope.tif"</span>,<span class="st">"slope"</span>)</span></code></pre>
 </div>
-</div>
-<div class="section level3">
-<h3 id="calculate-hillshade">Calculate Hillshade<a class="anchor" aria-label="anchor" href="#calculate-hillshade"></a>
-</h3>
-<div class="codewrapper sourceCode" id="cb11">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>processing.run(<span class="st">"native:hillshade"</span>, {<span class="st">'INPUT'</span>:<span class="st">'merged_dem.tif'</span>,<span class="st">'Z_FACTOR'</span>:<span class="dv">1</span>,<span class="st">'AZIMUTH'</span>:<span class="dv">300</span>,<span class="st">'V_ANGLE'</span>:<span class="dv">40</span>,<span class="st">'OUTPUT'</span>:<span class="st">'hillshade.tif'</span>})</span></code></pre>
-</div>
 <p>You may wonder how to easily write the python code to perform tasks.
 Well, QGIS provide a smart way.</p>
 <div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
@@ -1517,14 +1508,22 @@ Well, QGIS provide a smart way.</p>
 </button>
 <div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
-<p>Step 1: Search the processing in the Processing Toolbox(<a href="https://rcac-geo.github.io/workshop-qgis/project.html#calculate-hillshade" class="external-link">Hillshade
-Processing Tool</a>) with QGIS interface, and fill in all the
-parameters.</p>
+<p>Step 1: Search the processing in the Processing Toolbox with QGIS
+interface, and fill in all the parameters.</p>
 <p>Step 2: Click “Advanced”, and select “Copy as Python Command”.</p>
 <p>Step 3: Paste it to run in the python console.</p>
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="calculate-hillshade">Calculate Hillshade<a class="anchor" aria-label="anchor" href="#calculate-hillshade"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>processing.run(<span class="st">"native:hillshade"</span>, {<span class="st">'INPUT'</span>:<span class="st">'merged_dem.tif'</span>,<span class="st">'Z_FACTOR'</span>:<span class="dv">1</span>,<span class="st">'AZIMUTH'</span>:<span class="dv">300</span>,<span class="st">'V_ANGLE'</span>:<span class="dv">40</span>,<span class="st">'OUTPUT'</span>:<span class="st">'hillshade.tif'</span>})</span></code></pre>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="using-processing-from-the-command-line">Using processing from the command line<a class="anchor" aria-label="anchor" href="#using-processing-from-the-command-line"></a>
