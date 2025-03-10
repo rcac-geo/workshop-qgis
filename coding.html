@@ -226,6 +226,7 @@
       <div class="accordion-body">
         <ul><li><a href="#qgis-python-console">QGIS Python Console</a></li>
 <li><a href="#using-processing-from-the-command-line">Using processing from the command line</a></li>
+<li><a href="#coding-with-stand-alone-python">Coding with Stand-alone Python</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -290,7 +291,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Coding</h1>
-        <p>Last updated on 2025-03-07 |
+        <p>Last updated on 2025-03-10 |
 
         <a href="https://github.com/rcac-geo/workshop-qgis/edit/main/episodes/coding.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -378,7 +379,7 @@ necessary.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>When you create a QgsVectorLayer or QgsRasterLayer object, it’s just
 a layer in memory. It doesn’t automatically get added to the QGIS map
@@ -403,7 +404,7 @@ the map.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>Now it get added to the QGIS map canvas.</p>
 </div>
@@ -499,12 +500,13 @@ Well, QGIS provide a smart way.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
   <h3 class="accordion-header" id="headingSpoiler3">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Hint </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>Step 1: Search the processing in the Processing Toolbox(<a href="https://rcac-geo.github.io/workshop-qgis/project.html#calculate-hillshade" class="external-link">Hillshade
 Processing Tool</a>) with QGIS interface, and fill in all the
-parameters. Step 2: Click “Advanced”, and select “Copy as Python
-Command”. Step 3: Paste it to run in the python console.</p>
+parameters.</p>
+<p>Step 2: Click “Advanced”, and select “Copy as Python Command”.</p>
+<p>Step 3: Paste it to run in the python console.</p>
 </div>
 </div>
 </div>
@@ -543,12 +545,13 @@ qgis_process run wbt:WetnessIndex --distance_units=meters --area_units=m2 --elli
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler4" aria-expanded="false" aria-controls="collapseSpoiler4">
   <h3 class="accordion-header" id="headingSpoiler4">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Hint </h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
 <div class="accordion-body">
 <p>Step 1: Search the processing in the Processing Toolbox with QGIS
-interface, and fill in all the parameters. Step 2: Click “Advanced”, and
-select “Copy as qgis_process Command”. Step 3: Paste it to run in the
-job script.</p>
+interface, and fill in all the parameters.</p>
+<p>Step 2: Click “Advanced”, and select “Copy as qgis_process
+Command”.</p>
+<p>Step 3: Paste it to run in the job script.</p>
 </div>
 </div>
 </div>
@@ -583,11 +586,130 @@ memory. You can look up for help after loading the module, as below.</p>
 </div>
 </div>
 </div>
+</div>
+</section><section><h2 class="section-heading" id="coding-with-stand-alone-python">Coding with Stand-alone Python<a class="anchor" aria-label="anchor" href="#coding-with-stand-alone-python"></a></h2>
+<hr class="half-width"><ul><li>Step 1: Start a new python script named “hydro_10_5.py” and copy in
+the code below. You should replace the path with your own where it is
+noted in parenthesis.</li>
+</ul><div class="codewrapper sourceCode" id="cb17">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a><span class="co"># initialize qgis</span></span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>qgs_app <span class="op">=</span> QgsApplication([], <span class="va">False</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>qgs_app.initQgis()</span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a><span class="co">#add whiteboxTools path</span></span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a>module_path <span class="op">=</span> <span class="st">"/home/liu4201/apps/qgis_tools/WhiteboxTools_linux_amd64/WBT"</span>  (replace <span class="cf">with</span> your own)</span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a>sys.path.append(module_path)</span>
+<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a><span class="co">#import processing tools</span></span>
+<span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a><span class="im">import</span> whitebox <span class="im">as</span> wbtool</span>
+<span id="cb17-15"><a href="#cb17-15" tabindex="-1"></a><span class="co">#from qgis import processing</span></span>
+<span id="cb17-16"><a href="#cb17-16" tabindex="-1"></a><span class="co">#from processing.core.Processing import Processing</span></span>
+<span id="cb17-17"><a href="#cb17-17" tabindex="-1"></a></span>
+<span id="cb17-18"><a href="#cb17-18" tabindex="-1"></a><span class="co">#Processing.initialize()</span></span>
+<span id="cb17-19"><a href="#cb17-19" tabindex="-1"></a><span class="co"># change work directory</span></span>
+<span id="cb17-20"><a href="#cb17-20" tabindex="-1"></a>path <span class="op">=</span><span class="st">"/scratch/negishi/liu4201/project/code_output/"</span></span>
+<span id="cb17-21"><a href="#cb17-21" tabindex="-1"></a>os.chdir(path)</span>
+<span id="cb17-22"><a href="#cb17-22" tabindex="-1"></a></span>
+<span id="cb17-23"><a href="#cb17-23" tabindex="-1"></a><span class="co">#for alg in QgsApplication.processingRegistry().algorithms():</span></span>
+<span id="cb17-24"><a href="#cb17-24" tabindex="-1"></a><span class="co">#    print(alg.id(), "-&gt;", alg.displayName())</span></span>
+<span id="cb17-25"><a href="#cb17-25" tabindex="-1"></a></span>
+<span id="cb17-26"><a href="#cb17-26" tabindex="-1"></a>wbt <span class="op">=</span> wbtool.WhiteboxTools()</span>
+<span id="cb17-27"><a href="#cb17-27" tabindex="-1"></a></span>
+<span id="cb17-28"><a href="#cb17-28" tabindex="-1"></a><span class="co">#processing.run("native:hillshade", {'INPUT':'merged_dem.tif','Z_FACTOR':1,'AZIMUTH':300,'V_ANGLE':40,'OUTPUT':'hillshade.tif'})</span></span>
+<span id="cb17-29"><a href="#cb17-29" tabindex="-1"></a></span>
+<span id="cb17-30"><a href="#cb17-30" tabindex="-1"></a>wbt.extract_streams(flow_accum <span class="op">=</span> path <span class="op">+</span> <span class="st">"flowdirect.tif"</span>,</span>
+<span id="cb17-31"><a href="#cb17-31" tabindex="-1"></a>                   threshold<span class="op">=</span><span class="dv">100000</span>,</span>
+<span id="cb17-32"><a href="#cb17-32" tabindex="-1"></a>                   zero_background<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb17-33"><a href="#cb17-33" tabindex="-1"></a>                   output<span class="op">=</span> path <span class="op">+</span> <span class="st">"stream10_5.tif"</span>)</span>
+<span id="cb17-34"><a href="#cb17-34" tabindex="-1"></a>wbt.subbasins(d8_pntr<span class="op">=</span> path <span class="op">+</span> <span class="st">"flowdirect.tif"</span>, streams<span class="op">=</span> path <span class="op">+</span> <span class="st">"stream10_5.tif"</span>,esri_pntr<span class="op">=</span><span class="va">False</span>, output<span class="op">=</span> path <span class="op">+</span> <span class="st">"subbasins10_5.tif"</span>)</span>
+<span id="cb17-35"><a href="#cb17-35" tabindex="-1"></a>wbt.wetness_index(sca<span class="op">=</span> path <span class="op">+</span> <span class="st">"subbasins10_5.tif"</span>, slope<span class="op">=</span> path <span class="op">+</span> <span class="st">"slope.tif"</span>, output<span class="op">=</span> path <span class="op">+</span> <span class="st">"wetnessIndex10_5.tif"</span>)</span>
+<span id="cb17-36"><a href="#cb17-36" tabindex="-1"></a></span>
+<span id="cb17-37"><a href="#cb17-37" tabindex="-1"></a>qgs_app.exitQgis()</span></code></pre>
+</div>
+<div id="accordionSpoiler5" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler5" aria-expanded="false" aria-controls="collapseSpoiler5">
+  <h3 class="accordion-header" id="headingSpoiler5">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
+</button>
+<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
+<div class="accordion-body">
+<p>Note 1: Refer <a href="https://www.whiteboxgeo.com/manual/wbt_book/available_tools/index.html" class="external-link">WhiteBoxTools
+User Manual</a> for the code to use the algorithm, “Copy as Python
+Command” provided by QGIS does not match the real WhiteBoxTools
+algorithms.</p>
+<p>Note 2: Refer to the code commented out in the snippet to use
+processing tools provided by QGIS (for example, native:hillshade). To
+highlight, it’s necessary to include the code below in the right
+place.</p>
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="im">from</span> qgis <span class="im">import</span> processing</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="im">from</span> processing.core.Processing <span class="im">import</span> Processing</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>Processing.initialize()</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ul><li>Step 2: Start a file named “myjob” and copy the code below in. You
+should replace the path with your own where it is noted in
+parenthesis.</li>
+</ul><div class="codewrapper sourceCode" id="cb19">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="co">#!/bin/sh -l</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="co"># FILENAME:  test_channel_threshold</span></span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a><span class="co">#SBATCH -A workshop</span></span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="co">#SBATCH --nodes=1</span></span>
+<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a><span class="co">#SBATCH --ntasks=1</span></span>
+<span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=8 </span></span>
+<span id="cb19-8"><a href="#cb19-8" tabindex="-1"></a><span class="co">#SBATCH --time=00:10:00</span></span>
+<span id="cb19-9"><a href="#cb19-9" tabindex="-1"></a><span class="co">#SBATCH --job-name myhydro_job</span></span>
+<span id="cb19-10"><a href="#cb19-10" tabindex="-1"></a><span class="co">#SBATCH --output=/home/liu4201/jobs/hydro10_5.out  (replace with your own)</span></span>
+<span id="cb19-11"><a href="#cb19-11" tabindex="-1"></a><span class="co">#SBATCH --error=/home/liu4201/jobs/hydro10_5.out   (replace with your own)</span></span>
+<span id="cb19-12"><a href="#cb19-12" tabindex="-1"></a></span>
+<span id="cb19-13"><a href="#cb19-13" tabindex="-1"></a><span class="ex">module</span> load qgis</span>
+<span id="cb19-14"><a href="#cb19-14" tabindex="-1"></a><span class="ex">module</span> load monitor</span>
+<span id="cb19-15"><a href="#cb19-15" tabindex="-1"></a></span>
+<span id="cb19-16"><a href="#cb19-16" tabindex="-1"></a><span class="bu">export</span> <span class="va">QT_QPA_PLATFORM</span><span class="op">=</span>offscreen</span>
+<span id="cb19-17"><a href="#cb19-17" tabindex="-1"></a></span>
+<span id="cb19-18"><a href="#cb19-18" tabindex="-1"></a><span class="ex">monitor</span> cpu percent <span class="at">--sample-rate</span> 10 <span class="at">--total</span> <span class="op">&gt;</span> cpu1.log <span class="kw">&amp;</span></span>
+<span id="cb19-19"><a href="#cb19-19" tabindex="-1"></a><span class="ex">monitor</span> cpu memory <span class="at">--sample-rate</span> 10 <span class="at">--actual</span> <span class="at">-H</span> <span class="op">&gt;</span> mem1.log <span class="kw">&amp;</span></span>
+<span id="cb19-20"><a href="#cb19-20" tabindex="-1"></a></span>
+<span id="cb19-21"><a href="#cb19-21" tabindex="-1"></a><span class="ex">python</span> /home/liu4201/qgis_data/code/hydro_10_5.py  <span class="er">(</span><span class="ex">replace</span> with your own<span class="kw">)</span></span></code></pre>
+</div>
+<ul><li>Step 3: Submit your job via running the code below in terminal.</li>
+</ul><div class="codewrapper sourceCode" id="cb20">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="ex">sbatch</span> myjob</span></code></pre>
+</div>
+<div id="accordionSpoiler6" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler6" aria-expanded="false" aria-controls="collapseSpoiler6">
+  <h3 class="accordion-header" id="headingSpoiler6">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
+</button>
+<div id="collapseSpoiler6" class="accordion-collapse collapse" aria-labelledby="headingSpoiler6" data-bs-parent="#accordionSpoiler6">
+<div class="accordion-body">
+<p>The export QT_QPA_PLATFORM=offscreen command tells Qt (the GUI
+framework used by QGIS) to use the “offscreen” platform plugin.</p>
+</div>
+</div>
+</div>
+</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="project.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
@@ -646,8 +768,8 @@ any links that you are not going to use.
   "url": "https://rcac-geo.github.io/workshop-qgis/coding.html",
   "identifier": "https://rcac-geo.github.io/workshop-qgis/coding.html",
   "dateCreated": "2025-02-18",
-  "dateModified": "2025-03-07",
-  "datePublished": "2025-03-07"
+  "dateModified": "2025-03-10",
+  "datePublished": "2025-03-10"
 }
 
   </script><script>
