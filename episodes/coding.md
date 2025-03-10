@@ -167,20 +167,32 @@ Step 3: Paste it to run in the python console.
 ## Using processing from the command line
 
 QGIS comes with a tool called QGIS Processing Executor which allows you to run Processing algorithms and models (built-in or provided by plugins) directly from the command line without starting QGIS Desktop itself.
-To use it, Let first close QGIS application and submit an interactive job.
+To use it, Let first close QGIS application. We will submit a job to HPC Cluster. 
+
+* Step 1: Let's start a new file named "myhydrojob" and copy in the code below. 
 
 ```sh
-sinteractive -A workshop -N1 -c16 -t 15:00
-```
 
-### Analyze Hydrology and Calculate Wetness Index
+#!/bin/sh -l
+# FILENAME:  myjob10_4
 
-```myjob
+#SBATCH -A workshop
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8 
+#SBATCH --time=00:10:00
+#SBATCH --job-name myhydro_job
+#SBATCH --output=/home/liu4201/jobs/hydro10_4.out
+#SBATCH --error=/home/liu4201/jobs/hydro10_4.out  
+
+module reset
 module load qgis
 module load monitor
 
-monitor cpu percent --sample-rate 10 > cpu.log &
-monitor cpu memory --sample-rate 10 > mem.log &
+export QT_QPA_PLATFORM=offscreen
+
+monitor cpu percent --sample-rate 10 --total > cpu.log &
+monitor cpu memory --sample-rate 10 --actual -H > mem.log &
 
 workdir=/scratch/negishi/liu4201/project/code_output
 
@@ -204,10 +216,10 @@ Step 3: Paste it to run in the job script.
 
 :::::::::::::::::::::::::::::::::
 
-When you land on the compute node, just run the code below.
+* Step 2: Then we could submit the job with typing the code below in Terminal.
 
 ```sh
-sh myjob
+sbatch myhydrojob
 ```
 
 :::::::::::::::::::::::: callout 
@@ -224,7 +236,9 @@ qgis_process --help
 ```
 :::::::::::::::::::::::::::::::::
 
-## Coding with Stand-alone Python
+## Coding with Standalone Python
+
+Now let's experiment on a different Channelization Threshold, 10,000, by coding with standalone Python Script. 
 
 * Step 1: Start a new python script named "hydro_10_5.py" and copy in the code below. You should replace the path with your own where it is noted in parenthesis.
 
@@ -285,11 +299,11 @@ Processing.initialize()
 :::::::::::::::::::::::::::::::::
 
 
-* Step 2: Start a file named "myjob" and copy the code below in. You should replace the path with your own where it is noted in parenthesis.
+* Step 2: Start a file named "myjob10_5" and copy the code below in. You should replace the path with your own where it is noted in parenthesis.
 
 ```sh
 #!/bin/sh -l
-# FILENAME:  test_channel_threshold
+# FILENAME:  myjob10_5
 
 #SBATCH -A workshop
 #SBATCH --nodes=1
@@ -300,6 +314,7 @@ Processing.initialize()
 #SBATCH --output=/home/liu4201/jobs/hydro10_5.out  (replace with your own)
 #SBATCH --error=/home/liu4201/jobs/hydro10_5.out   (replace with your own)
 
+module reset
 module load qgis
 module load monitor
 
