@@ -4,19 +4,44 @@
 # Remember to update this file periodically, 
 # ensuring that the author list and other fields remain accurate.
 
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
 cff-version: 1.2.0
-title: FIXME
-message: >-
-  Please cite this lesson using the information in this file
-  when you refer to it in publications, and/or if you
-  re-use, adapt, or expand on the content in your own
-  training material.
+title: Hands-on QGIS on HPC Clusters
+message: '  Please cite this lesson using the information in this file   when you refer to it in publications, and/or if you   re-use, adapt, or expand on the content in your own   training material.'
 type: dataset
 authors:
-  - given-names: FIXME
-    family-names: FIXME
+  - given-names: Xiao
+    family-names: Liu
+    email: liu4201@purdue.edu
+    affiliation: >-
+      The Rosen Center for Advanced Computing, Purdue
+      University, Indiana, USA
+    orcid: 'https://orcid.org/0000-0002-6303-0771'
+identifiers:
+  - type: url
+    value: 'https://rcac-geo.github.io/workshop-qgis/'
+    description: workshop url
+repository-code: 'https://github.com/rcac-geo/workshop-qgis/'
+url: 'https://rcac-geo.github.io/workshop-qgis/'
 abstract: >-
-  FIXME Replace this with a short abstract describing the
-  lesson, e.g. its target audience and main intended
-  learning objectives.
+  Begin your geospatial journey on HPC clusters with QGIS.
+  This workshop covers core QGIS operations, raster analysis
+  techniques, and streamlines geospatial tasks using Python
+  scripting for automation. Through a practical project,
+  participants will explore the landscape around Purdue
+  University and gain skills to efficiently process spatial
+  data, from initial QGIS setup on clusters to advanced
+  coding workflows.
+keywords:
+  - QGIS
+  - HPC Clusters
+  - Python
+  - Coding
+  - Streamline
 license: CC-BY-4.0
+commit: 7071c78f218364bb64e604711efc48bc25198e8f
+version: '1.0'
+date-released: '2025-03-13'
+
