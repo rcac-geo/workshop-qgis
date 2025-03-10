@@ -157,7 +157,9 @@ You may wonder how to easily write the python code to perform tasks. Well, QGIS 
 ### Hint
 
 Step 1: Search the processing in the Processing Toolbox([Hillshade Processing Tool](https://rcac-geo.github.io/workshop-qgis/project.html#calculate-hillshade)) with QGIS interface, and fill in all the parameters.
+
 Step 2: Click "Advanced", and select "Copy as Python Command".
+
 Step 3: Paste it to run in the python console. 
 
 :::::::::::::::::::::::::::::::::
@@ -195,7 +197,9 @@ qgis_process run wbt:WetnessIndex --distance_units=meters --area_units=m2 --elli
 ### Hint
 
 Step 1: Search the processing in the Processing Toolbox with QGIS interface, and fill in all the parameters.
+
 Step 2: Click "Advanced", and select "Copy as qgis_process Command".
+
 Step 3: Paste it to run in the job script. 
 
 :::::::::::::::::::::::::::::::::
@@ -218,4 +222,103 @@ To look up help for "qgis_process", after "module load qgis", run
 ```sh
 qgis_process --help
 ```
+:::::::::::::::::::::::::::::::::
+
+## Coding with Stand-alone Python
+
+* Step 1: Start a new python script named "hydro_10_5.py" and copy in the code below. You should replace the path with your own where it is noted in parenthesis.
+
+```python
+import os
+from qgis.core import *
+import sys
+
+# initialize qgis
+qgs_app = QgsApplication([], False)
+qgs_app.initQgis()
+
+#add whiteboxTools path
+module_path = "/home/liu4201/apps/qgis_tools/WhiteboxTools_linux_amd64/WBT"  (replace with your own)
+sys.path.append(module_path)
+
+#import processing tools
+import whitebox as wbtool
+#from qgis import processing
+#from processing.core.Processing import Processing
+
+#Processing.initialize()
+# change work directory
+path ="/scratch/negishi/liu4201/project/code_output/"
+os.chdir(path)
+
+#for alg in QgsApplication.processingRegistry().algorithms():
+#    print(alg.id(), "->", alg.displayName())
+
+wbt = wbtool.WhiteboxTools()
+
+#processing.run("native:hillshade", {'INPUT':'merged_dem.tif','Z_FACTOR':1,'AZIMUTH':300,'V_ANGLE':40,'OUTPUT':'hillshade.tif'})
+
+wbt.extract_streams(flow_accum = path + "flowdirect.tif",
+                   threshold=100000,
+                   zero_background=False,
+                   output= path + "stream10_5.tif")
+wbt.subbasins(d8_pntr= path + "flowdirect.tif", streams= path + "stream10_5.tif",esri_pntr=False, output= path + "subbasins10_5.tif")
+wbt.wetness_index(sca= path + "subbasins10_5.tif", slope= path + "slope.tif", output= path + "wetnessIndex10_5.tif")
+
+qgs_app.exitQgis()
+
+```
+
+:::::::::::::::::::::::: spoiler 
+
+Note 1: Refer [WhiteBoxTools User Manual](https://www.whiteboxgeo.com/manual/wbt_book/available_tools/index.html) for the code to use the algorithm, "Copy as Python Command" provided by QGIS does not match the real WhiteBoxTools algorithms.
+
+Note 2: Refer to the code commented out in the snippet to use processing tools provided by QGIS (for example, native:hillshade). To highlight, it's necessary to include the code below in the right place.
+
+```python
+from qgis import processing
+from processing.core.Processing import Processing
+
+Processing.initialize()
+```
+
+:::::::::::::::::::::::::::::::::
+
+
+* Step 2: Start a file named "myjob" and copy the code below in. You should replace the path with your own where it is noted in parenthesis.
+
+```sh
+#!/bin/sh -l
+# FILENAME:  test_channel_threshold
+
+#SBATCH -A workshop
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8 
+#SBATCH --time=00:10:00
+#SBATCH --job-name myhydro_job
+#SBATCH --output=/home/liu4201/jobs/hydro10_5.out  (replace with your own)
+#SBATCH --error=/home/liu4201/jobs/hydro10_5.out   (replace with your own)
+
+module load qgis
+module load monitor
+
+export QT_QPA_PLATFORM=offscreen
+
+monitor cpu percent --sample-rate 10 --total > cpu1.log &
+monitor cpu memory --sample-rate 10 --actual -H > mem1.log &
+
+python /home/liu4201/qgis_data/code/hydro_10_5.py  (replace with your own)
+```
+
+* Step 3: Submit your job via running the code below in terminal.
+
+```sh
+sbatch myjob
+```
+
+:::::::::::::::::::::::: spoiler 
+
+The export QT_QPA_PLATFORM=offscreen command tells Qt (the GUI framework used by QGIS) to use the "offscreen" platform plugin.
+
 :::::::::::::::::::::::::::::::::
