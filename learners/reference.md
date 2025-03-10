@@ -14,5 +14,7 @@ title: 'Reference and Additional Reading'
 
 [Monitor Manual](https://resource-monitor.readthedocs.io/en/latest/getting_started.html)
 
+[Submit Jobs](https://www.rcac.purdue.edu/training/clusters201)
+
 QGIS: Becoming a GIS Power User, By Anita Graser, Ben Mearns, Alex Mandel, Víctor Olaya Ferrero, Alexander Bruy (2017)
 
