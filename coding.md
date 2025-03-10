@@ -52,9 +52,9 @@ There are two ways to load the data.
 
 There are two steps to load data. 
 
-* First, data is loaded in memory.
+* Step 1: data is loaded in memory.
   
-* Second, the data is added to QGIS map canvas. This is not necessary.
+* Step 2: the data is added to QGIS map canvas. This is not necessary if you just do computation and do not visualize data.
 
 ##### (1) Load Vector Data
 
@@ -146,6 +146,18 @@ processing.run("qgis:slope", {"INPUT": "merged_dem.tif", "OUTPUT": "slope.tif"})
 iface.addRasterLayer("slope.tif","slope")
 ```
 
+You may wonder how to easily write the python code to perform tasks. Well, QGIS provide a smart way.
+
+:::::::::::::::::::::::: spoiler 
+### Hint
+
+Step 1: Search the processing in the Processing Toolbox with QGIS interface, and fill in all the parameters.
+
+Step 2: Click "Advanced", and select "Copy as Python Command".
+
+Step 3: Paste it to run in the python console. 
+
+:::::::::::::::::::::::::::::::::
 
 ### Calculate Hillshade
 
@@ -153,19 +165,6 @@ iface.addRasterLayer("slope.tif","slope")
 processing.run("native:hillshade", {'INPUT':'merged_dem.tif','Z_FACTOR':1,'AZIMUTH':300,'V_ANGLE':40,'OUTPUT':'hillshade.tif'})
 
 ```
-
-You may wonder how to easily write the python code to perform tasks. Well, QGIS provide a smart way.
-
-:::::::::::::::::::::::: spoiler 
-### Hint
-
-Step 1: Search the processing in the Processing Toolbox([Hillshade Processing Tool](https://rcac-geo.github.io/workshop-qgis/project.html#calculate-hillshade)) with QGIS interface, and fill in all the parameters.
-
-Step 2: Click "Advanced", and select "Copy as Python Command".
-
-Step 3: Paste it to run in the python console. 
-
-:::::::::::::::::::::::::::::::::
 
 ## Using processing from the command line
 
