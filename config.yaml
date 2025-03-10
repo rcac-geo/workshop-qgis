@@ -19,7 +19,7 @@ varnish: aseetharam/varnish
 carpentry_description: 'Lesson Description'
 
 # Overall title for pages.
-title: 'Hands-on with QGIS' 
+title: 'Hands-on QGIS on HPC Clusters' 
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: '2025-2-18' 
