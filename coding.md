@@ -51,7 +51,9 @@ There are two ways to load the data.
 #### The first way
 
 There are two steps to load data. 
+
 * First, data is loaded in memory.
+  
 * Second, the data is added to QGIS map canvas. This is not necessary.
 
 ##### (1) Load Vector Data
@@ -80,7 +82,7 @@ else:
 ```
 :::::::::::::::::::::::: spoiler 
 
-Now it get added to the QGIS map canvas.
+Now it gets added to the QGIS map canvas.
 
 :::::::::::::::::::::::::::::::::
 
@@ -103,8 +105,9 @@ else:
 
 #### The second way
 
-##### (1) Load Vector Data
 It loads a vector or raster layer and immediately adds it to the map canvas
+
+##### (1) Load Vector Data
 
 ```python
 vlayer = iface.addVectorLayer(vectorfile, "stream10_6", "ogr")
