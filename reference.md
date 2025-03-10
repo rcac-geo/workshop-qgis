@@ -18,3 +18,4 @@ title: 'Reference and Additional Reading'
 
 QGIS: Becoming a GIS Power User, By Anita Graser, Ben Mearns, Alex Mandel, Víctor Olaya Ferrero, Alexander Bruy (2017)
 
+This workshop is derived from template that is Copyright (c) The Carpentries and, where practical, linking to https://carpentries.org/ (license: https://creativecommons.org/licenses/by/4.0/). 
