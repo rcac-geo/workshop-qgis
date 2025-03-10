@@ -9,7 +9,7 @@
 
 cff-version: 1.2.0
 title: Hands-on QGIS on HPC Clusters
-message: '  Please cite this lesson using the information in this file   when you refer to it in publications, and/or if you   re-use, adapt, or expand on the content in your own   training material.'
+message: '  Please cite this lesson using the information in this file when you refer to it in publications, and/or if you re-use, adapt, or expand on the content in your own training material.'
 type: dataset
 authors:
   - given-names: Xiao
