@@ -14,7 +14,7 @@ exercises: 2
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Demonstrate how to use QGIS Python Console.
-- Demonstrate how to automate QGIS tasks with Python coding and using processing from the command line.
+- Demonstrate how to automate QGIS tasks using Python coding and processing from the command line.
 - Demonstrate how to monitor CPU and memory usage.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -32,11 +32,13 @@ exercises: 2
 
 <img width="1048" alt="Screenshot 2025-03-04 at 11 00 04 AM" src="https://github.com/user-attachments/assets/79248436-7123-46cc-814c-d09074375c7f" />
 
-Replace trainXX with your training account
+Let's create a output directory through Terminal, you should replace trainXX with your training account.
 
 ```sh
 mkdir -p /scratch/negishi/trainXX/project/code_output
 ```
+
+Let's copy the code below to the python console.
 
 ```python
 # change work directory
@@ -46,7 +48,7 @@ os.chdir(path)
 
 ### Load Data
 
-There are two ways to load the data. 
+You can load data in two ways, depending on if you want it on the QGIS map canvas. Choose the first method if you only require computation; select the second if visualization is also needed.
 
 #### The first way
 
@@ -168,8 +170,9 @@ processing.run("native:hillshade", {'INPUT':'merged_dem.tif','Z_FACTOR':1,'AZIMU
 
 ## Using processing from the command line
 
-QGIS comes with a tool called QGIS Processing Executor which allows you to run Processing algorithms and models (built-in or provided by plugins) directly from the command line without starting QGIS Desktop itself.
-To use it, Let first close QGIS application. We will submit a job to HPC Cluster. 
+QGIS includes the Processing Executor, a command-line tool that enables the execution of QGIS processing algorithms and models, including those from plugins, outside of the QGIS Desktop interface.
+
+To use it, Let first close QGIS application, and then we will submit a job to HPC Cluster. 
 
 * Step 1: Let's start a new file named "myhydrojob" and copy in the code below. 
 
@@ -264,7 +267,7 @@ import whitebox as wbtool
 
 #Processing.initialize()
 # change work directory
-path ="/scratch/negishi/liu4201/project/code_output/"
+path ="/scratch/negishi/liu4201/project/code_output/"  **(replace with your own)**
 os.chdir(path)
 
 #for alg in QgsApplication.processingRegistry().algorithms():
@@ -313,8 +316,8 @@ Processing.initialize()
 #SBATCH --cpus-per-task=8 
 #SBATCH --time=00:10:00
 #SBATCH --job-name myhydro_job
-#SBATCH --output=/home/liu4201/jobs/hydro10_5.out  (replace with your own)
-#SBATCH --error=/home/liu4201/jobs/hydro10_5.out   (replace with your own)
+#SBATCH --output=/home/liu4201/jobs/hydro10_5.out  **(replace with your own)**
+#SBATCH --error=/home/liu4201/jobs/hydro10_5.out   **(replace with your own)**
 
 module reset
 module load qgis
@@ -325,7 +328,7 @@ export QT_QPA_PLATFORM=offscreen
 monitor cpu percent --sample-rate 10 --total > cpu1.log &
 monitor cpu memory --sample-rate 10 --actual -H > mem1.log &
 
-python /home/liu4201/qgis_data/code/hydro_10_5.py  (replace with your own)
+python /home/liu4201/qgis_data/code/hydro_10_5.py  **(replace with your own)**
 ```
 
 * Step 3: Submit your job via running the code below in terminal.
