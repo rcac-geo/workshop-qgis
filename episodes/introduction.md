@@ -151,7 +151,7 @@ In Geographic Information Systems (GIS), data is primarily represented in two fu
 
 #### Load Spatial Data
 ##### (1) Load vector data from files
-* Step1: Layer | Add Layer | Add Vector Layer
+* Step1: Layer -> Add Layer -> Add Vector Layer
   
 <img width="554" alt="Picture2" src="https://github.com/user-attachments/assets/58bc28a8-7fe8-4dfd-8a54-495dbbfe1e6d" />
 
@@ -178,21 +178,23 @@ try yourself to add airports.shp to layers.
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-When adding a data source, QGIS attempts to identify its Coordinate Reference System (CRS) from sources like a shapefile's .prj file. If no CRS information is found, QGIS prompts you to specify it. You can modify this behavior in Settings -> Options -> CRS to automatically assign either the project's CRS or a designated default CRS.
+When adding a data source, QGIS attempts to identify its Coordinate Reference System (CRS) from sources like a shapefile's .prj file. If no CRS information is found, QGIS prompts you to specify it. You can modify this behavior in Settings -> Options -> CRS to automatically assign either the project's CRS or a designated default CRS. (Graser et al., 2017)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ##### (2) Load CSV files
-* Add Delimited Text Layer option available via the menu entry by going to Layer | Add Layer | Add Delimited Text Layer 
+* Step 1: Layer -> Add Layer -> Add Delimited Text Layer 
+* Step 2: Make changes as the red box in the picture below.
 
 <img width="893" alt="Screenshot 2025-02-25 at 2 41 23 PM" src="https://github.com/user-attachments/assets/4ccee5c6-a3d0-4292-8751-04b044d875b0" />
 
-* You will see the shapefile has been added to Layers as below.
+
+* Step 3: You will see the shapefile has been added to Layers as below.
   
 <img width="612" alt="Picture4" src="https://github.com/user-attachments/assets/db0dd043-5c42-48c2-b929-c48f24f010b6" />
 
 ##### (3) Load Raster files
-* Step1: Layer | Add Layer | Add Raster Layer
+* Step1: Layer -> Add Layer -> Add Raster Layer
 * Step2: Input your path of "landcover.img" and hit "add"
 
 ![](https://github.com/user-attachments/assets/6566ea7f-8ca9-4def-96b3-ae16671039bf)
@@ -243,7 +245,7 @@ Solution:
 ![](https://github.com/user-attachments/assets/98e26b3a-6329-41eb-b769-3cb38434cce5)
 
 * Step3: Hit "OK" and now only airport with elevation lower than 1000 ft show up.
-* Step4-Export data: right click the data and selelct "Export" | "Save Features As". Input information as figure below and hit "OK".
+* Step4-Export data: right click the data and selelct "Export" -> "Save Features As". Input information as figure below and hit "OK".
 
 ![](https://github.com/user-attachments/assets/5be55894-3ede-42bd-a888-36efda92b202)
   
@@ -268,7 +270,7 @@ Solution:
 
 ![](https://github.com/user-attachments/assets/a6e51da6-479c-4008-ad97-05333452897d)
 
-* You have already written out the output file. But if you didn't, you could always export the data via right clicking it and select "Export" | "Save As". Then input information as figure below and hit "OK".
+* You have already written out the output file. But if you didn't, you could always export the data via right clicking it and select "Export" -> "Save As". Then input information as figure below and hit "OK".
 
 ![](https://github.com/user-attachments/assets/8074e204-dc55-4533-af9b-0dc1e85fc0d0)
 
