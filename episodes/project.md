@@ -83,12 +83,13 @@ The Wetness Index, often referred to as the Topographic Wetness Index (TWI), is 
 * The TWI is based on the principle that areas with a large upslope contributing area and a shallow slope are more likely to accumulate water.
 * It combines information about the upslope contributing area (the area that drains into a given point) and the slope gradient.
 
-* $TWI = ln(\dfrac{\alpha}{(tan(\beta)})$
+* $TWI = ln(\dfrac{\alpha}{tan\beta})$
+  
   where $\alpha$ is specific catchment area (i.e. the upslope contributing area per unit contour length), $\beta$ is the local slope angle.
 
 
 ::::::::::::::::::::::::::::::::::::: challenge 
-Load Data:
+## Load Data
 
 Let's first load the two rasters in data directory.
 
@@ -106,7 +107,7 @@ Let's first load the two rasters in data directory.
 
 QuickMapServices (QMS) is a valuable plugin for QGIS that simplifies the process of adding and using a vast array of online basemaps and web mapping services. 
 
-* Go to Plugins | Manage and Install Plugins
+* Go to Plugins -> Manage and Install Plugins
 * Search "QuickMapSevices" and click "Install Plugin"
 * Now click "Search QMS" and search "Google Maps", as below.
   
@@ -121,7 +122,7 @@ QuickMapServices (QMS) is a valuable plugin for QGIS that simplifies the process
 WhiteboxTools is a powerful, open-source geospatial data analysis platform that offers a wide range of geospatial analysis tasks including DEM analysis, hydrological modeling and more.
 
 * Step 1: Install WhiteboxTools for QGIS
-  - go to Plugins | Manage and Install Plugins
+  - go to Plugins -> Manage and Install Plugins
   - search "WhiteboxTools for QGIS" and click "Install Plugin"
 * Step 2: Install Whitebox Executables
   - option 1: go to [WhiteboxTools](https://www.whiteboxgeo.com/download-direct/) and download.
@@ -136,7 +137,7 @@ WhiteboxTools is a powerful, open-source geospatial data analysis platform that 
   unzip WhiteboxTools_linux_amd64.zip
   ```
 * Step 4: Configurate it
-  - go to Settings | options | Processing | providers | WhiteboxTools
+  - go to Settings -> options -> Processing -> providers -> WhiteboxTools
   - go to WhiteboxTools executable and double click the content and click "..." to set it as "whitebox_tools" in your unzipped directory(the executable).
     
     your executable should be as below (you can also copy and paste):
@@ -238,7 +239,7 @@ Search "Hillshade" in Processing Toolbox, and input the elevation layer, paramet
 
 To better see the streams, you could uncheck other layers except the google map layer, and zoom in to compare the generated streams with the ones on the map.
 
-Or we have convert it to vector: Go to Raster | Conversion | Polygonize (Raster to Vector), as below
+Or we have convert it to vector: Go to Raster -> Conversion -> Polygonize (Raster to Vector), as below
 
 ![](https://github.com/user-attachments/assets/a66ba8b9-90c8-4996-9062-291162c9f7b5)
 
