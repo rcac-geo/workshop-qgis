@@ -2,6 +2,10 @@
 title: Setup
 ---
 
+## Instructor
+
+**Xiao Liu**: Xiao is a Senior Computational Scientist at Purdue University’s Rosen Center for Advanced Computing. She has two Masters in Geosciences and a Master in Computer Sciences and Engineering. Her knowledge encompassed GIS, machine learning, and hydrologic modeling.
+
 ## Schedule
 
 | **Time**  | **Session**  |
