@@ -343,7 +343,7 @@ directly.</p>
 <p>The screenshots below show how to open QGIS Python Console, and how
 it looks like.</p>
 </li>
-</ul><figure><img width="595" alt="Screenshot 2025-03-04 at 10 58 51 AM" src="https://github.com/user-attachments/assets/3157328b-18c8-43bf-b0a7-a434496de234" class="figure mx-auto d-block"></figure><figure><img width="1048" alt="Screenshot 2025-03-04 at 11 00 04 AM" src="https://github.com/user-attachments/assets/79248436-7123-46cc-814c-d09074375c7f" class="figure mx-auto d-block"></figure><p>Let’s create a output directory through Terminal, you should replace
+</ul><figure><img width="595" alt="Screenshot 2025-03-04 at 10 58 51 AM" src="https://github.com/user-attachments/assets/3157328b-18c8-43bf-b0a7-a434496de234" class="figure mx-auto d-block"></figure><figure><img width="1048" alt="Screenshot 2025-03-04 at 11 00 04 AM" src="https://github.com/user-attachments/assets/79248436-7123-46cc-814c-d09074375c7f" class="figure mx-auto d-block"></figure><p>Let’s create an output directory through Terminal, you should replace
 trainXX with your training account.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -386,7 +386,7 @@ necessary if you just do computation and do not visualize data.</p></li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>When you create a QgsVectorLayer or QgsRasterLayer object, it’s just
 a layer in memory. It doesn’t automatically get added to the QGIS map
@@ -411,7 +411,7 @@ the map.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>Now it gets added to the QGIS map canvas.</p>
 </div>
@@ -499,7 +499,7 @@ Well, QGIS provide a smart way.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
   <h3 class="accordion-header" id="headingSpoiler3">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Hint </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>Step 1: Search the processing in the Processing Toolbox with QGIS
 interface, and fill in all the parameters.</p>
@@ -539,8 +539,8 @@ code below.</li>
 <span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=8 </span></span>
 <span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="co">#SBATCH --time=00:10:00</span></span>
 <span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="co">#SBATCH --job-name myhydro_job</span></span>
-<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="co">#SBATCH --output=/home/liu4201/jobs/hydro10_4.out</span></span>
-<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a><span class="co">#SBATCH --error=/home/liu4201/jobs/hydro10_4.out  </span></span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="co">#SBATCH --output=/home/liu4201/jobs/hydro10_4.out    ## replace with your own path</span></span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a><span class="co">#SBATCH --error=/home/liu4201/jobs/hydro10_4.out     ## replace with your own path</span></span>
 <span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a></span>
 <span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a><span class="ex">module</span> reset</span>
 <span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a><span class="ex">module</span> load qgis</span>
@@ -551,7 +551,7 @@ code below.</li>
 <span id="cb12-20"><a href="#cb12-20" tabindex="-1"></a><span class="ex">monitor</span> cpu percent <span class="at">--sample-rate</span> 10 <span class="at">--total</span> <span class="op">&gt;</span> cpu.log <span class="kw">&amp;</span></span>
 <span id="cb12-21"><a href="#cb12-21" tabindex="-1"></a><span class="ex">monitor</span> cpu memory <span class="at">--sample-rate</span> 10 <span class="at">--actual</span> <span class="at">-H</span> <span class="op">&gt;</span> mem.log <span class="kw">&amp;</span></span>
 <span id="cb12-22"><a href="#cb12-22" tabindex="-1"></a></span>
-<span id="cb12-23"><a href="#cb12-23" tabindex="-1"></a><span class="va">workdir</span><span class="op">=</span>/scratch/negishi/liu4201/project/code_output</span>
+<span id="cb12-23"><a href="#cb12-23" tabindex="-1"></a><span class="va">workdir</span><span class="op">=</span>/scratch/negishi/liu4201/project/code_output  <span class="co">## replace with your own path</span></span>
 <span id="cb12-24"><a href="#cb12-24" tabindex="-1"></a></span>
 <span id="cb12-25"><a href="#cb12-25" tabindex="-1"></a><span class="ex">qgis_process</span> run wbt:FillDepressionsWangAndLiu  <span class="at">--</span> dem=<span class="va">$workdir</span>/merged_dem.tif output=<span class="va">$workdir</span>/fillsinks.tif</span>
 <span id="cb12-26"><a href="#cb12-26" tabindex="-1"></a><span class="ex">qgis_process</span> run wbt:D8Pointer  <span class="at">--</span> dem=<span class="va">$workdir</span>/fillsinks.tif output=<span class="va">$workdir</span>/flowdirect.tif</span>
@@ -565,7 +565,7 @@ code below.</li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler4" aria-expanded="false" aria-controls="collapseSpoiler4">
   <h3 class="accordion-header" id="headingSpoiler4">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Hint </h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
 <div class="accordion-body">
 <p>Step 1: Search the processing in the Processing Toolbox with QGIS
 interface, and fill in all the parameters.</p>
@@ -608,11 +608,11 @@ memory. You can look up for help after loading the module, as below.</p>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="coding-with-standalone-python">Coding with Standalone Python<a class="anchor" aria-label="anchor" href="#coding-with-standalone-python"></a></h2>
-<hr class="half-width"><p>Now let’s experiment on a different Channelization Threshold, 10,000,
+<hr class="half-width"><p>Now let’s experiment on a different Channelization Threshold, 10,000
 by coding with standalone Python Script.</p>
 <ul><li>Step 1: Start a new python script named “hydro_10_5.py” and copy in
 the code below. You should replace the path with your own where it is
-noted in parenthesis.</li>
+noted.</li>
 </ul><div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -625,7 +625,7 @@ noted in parenthesis.</li>
 <span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>qgs_app.initQgis()</span>
 <span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a></span>
 <span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a><span class="co">#add whiteboxTools path</span></span>
-<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a>module_path <span class="op">=</span> <span class="st">"/home/liu4201/apps/qgis_tools/WhiteboxTools_linux_amd64/WBT"</span>  (replace <span class="cf">with</span> your own)</span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a>module_path <span class="op">=</span> <span class="st">"/home/liu4201/apps/qgis_tools/WhiteboxTools_linux_amd64/WBT"</span> <span class="co">## replace with your own path</span></span>
 <span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a>sys.path.append(module_path)</span>
 <span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a></span>
 <span id="cb16-13"><a href="#cb16-13" tabindex="-1"></a><span class="co">#import processing tools</span></span>
@@ -635,7 +635,7 @@ noted in parenthesis.</li>
 <span id="cb16-17"><a href="#cb16-17" tabindex="-1"></a></span>
 <span id="cb16-18"><a href="#cb16-18" tabindex="-1"></a><span class="co">#Processing.initialize()</span></span>
 <span id="cb16-19"><a href="#cb16-19" tabindex="-1"></a><span class="co"># change work directory</span></span>
-<span id="cb16-20"><a href="#cb16-20" tabindex="-1"></a>path <span class="op">=</span><span class="st">"/scratch/negishi/liu4201/project/code_output/"</span>  <span class="op">**</span>(replace <span class="cf">with</span> your own)<span class="op">**</span></span>
+<span id="cb16-20"><a href="#cb16-20" tabindex="-1"></a>path <span class="op">=</span><span class="st">"/scratch/negishi/liu4201/project/code_output/"</span>  <span class="co">## replace with your own path</span></span>
 <span id="cb16-21"><a href="#cb16-21" tabindex="-1"></a>os.chdir(path)</span>
 <span id="cb16-22"><a href="#cb16-22" tabindex="-1"></a></span>
 <span id="cb16-23"><a href="#cb16-23" tabindex="-1"></a><span class="co">#for alg in QgsApplication.processingRegistry().algorithms():</span></span>
@@ -659,7 +659,7 @@ noted in parenthesis.</li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler5" aria-expanded="false" aria-controls="collapseSpoiler5">
   <h3 class="accordion-header" id="headingSpoiler5">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
 </button>
-<div id="collapseSpoiler5" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler5" aria-labelledby="headingSpoiler5">
+<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
 <div class="accordion-body">
 <p>Note 1: Refer <a href="https://www.whiteboxgeo.com/manual/wbt_book/available_tools/index.html" class="external-link">WhiteBoxTools
 User Manual</a> for the code to use the algorithm, “Copy as Python
@@ -696,8 +696,8 @@ parenthesis.</li>
 <span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=8 </span></span>
 <span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a><span class="co">#SBATCH --time=00:10:00</span></span>
 <span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a><span class="co">#SBATCH --job-name myhydro_job</span></span>
-<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a><span class="co">#SBATCH --output=/home/liu4201/jobs/hydro10_5.out  **(replace with your own)**</span></span>
-<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a><span class="co">#SBATCH --error=/home/liu4201/jobs/hydro10_5.out   **(replace with your own)**</span></span>
+<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a><span class="co">#SBATCH --output=/home/liu4201/jobs/hydro10_5.out  ## replace with your own path</span></span>
+<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a><span class="co">#SBATCH --error=/home/liu4201/jobs/hydro10_5.out   ## replace with your own path</span></span>
 <span id="cb18-12"><a href="#cb18-12" tabindex="-1"></a></span>
 <span id="cb18-13"><a href="#cb18-13" tabindex="-1"></a><span class="ex">module</span> reset</span>
 <span id="cb18-14"><a href="#cb18-14" tabindex="-1"></a><span class="ex">module</span> load qgis</span>
@@ -708,7 +708,7 @@ parenthesis.</li>
 <span id="cb18-19"><a href="#cb18-19" tabindex="-1"></a><span class="ex">monitor</span> cpu percent <span class="at">--sample-rate</span> 10 <span class="at">--total</span> <span class="op">&gt;</span> cpu1.log <span class="kw">&amp;</span></span>
 <span id="cb18-20"><a href="#cb18-20" tabindex="-1"></a><span class="ex">monitor</span> cpu memory <span class="at">--sample-rate</span> 10 <span class="at">--actual</span> <span class="at">-H</span> <span class="op">&gt;</span> mem1.log <span class="kw">&amp;</span></span>
 <span id="cb18-21"><a href="#cb18-21" tabindex="-1"></a></span>
-<span id="cb18-22"><a href="#cb18-22" tabindex="-1"></a><span class="ex">python</span> /home/liu4201/qgis_data/code/hydro_10_5.py  <span class="pp">**(</span>replace with your own<span class="pp">)**</span></span></code></pre>
+<span id="cb18-22"><a href="#cb18-22" tabindex="-1"></a><span class="ex">python</span> /home/liu4201/qgis_data/code/hydro_10_5.py  <span class="co">## replace with your own path</span></span></code></pre>
 </div>
 <ul><li>Step 3: Submit your job via running the code below in terminal.</li>
 </ul><div class="codewrapper sourceCode" id="cb19">
@@ -721,7 +721,7 @@ parenthesis.</li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler6" aria-expanded="false" aria-controls="collapseSpoiler6">
   <h3 class="accordion-header" id="headingSpoiler6">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
 </button>
-<div id="collapseSpoiler6" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler6" aria-labelledby="headingSpoiler6">
+<div id="collapseSpoiler6" class="accordion-collapse collapse" aria-labelledby="headingSpoiler6" data-bs-parent="#accordionSpoiler6">
 <div class="accordion-body">
 <p>The export QT_QPA_PLATFORM=offscreen command tells Qt (the GUI
 framework used by QGIS) to use the “offscreen” platform plugin.</p>
