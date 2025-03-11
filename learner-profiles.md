@@ -22,12 +22,14 @@ When performing geospatial computations involving multiple datasets, ensure they
 ### To learn more about QGIS:
 
 - [QGIS User Guide](https://docs.qgis.org/3.40/en/docs/user_manual/index.html)
+  - [Call alogorithms from Python Console] (https://docs.qgis.org/3.40/en/docs/user_manual/processing/console.html#calling-algorithms-from-the-python-console)
 
 - [QGIS Training Manual](https://docs.qgis.org/3.40/en/docs/training_manual/index.html#qgis-training-manual)
 
 - [A Gentle Introduction to GIS](https://docs.qgis.org/3.40/en/docs/gentle_gis_introduction/index.html)
 
 - [PyQGIS Developer Cookbook](https://docs.qgis.org/3.40/en/docs/pyqgis_developer_cookbook/index.html)
+  - [QGIS with standalone python](https://docs.qgis.org/3.40/en/docs/pyqgis_developer_cookbook/intro.html#using-pyqgis-in-standalone-scripts)
 
 ### To learn more about WhiteBoxTools:
 
