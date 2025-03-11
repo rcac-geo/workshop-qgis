@@ -12,7 +12,7 @@ title: Setup
 | 12:00 PM | Lunch Break |
 | 1:00 PM | Project: 	Exploring landscape around Purdue |
 | 2:30 PM | Break |
-| 3:00 PM | Coding with QGIS: Python Console |
+| 3:00 PM | Coding with QGIS: Python Console and more |
 | 4:30 PM | Wrap-Up & Discussion |
 
 
