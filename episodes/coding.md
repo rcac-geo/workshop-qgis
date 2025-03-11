@@ -170,7 +170,7 @@ processing.run("native:hillshade", {'INPUT':'merged_dem.tif','Z_FACTOR':1,'AZIMU
 
 ## Using processing from the command line
 
-QGIS includes the Processing Executor, a command-line tool that enables the execution of QGIS processing algorithms and models, including those from plugins, outside of the QGIS Desktop interface.
+QGIS includes the Processing Executor, a command-line tool that enables the execution of QGIS processing algorithms and models (23.8. Using Processing From the Command Line — QGIS Documentation  Documentation, n.d.), including those from plugins, outside of the QGIS Desktop interface.
 
 To use it, Let first close QGIS application, and then we will submit a job to HPC Cluster. 
 
