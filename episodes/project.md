@@ -234,7 +234,7 @@ We use the default settings here that typically place the light source in the no
 #### (4) Extract Streams
 
 * Step 1: search "ExtractStreams" in the Processing Toolbox.
-* Step 2: select "flowaccum" outputed from above procedure as the input and type output, set the Channelization Threshold as 1000,000, as below
+* Step 2: select "flowaccum" outputed from above procedure as the input and type output, set the Channelization Threshold as 1,000,000 as below
 
   ![](https://github.com/user-attachments/assets/78cec102-ddaf-42dc-ac85-015b1e487435)
 
@@ -245,7 +245,7 @@ We use the default settings here that typically place the light source in the no
 
 To better see the streams, you could uncheck other layers except the google map layer, and zoom in to compare the generated streams with the ones on the map.
 
-Or we have convert it to vector: Go to Raster -> Conversion -> Polygonize (Raster to Vector), as below
+Let's convert it to vector: Go to Raster -> Conversion -> Polygonize (Raster to Vector), as below
 
 ![](https://github.com/user-attachments/assets/a66ba8b9-90c8-4996-9062-291162c9f7b5)
 
@@ -261,7 +261,7 @@ Or we have convert it to vector: Go to Raster -> Conversion -> Polygonize (Raste
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::: spoiler
-### Exercise
+### homework
 Try different Channelization Threshold and compared the extracted streams.
 ![](https://github.com/user-attachments/assets/c8d469dd-babe-44a8-8f48-e9800d0a79dd)
 
@@ -312,9 +312,9 @@ All algorithms (including models) can be executed as a batch process. That is, t
   ![](https://github.com/user-attachments/assets/ee910f75-b1d1-439b-800d-7bc79a023dc4)
 
 :::::::::::::::: spoiler
-### Exercise
+### homework
 
-the smaller Channelization Threshold is, the more channels you generated, and the high resolution you got (As below shows more accurate Wetness Index)
+the smaller Channelization Threshold is, the more channels you generated, and the high resolution you got (As below shows more accurate Wetness Index, with Channelization Threshold, 1000)
 
   ![](https://github.com/user-attachments/assets/cfb23011-aab6-4214-98dc-6b8874c0a679)
   
