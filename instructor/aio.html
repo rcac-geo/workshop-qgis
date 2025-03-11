@@ -584,7 +584,7 @@ below.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <figure><img width="613" alt="Picture3" src="https://github.com/user-attachments/assets/f4d958c0-3acb-42a9-855e-4505cbca2c04" class="figure mx-auto d-block"></figure>
 </div>
@@ -648,7 +648,7 @@ layers.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <figure><img src="https://github.com/user-attachments/assets/e10386e9-d1c0-4736-8b9e-6618cf1a5db4" class="figure mx-auto d-block"></figure>
 </div>
@@ -672,7 +672,7 @@ above?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Yep, the hillshade should be in the North instead of the South. Let’s
 check data Properties and change looking.</p>
@@ -1757,6 +1757,28 @@ parenthesis.</li>
 <p>The export QT_QPA_PLATFORM=offscreen command tells Qt (the GUI
 framework used by QGIS) to use the “offscreen” platform plugin.</p>
 </div>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul>
+<li>To automate geospatial tasks with QGIS algorithms, we can use three
+coding approaches: the QGIS Python Console, standalone Python scripts,
+and command-line execution.</li>
+<li>For QGIS Python Console, data can be loaded in two ways depending on
+whether you want to add it to the QGIS map canvas.</li>
+<li>Standalone Python scripts and command-line execution allow us to
+submit jobs to HPC clusters, enabling enhanced automation of QGIS
+geospatial tasks.</li>
+<li>We monitor CPU and memory usage within jobs to guide our computation
+resource requests.</li>
+</ul>
 </div>
 </div>
 </div>
