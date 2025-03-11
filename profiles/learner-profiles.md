@@ -2,6 +2,8 @@
 title: Advice for Geospatial Computations
 ---
 
+## Advice for Geospatial Computations
+
 When performing geospatial computations involving multiple datasets, ensure they are all in the same Coordinate Reference System (CRS).
 
 * Why it's important:
