@@ -21,22 +21,22 @@ When performing geospatial computations involving multiple datasets, ensure they
 
 ### To learn more about QGIS:
 
-[QGIS User Guide](https://docs.qgis.org/3.40/en/docs/user_manual/index.html)
+- [QGIS User Guide](https://docs.qgis.org/3.40/en/docs/user_manual/index.html)
 
-[QGIS Training Manual](https://docs.qgis.org/3.40/en/docs/training_manual/index.html#qgis-training-manual)
+- [QGIS Training Manual](https://docs.qgis.org/3.40/en/docs/training_manual/index.html#qgis-training-manual)
 
-[A Gentle Introduction to GIS](https://docs.qgis.org/3.40/en/docs/gentle_gis_introduction/index.html)
+- [A Gentle Introduction to GIS](https://docs.qgis.org/3.40/en/docs/gentle_gis_introduction/index.html)
 
-[PyQGIS Developer Cookbook](https://docs.qgis.org/3.40/en/docs/pyqgis_developer_cookbook/index.html)
+- [PyQGIS Developer Cookbook](https://docs.qgis.org/3.40/en/docs/pyqgis_developer_cookbook/index.html)
 
 ### To learn more about WhiteBoxTools:
 
-[WhiteBoxTools User Manual](https://www.whiteboxgeo.com/manual/wbt_book/available_tools/index.html)
+- [WhiteBoxTools User Manual](https://www.whiteboxgeo.com/manual/wbt_book/available_tools/index.html)
 
 ### To learn more about monitor usage:
 
-[Monitor Manual](https://resource-monitor.readthedocs.io/en/latest/getting_started.html)
+- [Monitor Manual](https://resource-monitor.readthedocs.io/en/latest/getting_started.html)
 
 ### To learn more about submitting jobs on HPC Clusters:
 
-[Submit Jobs](https://www.rcac.purdue.edu/training/clusters201)
+- [Submit Jobs](https://www.rcac.purdue.edu/training/clusters201)
