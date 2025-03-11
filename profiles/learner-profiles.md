@@ -22,7 +22,7 @@ When performing geospatial computations involving multiple datasets, ensure they
 ### To learn more about QGIS:
 
 - [QGIS User Guide](https://docs.qgis.org/3.40/en/docs/user_manual/index.html)
-  - [Call alogorithms from Python Console] (https://docs.qgis.org/3.40/en/docs/user_manual/processing/console.html#calling-algorithms-from-the-python-console)
+  - [Call alogorithms from Python Console](https://docs.qgis.org/3.40/en/docs/user_manual/processing/console.html#calling-algorithms-from-the-python-console)
 
 - [QGIS Training Manual](https://docs.qgis.org/3.40/en/docs/training_manual/index.html#qgis-training-manual)
 
