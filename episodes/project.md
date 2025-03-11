@@ -83,7 +83,7 @@ The Wetness Index, often referred to as the Topographic Wetness Index (TWI), is 
 * The TWI is based on the principle that areas with a large upslope contributing area and a shallow slope are more likely to accumulate water.
 * It combines information about the upslope contributing area (the area that drains into a given point) and the slope gradient.
 
-* $ TWI = ln(\dfrac{\alpha}{(tan(\beta)})$
+* $TWI = ln(\dfrac{\alpha}{(tan(\beta)})$
   where $\alpha$ is specific catchment area (i.e. the upslope contributing area per unit contour length), $\beta$ is the local slope angle.
 
 
