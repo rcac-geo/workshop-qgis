@@ -492,7 +492,7 @@ Raster data storage size is heavily dependant on resolution.</li>
 <h4 id="load-spatial-data">Load Spatial Data<a class="anchor" aria-label="anchor" href="#load-spatial-data"></a></h4>
 <div class="section level5">
 <h5 id="load-vector-data-from-files">(1) Load vector data from files<a class="anchor" aria-label="anchor" href="#load-vector-data-from-files"></a></h5>
-<ul><li>Step1: Layer | Add Layer | Add Vector Layer</li>
+<ul><li>Step1: Layer -&gt; Add Layer -&gt; Add Vector Layer</li>
 </ul><figure><img width="554" alt="Picture2" src="https://github.com/user-attachments/assets/58bc28a8-7fe8-4dfd-8a54-495dbbfe1e6d" class="figure mx-auto d-block"></figure><ul><li>Step2: Input your path of “alaska.shp” and hit “add”</li>
 </ul><figure><img src="https://github.com/user-attachments/assets/b68a9319-68f0-4502-9bb5-d3d6b87b33d0" class="figure mx-auto d-block"></figure><ul><li>Step 3: You will see the shapefile has been added to Layers as
 below.</li>
@@ -512,7 +512,7 @@ below.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <figure><img width="613" alt="Picture3" src="https://github.com/user-attachments/assets/f4d958c0-3acb-42a9-855e-4505cbca2c04" class="figure mx-auto d-block"></figure></div>
 </div>
@@ -529,20 +529,22 @@ below.</li>
 Reference System (CRS) from sources like a shapefile’s .prj file. If no
 CRS information is found, QGIS prompts you to specify it. You can modify
 this behavior in Settings -&gt; Options -&gt; CRS to automatically
-assign either the project’s CRS or a designated default CRS.</p>
+assign either the project’s CRS or a designated default CRS. (Graser et
+al., 2017)</p>
 </div>
 </div>
 </div>
 </div>
 <div class="section level5">
 <h5 id="load-csv-files">(2) Load CSV files<a class="anchor" aria-label="anchor" href="#load-csv-files"></a></h5>
-<ul><li>Add Delimited Text Layer option available via the menu entry by
-going to Layer | Add Layer | Add Delimited Text Layer </li>
-</ul><figure><img width="893" alt="Screenshot 2025-02-25 at 2 41 23 PM" src="https://github.com/user-attachments/assets/4ccee5c6-a3d0-4292-8751-04b044d875b0" class="figure mx-auto d-block"></figure><ul><li>You will see the shapefile has been added to Layers as below.</li>
+<ul><li>Step 1: Layer -&gt; Add Layer -&gt; Add Delimited Text Layer </li>
+<li>Step 2: Make changes as the red box in the picture below.</li>
+</ul><figure><img width="893" alt="Screenshot 2025-02-25 at 2 41 23 PM" src="https://github.com/user-attachments/assets/4ccee5c6-a3d0-4292-8751-04b044d875b0" class="figure mx-auto d-block"></figure><ul><li>Step 3: You will see the shapefile has been added to Layers as
+below.</li>
 </ul><figure><img width="612" alt="Picture4" src="https://github.com/user-attachments/assets/db0dd043-5c42-48c2-b929-c48f24f010b6" class="figure mx-auto d-block"></figure></div>
 <div class="section level5">
 <h5 id="load-raster-files">(3) Load Raster files<a class="anchor" aria-label="anchor" href="#load-raster-files"></a></h5>
-<ul><li>Step1: Layer | Add Layer | Add Raster Layer</li>
+<ul><li>Step1: Layer -&gt; Add Layer -&gt; Add Raster Layer</li>
 <li>Step2: Input your path of “landcover.img” and hit “add”</li>
 </ul><figure><img src="https://github.com/user-attachments/assets/6566ea7f-8ca9-4def-96b3-ae16671039bf" class="figure mx-auto d-block"></figure><ul><li>Step 3: You will see the raster has been added to Layers as
 below.</li>
@@ -563,7 +565,7 @@ layers.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <figure><img src="https://github.com/user-attachments/assets/e10386e9-d1c0-4736-8b9e-6618cf1a5db4" class="figure mx-auto d-block"></figure></div>
 </div>
@@ -586,7 +588,7 @@ above?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Yep, the hillshade should be in the North instead of the South. Let’s
 check data Properties and change looking.</p>
@@ -609,8 +611,8 @@ found the airport with elevation lower than 1000 ft.</p>
 Expression as below:</li>
 </ul><figure><img src="https://github.com/user-attachments/assets/98e26b3a-6329-41eb-b769-3cb38434cce5" class="figure mx-auto d-block"></figure><ul><li>Step3: Hit “OK” and now only airport with elevation lower than 1000
 ft show up.</li>
-<li>Step4-Export data: right click the data and selelct “Export” | “Save
-Features As”. Input information as figure below and hit “OK”.</li>
+<li>Step4-Export data: right click the data and selelct “Export” -&gt;
+“Save Features As”. Input information as figure below and hit “OK”.</li>
 </ul><figure><img src="https://github.com/user-attachments/assets/5be55894-3ede-42bd-a888-36efda92b202" class="figure mx-auto d-block"></figure></div>
 <div class="section level4">
 <h4 id="raster-calculation">Raster Calculation<a class="anchor" aria-label="anchor" href="#raster-calculation"></a></h4>
@@ -625,8 +627,9 @@ for example.</p>
 “Calculated” as the Output file.</li>
 </ul><figure><img src="https://github.com/user-attachments/assets/50d49743-2cb9-466a-806e-a077f31629d0" class="figure mx-auto d-block"></figure><ul><li>Step3: Hit “Run” and change the looking of output.</li>
 </ul><figure><img src="https://github.com/user-attachments/assets/a6e51da6-479c-4008-ad97-05333452897d" class="figure mx-auto d-block"></figure><ul><li>You have already written out the output file. But if you didn’t, you
-could always export the data via right clicking it and select “Export” |
-“Save As”. Then input information as figure below and hit “OK”.</li>
+could always export the data via right clicking it and select “Export”
+-&gt; “Save As”. Then input information as figure below and hit
+“OK”.</li>
 </ul><figure><img src="https://github.com/user-attachments/assets/8074e204-dc55-4533-af9b-0dc1e85fc0d0" class="figure mx-auto d-block"></figure><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
