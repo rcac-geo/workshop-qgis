@@ -32,7 +32,7 @@ exercises: 2
 
 <img width="1048" alt="Screenshot 2025-03-04 at 11 00 04 AM" src="https://github.com/user-attachments/assets/79248436-7123-46cc-814c-d09074375c7f" />
 
-Let's create a output directory through Terminal, you should replace trainXX with your training account.
+Let's create an output directory through Terminal, you should replace trainXX with your training account.
 
 ```sh
 mkdir -p /scratch/negishi/trainXX/project/code_output
@@ -187,8 +187,8 @@ To use it, Let first close QGIS application, and then we will submit a job to HP
 #SBATCH --cpus-per-task=8 
 #SBATCH --time=00:10:00
 #SBATCH --job-name myhydro_job
-#SBATCH --output=/home/liu4201/jobs/hydro10_4.out
-#SBATCH --error=/home/liu4201/jobs/hydro10_4.out  
+#SBATCH --output=/home/liu4201/jobs/hydro10_4.out    ## replace with your own path
+#SBATCH --error=/home/liu4201/jobs/hydro10_4.out     ## replace with your own path
 
 module reset
 module load qgis
@@ -199,7 +199,7 @@ export QT_QPA_PLATFORM=offscreen
 monitor cpu percent --sample-rate 10 --total > cpu.log &
 monitor cpu memory --sample-rate 10 --actual -H > mem.log &
 
-workdir=/scratch/negishi/liu4201/project/code_output
+workdir=/scratch/negishi/liu4201/project/code_output  ## replace with your own path
 
 qgis_process run wbt:FillDepressionsWangAndLiu  -- dem=$workdir/merged_dem.tif output=$workdir/fillsinks.tif
 qgis_process run wbt:D8Pointer  -- dem=$workdir/fillsinks.tif output=$workdir/flowdirect.tif
@@ -243,9 +243,9 @@ qgis_process --help
 
 ## Coding with Standalone Python
 
-Now let's experiment on a different Channelization Threshold, 10,000, by coding with standalone Python Script. 
+Now let's experiment on a different Channelization Threshold, 10,000 by coding with standalone Python Script. 
 
-* Step 1: Start a new python script named "hydro_10_5.py" and copy in the code below. You should replace the path with your own where it is noted in parenthesis.
+* Step 1: Start a new python script named "hydro_10_5.py" and copy in the code below. You should replace the path with your own where it is noted.
 
 ```python
 import os
@@ -257,7 +257,7 @@ qgs_app = QgsApplication([], False)
 qgs_app.initQgis()
 
 #add whiteboxTools path
-module_path = "/home/liu4201/apps/qgis_tools/WhiteboxTools_linux_amd64/WBT"  (replace with your own)
+module_path = "/home/liu4201/apps/qgis_tools/WhiteboxTools_linux_amd64/WBT" ## replace with your own path
 sys.path.append(module_path)
 
 #import processing tools
@@ -267,7 +267,7 @@ import whitebox as wbtool
 
 #Processing.initialize()
 # change work directory
-path ="/scratch/negishi/liu4201/project/code_output/"  **(replace with your own)**
+path ="/scratch/negishi/liu4201/project/code_output/"  ## replace with your own path
 os.chdir(path)
 
 #for alg in QgsApplication.processingRegistry().algorithms():
@@ -316,8 +316,8 @@ Processing.initialize()
 #SBATCH --cpus-per-task=8 
 #SBATCH --time=00:10:00
 #SBATCH --job-name myhydro_job
-#SBATCH --output=/home/liu4201/jobs/hydro10_5.out  **(replace with your own)**
-#SBATCH --error=/home/liu4201/jobs/hydro10_5.out   **(replace with your own)**
+#SBATCH --output=/home/liu4201/jobs/hydro10_5.out  ## replace with your own path
+#SBATCH --error=/home/liu4201/jobs/hydro10_5.out   ## replace with your own path
 
 module reset
 module load qgis
@@ -328,7 +328,7 @@ export QT_QPA_PLATFORM=offscreen
 monitor cpu percent --sample-rate 10 --total > cpu1.log &
 monitor cpu memory --sample-rate 10 --actual -H > mem1.log &
 
-python /home/liu4201/qgis_data/code/hydro_10_5.py  **(replace with your own)**
+python /home/liu4201/qgis_data/code/hydro_10_5.py  ## replace with your own path
 ```
 
 * Step 3: Submit your job via running the code below in terminal.
