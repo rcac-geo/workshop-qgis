@@ -16,6 +16,6 @@ title: 'Reference and Additional Reading'
 
 [Submit Jobs](https://www.rcac.purdue.edu/training/clusters201)
 
-QGIS: Becoming a GIS Power User, By Anita Graser, Ben Mearns, Alex Mandel, Víctor Olaya Ferrero, Alexander Bruy (2017)
+Graser, A., Mearns, B., Mandel, A., Olaya Ferrero, V., & Bruy, A. (2017). QGIS: Becoming a GIS power user. Packt Publishing.
 
 This workshop is derived from template that is Copyright (c) The Carpentries and, where practical, linking to https://carpentries.org/ (license: https://creativecommons.org/licenses/by/4.0/). 
