@@ -292,7 +292,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction</h1>
-        <p>Last updated on 2025-03-04 |
+        <p>Last updated on 2025-03-11 |
 
         <a href="https://github.com/rcac-geo/workshop-qgis/edit/main/episodes/introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -512,7 +512,7 @@ below.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <figure><img width="613" alt="Picture3" src="https://github.com/user-attachments/assets/f4d958c0-3acb-42a9-855e-4505cbca2c04" class="figure mx-auto d-block"></figure></div>
 </div>
@@ -525,12 +525,11 @@ below.</li>
 <div class="callout-inner">
 <h3 class="callout-title">Callout</h3>
 <div class="callout-content">
-<p>Whenever we load a data source, QGIS looks for usable CRS
-information, for example, in the shapefile’s .prj file. If QGIS cannot
-find any usable information, by default, it will ask you to specify the
-CRS manually. This behavior can be changed by going
-to Settings | Options | CRS to always use either the project CRS or a
-default CRS.</p>
+<p>When adding a data source, QGIS attempts to identify its Coordinate
+Reference System (CRS) from sources like a shapefile’s .prj file. If no
+CRS information is found, QGIS prompts you to specify it. You can modify
+this behavior in Settings -&gt; Options -&gt; CRS to automatically
+assign either the project’s CRS or a designated default CRS.</p>
 </div>
 </div>
 </div>
@@ -564,7 +563,7 @@ layers.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <figure><img src="https://github.com/user-attachments/assets/e10386e9-d1c0-4736-8b9e-6618cf1a5db4" class="figure mx-auto d-block"></figure></div>
 </div>
@@ -587,7 +586,7 @@ above?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Yep, the hillshade should be in the North instead of the South. Let’s
 check data Properties and change looking.</p>
@@ -708,7 +707,7 @@ any links that you are not going to use.
   "url": "https://rcac-geo.github.io/workshop-qgis/instructor/introduction.html",
   "identifier": "https://rcac-geo.github.io/workshop-qgis/instructor/introduction.html",
   "dateCreated": "2025-02-18",
-  "dateModified": "2025-03-04",
+  "dateModified": "2025-03-11",
   "datePublished": "2025-03-11"
 }
 

@@ -323,7 +323,7 @@
         
 <section id="aio-introduction"><p>Content from <a href="introduction.html">Introduction</a></p>
 <hr>
-<p>Last updated on 2025-03-04 |
+<p>Last updated on 2025-03-11 |
 
         <a href="https://github.com/rcac-geo/workshop-qgis/edit/main/episodes/introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -581,7 +581,7 @@ below.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <figure><img width="613" alt="Picture3" src="https://github.com/user-attachments/assets/f4d958c0-3acb-42a9-855e-4505cbca2c04" class="figure mx-auto d-block"></figure>
 </div>
@@ -595,12 +595,11 @@ below.</li>
 <div class="callout-inner">
 <h3 class="callout-title">Callout</h3>
 <div class="callout-content">
-<p>Whenever we load a data source, QGIS looks for usable CRS
-information, for example, in the shapefile’s .prj file. If QGIS cannot
-find any usable information, by default, it will ask you to specify the
-CRS manually. This behavior can be changed by going
-to Settings | Options | CRS to always use either the project CRS or a
-default CRS.</p>
+<p>When adding a data source, QGIS attempts to identify its Coordinate
+Reference System (CRS) from sources like a shapefile’s .prj file. If no
+CRS information is found, QGIS prompts you to specify it. You can modify
+this behavior in Settings -&gt; Options -&gt; CRS to automatically
+assign either the project’s CRS or a designated default CRS.</p>
 </div>
 </div>
 </div>
@@ -645,7 +644,7 @@ layers.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <figure><img src="https://github.com/user-attachments/assets/e10386e9-d1c0-4736-8b9e-6618cf1a5db4" class="figure mx-auto d-block"></figure>
 </div>
@@ -669,7 +668,7 @@ above?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Yep, the hillshade should be in the North instead of the South. Let’s
 check data Properties and change looking.</p>
@@ -935,7 +934,7 @@ slope angle.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <figure><img width="1003" alt="Screenshot 2025-03-04 at 2 21 14 PM" src="https://github.com/user-attachments/assets/c6e10ffc-1d6c-458d-aa8e-b415181acd22" class="figure mx-auto d-block"></figure>
 </div>
@@ -1147,7 +1146,7 @@ vector</div>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Output </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <figure><img src="https://github.com/user-attachments/assets/3cf31f5f-78f4-427c-b045-e53013f5b33e" class="figure mx-auto d-block"></figure>
 </div>
@@ -1162,7 +1161,7 @@ vector</div>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Exercise </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>Try different Channelization Threshold and compared the extracted
 streams. <img src="https://github.com/user-attachments/assets/c8d469dd-babe-44a8-8f48-e9800d0a79dd" class="figure"></p>
@@ -1184,7 +1183,7 @@ the InputStreams File and type output, as below</li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
   <h3 class="accordion-header" id="headingSpoiler3">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Output </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <figure><img src="https://github.com/user-attachments/assets/0f01bd47-2b98-4710-bd7e-b7c5e0e2adda" class="figure mx-auto d-block"></figure>
 </div>
@@ -1207,7 +1206,7 @@ instances in one shot, as below</li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler4" aria-expanded="false" aria-controls="collapseSpoiler4">
   <h3 class="accordion-header" id="headingSpoiler4">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
 <div class="accordion-body">
 <p>All algorithms (including models) can be executed as a batch process.
 That is, they can be executed using not just a single set of inputs, but
@@ -1251,7 +1250,7 @@ Layer, and select “Properties” and set as below</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler5" aria-expanded="false" aria-controls="collapseSpoiler5">
   <h3 class="accordion-header" id="headingSpoiler5">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Exercise </h3>
 </button>
-<div id="collapseSpoiler5" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler5" aria-labelledby="headingSpoiler5">
+<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
 <div class="accordion-body">
 <p>the smaller Channelization Threshold is, the more channels you
 generated, and the high resolution you got (As below shows more accurate
