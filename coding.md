@@ -342,3 +342,12 @@ sbatch myjob
 The export QT_QPA_PLATFORM=offscreen command tells Qt (the GUI framework used by QGIS) to use the "offscreen" platform plugin.
 
 :::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: keypoints 
+
+- To automate geospatial tasks with QGIS algorithms, we can use three coding approaches: the QGIS Python Console, standalone Python scripts, and command-line execution.
+- For QGIS Python Console, data can be loaded in two ways depending on whether you want to add it to the QGIS map canvas.
+- Standalone Python scripts and command-line execution allow us to submit jobs to HPC clusters, enabling enhanced automation of QGIS geospatial tasks.
+- We monitor CPU and memory usage within jobs to guide our computation resource requests.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
