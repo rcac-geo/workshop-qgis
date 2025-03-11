@@ -178,9 +178,7 @@ try yourself to add airports.shp to layers.
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-Whenever we load a data source, QGIS looks for usable CRS information, for example, in the shapefile's .prj file. 
-If QGIS cannot find any usable information, by default, it will ask you to specify the CRS manually. 
-This behavior can be changed by going to Settings | Options | CRS to always use either the project CRS or a default CRS.
+When adding a data source, QGIS attempts to identify its Coordinate Reference System (CRS) from sources like a shapefile's .prj file. If no CRS information is found, QGIS prompts you to specify it. You can modify this behavior in Settings -> Options -> CRS to automatically assign either the project's CRS or a designated default CRS.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
