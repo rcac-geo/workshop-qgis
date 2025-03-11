@@ -2,6 +2,8 @@
 title: 'Reference'
 ---
 
+23.8. Using processing from the command line — QGIS Documentation  documentation. (n.d.). https://docs.qgis.org/3.40/en/docs/user_manual/processing/standalone.html
+
 25.3. QGIS Python console — QGIS Documentation  documentation. (n.d.). https://docs.qgis.org/3.40/en/docs/user_manual/plugins/python_console.html
 
 Graser, A., Mearns, B., Mandel, A., Olaya Ferrero, V., & Bruy, A. (2017). QGIS: Becoming a GIS power user. Packt Publishing.
