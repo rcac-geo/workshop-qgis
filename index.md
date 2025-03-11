@@ -21,4 +21,4 @@ What You'll Learn:
   * Stream and watershed
   * Raster to Vector
 
-3. **Coding with QGIS: Python Console.** Take your analysis to the next level by learning how to write Python scripts using the QGIS Python Console. You'll learn how to automate geospatial tasks, such as replicating the same tasks you performed in the "Exploring Landscape around Purdue" project, but this time using code and submiting jobs to HPC clusters. By automating these tasks, you'll be able to streamline your workflow and increase efficiency.
+3. **Coding with QGIS: Python Console and more.** Take your analysis to the next level by learning how to write scripts using the QGIS Python Console and more. You'll learn how to automate geospatial tasks, such as replicating the same tasks you performed in the "Exploring Landscape around Purdue" project, but this time using code and submiting jobs to HPC clusters. By automating these tasks, you'll be able to streamline your workflow and increase efficiency.
