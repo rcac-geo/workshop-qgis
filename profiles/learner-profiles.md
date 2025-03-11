@@ -16,3 +16,27 @@ When performing geospatial computations involving multiple datasets, ensure they
   - Unify: If the CRSs differ, use geoprocessing tools (e.g., "reproject," "project raster") to transform all datasets to a single, consistent CRS.
   - Choose wisely: Select a CRS that is appropriate for your study area and the type of analysis you are performing. For example, projected coordinate systems for smaller areas, and geographic coordinate systems for global analysis.
   - Document: keep records of the original CRS of each dataset, and the CRS that you reprojected the data to. This will help with reproducibility.
+
+## Additional Reading
+
+### To learn more about QGIS:
+
+[QGIS User Guide](https://docs.qgis.org/3.40/en/docs/user_manual/index.html)
+
+[QGIS Training Manual](https://docs.qgis.org/3.40/en/docs/training_manual/index.html#qgis-training-manual)
+
+[A Gentle Introduction to GIS](https://docs.qgis.org/3.40/en/docs/gentle_gis_introduction/index.html)
+
+[PyQGIS Developer Cookbook](https://docs.qgis.org/3.40/en/docs/pyqgis_developer_cookbook/index.html)
+
+### To learn more about WhiteBoxTools:
+
+[WhiteBoxTools User Manual](https://www.whiteboxgeo.com/manual/wbt_book/available_tools/index.html)
+
+### To learn more about monitor usage:
+
+[Monitor Manual](https://resource-monitor.readthedocs.io/en/latest/getting_started.html)
+
+### To learn more about submitting jobs on HPC Clusters:
+
+[Submit Jobs](https://www.rcac.purdue.edu/training/clusters201)
