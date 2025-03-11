@@ -191,6 +191,12 @@ Search "Hillshade" in Processing Toolbox, and input the elevation layer, paramet
 
 ![](https://github.com/user-attachments/assets/fcddfdc5-0859-405d-873d-913f2ee6c1db)
 
+:::::::::::::::::::::::: spoiler 
+
+We use the default settings here that typically place the light source in the northwest. It is a common convention in cartography for visualizing topography. (Vertical Views | GEOG 486: Cartography and Visualization, n.d.)
+
+:::::::::::::::::::::::::::::::::
+
 ## Analyze Hydrology
 
 #### (1) Fill Sinks
