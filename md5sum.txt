@@ -9,5 +9,5 @@
 "episodes/coding.md" "25b3f01b0432e7809e123e0c78dacf5f" "site/built/coding.md" "2025-03-11"
 "instructors/instructor-notes.md" "cae72b6712578d74a49fea7513099f8c" "site/built/instructor-notes.md" "2023-03-16"
 "learners/reference.md" "be579263a887bf2b79433eb48ea4ddfa" "site/built/reference.md" "2025-03-11"
-"learners/setup.md" "33750af8b0db561685d2d52def79d08c" "site/built/setup.md" "2025-03-04"
+"learners/setup.md" "594b6b5a2cca082e4c453c368fb0b2a6" "site/built/setup.md" "2025-03-11"
 "profiles/learner-profiles.md" "5642a07c9214d230805537f59919742e" "site/built/learner-profiles.md" "2025-03-11"
