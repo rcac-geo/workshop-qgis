@@ -23,7 +23,7 @@ exercises: 2
 
 - The QGIS Python Console is an interactive shell for Python command executions.
 - It also has a Python file editor that allows you to edit and save your Python scripts.
-- Modules from QGIS (analysis, core, gui, server, processing, 3d) and Qt (QtCore, QtGui, QtNetwork, QtWidgets, QtXml) as well as Python’s math, os, re and sys modules are already imported and can be used directly.
+- Modules from QGIS (analysis, core, gui, server, processing, 3d) and Qt (QtCore, QtGui, QtNetwork, QtWidgets, QtXml) as well as Python’s math, os, re and sys modules are already imported and can be used directly (25.3. QGIS Python Console — QGIS Documentation  Documentation, n.d.).
 
   The screenshots below show how to open QGIS Python Console, and how it looks like.
 
