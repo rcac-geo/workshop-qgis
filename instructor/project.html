@@ -434,17 +434,21 @@ contributing area and a shallow slope are more likely to accumulate
 water.</p></li>
 <li><p>It combines information about the upslope contributing area (the
 area that drains into a given point) and the slope gradient.</p></li>
-<li><p><span class="math inline">\(TWI =
-ln(\dfrac{\alpha}{(tan(\beta)})\)</span> where <span class="math inline">\(\alpha\)</span> is specific catchment area
-(i.e. the upslope contributing area per unit contour length), <span class="math inline">\(\beta\)</span> is the local slope angle.</p></li>
-</ul><div id="challenge1" class="callout challenge">
+<li>
+<p><span class="math inline">\(TWI =
+ln(\dfrac{\alpha}{tan\beta})\)</span></p>
+<p>where <span class="math inline">\(\alpha\)</span> is specific
+catchment area (i.e. the upslope contributing area per unit contour
+length), <span class="math inline">\(\beta\)</span> is the local slope
+angle.</p>
+</li>
+</ul><div id="load-data" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<div id="load-data" class="callout-inner">
+<h3 class="callout-title">Load Data</h3>
 <div class="callout-content">
-<p>Load Data:</p>
 <p>Let’s first load the two rasters in data directory.</p>
 </div>
 </div>
@@ -454,7 +458,7 @@ ln(\dfrac{\alpha}{(tan(\beta)})\)</span> where <span class="math inline">\(\alph
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <figure><img width="1003" alt="Screenshot 2025-03-04 at 2 21 14 PM" src="https://github.com/user-attachments/assets/c6e10ffc-1d6c-458d-aa8e-b415181acd22" class="figure mx-auto d-block"></figure></div>
 </div>
@@ -467,7 +471,7 @@ ln(\dfrac{\alpha}{(tan(\beta)})\)</span> where <span class="math inline">\(\alph
 <p>QuickMapServices (QMS) is a valuable plugin for QGIS that simplifies
 the process of adding and using a vast array of online basemaps and web
 mapping services.</p>
-<ul><li>Go to Plugins | Manage and Install Plugins</li>
+<ul><li>Go to Plugins -&gt; Manage and Install Plugins</li>
 <li>Search “QuickMapSevices” and click “Install Plugin”</li>
 <li>Now click “Search QMS” and search “Google Maps”, as below.</li>
 </ul><figure><img width="1355" alt="Screenshot 2025-03-04 at 12 11 27 PM" src="https://github.com/user-attachments/assets/07c1ee52-da62-4c9f-8918-4f1b6f234117" class="figure mx-auto d-block"></figure><figure><img width="257" alt="Screenshot 2025-03-04 at 12 11 54 PM" src="https://github.com/user-attachments/assets/d7f3ddf9-624e-46a8-9267-120d63e56d5c" class="figure mx-auto d-block"></figure><figure><img width="278" alt="Picture6" src="https://github.com/user-attachments/assets/098c0340-c254-4bbd-ad98-21ca9cf31849" class="figure mx-auto d-block"></figure></div>
@@ -478,7 +482,7 @@ platform that offers a wide range of geospatial analysis tasks including
 DEM analysis, hydrological modeling and more.</p>
 <ul><li>
 <p>Step 1: Install WhiteboxTools for QGIS</p>
-<ul><li>go to Plugins | Manage and Install Plugins</li>
+<ul><li>go to Plugins -&gt; Manage and Install Plugins</li>
 <li>search “WhiteboxTools for QGIS” and click “Install Plugin”</li>
 </ul></li>
 <li>
@@ -502,8 +506,8 @@ and download.</li>
 </li>
 <li>
 <p>Step 4: Configurate it</p>
-<ul><li><p>go to Settings | options | Processing | providers |
-WhiteboxTools</p></li>
+<ul><li><p>go to Settings -&gt; options -&gt; Processing -&gt; providers
+-&gt; WhiteboxTools</p></li>
 <li>
 <p>go to WhiteboxTools executable and double click the content and
 click “…” to set it as “whitebox_tools” in your unzipped directory(the
@@ -603,7 +607,7 @@ stream10_6 layer has been added to Layers.</p></li>
 <p>To better see the streams, you could uncheck other layers except the
 google map layer, and zoom in to compare the generated streams with the
 ones on the map.</p>
-<p>Or we have convert it to vector: Go to Raster | Conversion |
+<p>Or we have convert it to vector: Go to Raster -&gt; Conversion -&gt;
 Polygonize (Raster to Vector), as below</p>
 <figure><img src="https://github.com/user-attachments/assets/a66ba8b9-90c8-4996-9062-291162c9f7b5" class="figure mx-auto d-block"></figure><figure><img src="https://github.com/user-attachments/assets/70fa3c47-ce96-4256-9b2c-18cd91ee0a32" alt="you can choose different file format of vector" class="figure mx-auto d-block"><div class="figcaption">you can choose different file format of
 vector</div>
@@ -612,7 +616,7 @@ vector</div>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Output </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <figure><img src="https://github.com/user-attachments/assets/3cf31f5f-78f4-427c-b045-e53013f5b33e" class="figure mx-auto d-block"></figure></div>
 </div>
@@ -626,7 +630,7 @@ vector</div>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Exercise </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <p>Try different Channelization Threshold and compared the extracted
 streams. <img src="https://github.com/user-attachments/assets/c8d469dd-babe-44a8-8f48-e9800d0a79dd" class="figure"></p>
@@ -645,7 +649,7 @@ the InputStreams File and type output, as below</li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
   <h3 class="accordion-header" id="headingSpoiler3">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Output </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <figure><img src="https://github.com/user-attachments/assets/0f01bd47-2b98-4710-bd7e-b7c5e0e2adda" class="figure mx-auto d-block"></figure></div>
 </div>
@@ -665,7 +669,7 @@ instances in one shot, as below</li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler4" aria-expanded="false" aria-controls="collapseSpoiler4">
   <h3 class="accordion-header" id="headingSpoiler4">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
 <div class="accordion-body">
 <p>All algorithms (including models) can be executed as a batch process.
 That is, they can be executed using not just a single set of inputs, but
@@ -703,7 +707,7 @@ Layer, and select “Properties” and set as below</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler5" aria-expanded="false" aria-controls="collapseSpoiler5">
   <h3 class="accordion-header" id="headingSpoiler5">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Exercise </h3>
 </button>
-<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
+<div id="collapseSpoiler5" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler5" aria-labelledby="headingSpoiler5">
 <div class="accordion-body">
 <p>the smaller Channelization Threshold is, the more channels you
 generated, and the high resolution you got (As below shows more accurate
