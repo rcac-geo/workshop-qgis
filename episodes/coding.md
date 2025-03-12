@@ -197,7 +197,7 @@ module load monitor
 export QT_QPA_PLATFORM=offscreen
 
 monitor cpu percent --sample-rate 10 --total > cpu.log &
-monitor cpu memory --sample-rate 10 --actual -H > mem.log &
+monitor cpu memory --sample-rate 10 --percent > mem.log &
 
 workdir=/scratch/negishi/liu4201/project/code_output  ## replace with your own path
 
@@ -326,7 +326,7 @@ module load monitor
 export QT_QPA_PLATFORM=offscreen
 
 monitor cpu percent --sample-rate 10 --total > cpu1.log &
-monitor cpu memory --sample-rate 10 --actual -H > mem1.log &
+monitor cpu memory --sample-rate 10 --percent > mem1.log &
 
 python /home/liu4201/qgis_data/code/hydro_10_5.py  ## replace with your own path
 ```
