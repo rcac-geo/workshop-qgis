@@ -223,7 +223,7 @@
       </button>
     </div><!--/div.accordion-header-->
 
-    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#qgis-python-console">QGIS Python Console</a></li>
 <li><a href="#using-processing-from-the-command-line">Using processing from the command line</a></li>
@@ -348,15 +348,15 @@ trainXX with your training account.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /scratch/negishi/trainXX/project/code_output</span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /scratch/negishi/trainXX/project/code_output</span></code></pre>
 </div>
 <p>Let’s copy the code below to the python console.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># change work directory</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>path <span class="op">=</span><span class="st">"/scratch/negishi/trainXX/project/code_output"</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>os.chdir(path)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="co"># change work directory</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a>path <span class="op">=</span><span class="st">"/scratch/negishi/trainXX/project/code_output"</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a>os.chdir(path)</span></code></pre>
 </div>
 <div class="section level3">
 <h3 id="load-data">Load Data<a class="anchor" aria-label="anchor" href="#load-data"></a></h3>
@@ -374,12 +374,12 @@ necessary if you just do computation and do not visualize data.</p></li>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>vectorfile <span class="op">=</span><span class="st">"/scratch/negishi/liu4201/project/output/stream10_6.geojson"</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co"># The format is:</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># vlayer = QgsVectorLayer(data_source, layer_name, provider_name)</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>vlayer <span class="op">=</span> QgsVectorLayer(vectorfile, <span class="st">"stream10_6"</span>, <span class="st">"ogr"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a>vectorfile <span class="op">=</span><span class="st">"/scratch/negishi/liu4201/project/output/stream10_6.geojson"</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a><span class="co"># The format is:</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1" aria-label="code-block-3-4"></a><span class="co"># vlayer = QgsVectorLayer(data_source, layer_name, provider_name)</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1" aria-label="code-block-3-6"></a>vlayer <span class="op">=</span> QgsVectorLayer(vectorfile, <span class="st">"stream10_6"</span>, <span class="st">"ogr"</span>)</span></code></pre>
 </div>
 <div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
@@ -401,10 +401,10 @@ the map.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> vlayer.isValid():</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Layer failed to load!"</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>    QgsProject.instance().addMapLayer(vlayer) <span class="co"># load the layer</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="cf">if</span> <span class="kw">not</span> vlayer.isValid():</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a>    <span class="bu">print</span>(<span class="st">"Layer failed to load!"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a><span class="cf">else</span>:</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1" aria-label="code-block-4-4"></a>    QgsProject.instance().addMapLayer(vlayer) <span class="co"># load the layer</span></span></code></pre>
 </div>
 <div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
@@ -424,19 +424,19 @@ the map.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># use the firt way to load rasterfile 1</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co"># load raster to memory</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>path_to_tif <span class="op">=</span> rasterpath <span class="op">+</span> <span class="st">"USGS_1M_16_x50y448_IN_Indiana_Statewide_LiDAR_2017_B17.tif"</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>rlayer <span class="op">=</span> QgsRasterLayer(path_to_tif, <span class="st">"dem"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="co"># use the firt way to load rasterfile 1</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a><span class="co"># load raster to memory</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a>path_to_tif <span class="op">=</span> rasterpath <span class="op">+</span> <span class="st">"USGS_1M_16_x50y448_IN_Indiana_Statewide_LiDAR_2017_B17.tif"</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a>rlayer <span class="op">=</span> QgsRasterLayer(path_to_tif, <span class="st">"dem"</span>)</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># added raster to the QGIS map canvas</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> rlayer.isValid():</span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Layer failed to load!"</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>    QgsProject.instance().addMapLayer(rlayer) <span class="co"># load the layer</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1" aria-label="code-block-6-1"></a><span class="co"># added raster to the QGIS map canvas</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1" aria-label="code-block-6-2"></a><span class="cf">if</span> <span class="kw">not</span> rlayer.isValid():</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1" aria-label="code-block-6-3"></a>    <span class="bu">print</span>(<span class="st">"Layer failed to load!"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1" aria-label="code-block-6-4"></a><span class="cf">else</span>:</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1" aria-label="code-block-6-5"></a>    QgsProject.instance().addMapLayer(rlayer) <span class="co"># load the layer</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -449,9 +449,9 @@ canvas</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>vlayer <span class="op">=</span> iface.addVectorLayer(vectorfile, <span class="st">"stream10_6"</span>, <span class="st">"ogr"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> vlayer:</span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Layer failed to load!"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1" aria-label="code-block-7-1"></a>vlayer <span class="op">=</span> iface.addVectorLayer(vectorfile, <span class="st">"stream10_6"</span>, <span class="st">"ogr"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1" aria-label="code-block-7-2"></a><span class="cf">if</span> <span class="kw">not</span> vlayer:</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1" aria-label="code-block-7-3"></a>  <span class="bu">print</span>(<span class="st">"Layer failed to load!"</span>)</span></code></pre>
 </div>
 </div>
 <div class="section level5">
@@ -459,9 +459,9 @@ canvas</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co">#use the second way to load rasterfile 2</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>path_to_tif2 <span class="op">=</span> rasterpath <span class="op">+</span> <span class="st">"USGS_1M_16_x50y449_IN_Indiana_Statewide_LiDAR_2017_B17.tif"</span>   </span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>iface.addRasterLayer(path_to_tif2, <span class="st">"dem2"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1" aria-label="code-block-8-1"></a><span class="co">#use the second way to load rasterfile 2</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1" aria-label="code-block-8-2"></a>path_to_tif2 <span class="op">=</span> rasterpath <span class="op">+</span> <span class="st">"USGS_1M_16_x50y449_IN_Indiana_Statewide_LiDAR_2017_B17.tif"</span>   </span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1" aria-label="code-block-8-3"></a>iface.addRasterLayer(path_to_tif2, <span class="st">"dem2"</span>)</span></code></pre>
 </div>
 </div>
 </div>
@@ -471,14 +471,14 @@ canvas</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>rlayer <span class="op">=</span> QgsRasterLayer(path_to_tif, <span class="st">"dem"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>rlayer2 <span class="op">=</span> QgsRasterLayer(path_to_tif2, <span class="st">"dem2"</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="co"># Merge rasters</span></span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>processing.run(<span class="st">"gdal:merge"</span>, {<span class="st">"INPUT"</span>: [rlayer, rlayer2], <span class="st">"OUTPUT"</span>: <span class="st">"merged_dem.tif"</span>})</span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="co">#check the merged_dem</span></span>
-<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>iface.addRasterLayer(<span class="st">"merged_dem.tif"</span>,<span class="st">"merged_dem"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1" aria-label="code-block-9-1"></a>rlayer <span class="op">=</span> QgsRasterLayer(path_to_tif, <span class="st">"dem"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1" aria-label="code-block-9-2"></a>rlayer2 <span class="op">=</span> QgsRasterLayer(path_to_tif2, <span class="st">"dem2"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1" aria-label="code-block-9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1" aria-label="code-block-9-4"></a><span class="co"># Merge rasters</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1" aria-label="code-block-9-5"></a>processing.run(<span class="st">"gdal:merge"</span>, {<span class="st">"INPUT"</span>: [rlayer, rlayer2], <span class="st">"OUTPUT"</span>: <span class="st">"merged_dem.tif"</span>})</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1" aria-label="code-block-9-6"></a></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1" aria-label="code-block-9-7"></a><span class="co">#check the merged_dem</span></span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1" aria-label="code-block-9-8"></a>iface.addRasterLayer(<span class="st">"merged_dem.tif"</span>,<span class="st">"merged_dem"</span>)</span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -486,11 +486,11 @@ canvas</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Calcualting slope</span></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>processing.run(<span class="st">"qgis:slope"</span>, {<span class="st">"INPUT"</span>: <span class="st">"merged_dem.tif"</span>, <span class="st">"OUTPUT"</span>: <span class="st">"slope.tif"</span>})</span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co">#check it </span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>iface.addRasterLayer(<span class="st">"slope.tif"</span>,<span class="st">"slope"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1" aria-label="code-block-10-1"></a><span class="co"># Calcualting slope</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1" aria-label="code-block-10-2"></a>processing.run(<span class="st">"qgis:slope"</span>, {<span class="st">"INPUT"</span>: <span class="st">"merged_dem.tif"</span>, <span class="st">"OUTPUT"</span>: <span class="st">"slope.tif"</span>})</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1" aria-label="code-block-10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1" aria-label="code-block-10-4"></a><span class="co">#check it </span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1" aria-label="code-block-10-5"></a>iface.addRasterLayer(<span class="st">"slope.tif"</span>,<span class="st">"slope"</span>)</span></code></pre>
 </div>
 <p>You may wonder how to easily write the python code to perform tasks.
 Well, QGIS provide a smart way.</p>
@@ -515,7 +515,7 @@ interface, and fill in all the parameters.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>processing.run(<span class="st">"native:hillshade"</span>, {<span class="st">'INPUT'</span>:<span class="st">'merged_dem.tif'</span>,<span class="st">'Z_FACTOR'</span>:<span class="dv">1</span>,<span class="st">'AZIMUTH'</span>:<span class="dv">300</span>,<span class="st">'V_ANGLE'</span>:<span class="dv">40</span>,<span class="st">'OUTPUT'</span>:<span class="st">'hillshade.tif'</span>})</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1" aria-label="code-block-11-1"></a>processing.run(<span class="st">"native:hillshade"</span>, {<span class="st">'INPUT'</span>:<span class="st">'merged_dem.tif'</span>,<span class="st">'Z_FACTOR'</span>:<span class="dv">1</span>,<span class="st">'AZIMUTH'</span>:<span class="dv">300</span>,<span class="st">'V_ANGLE'</span>:<span class="dv">40</span>,<span class="st">'OUTPUT'</span>:<span class="st">'hillshade.tif'</span>})</span></code></pre>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="using-processing-from-the-command-line">Using processing from the command line<a class="anchor" aria-label="anchor" href="#using-processing-from-the-command-line"></a></h2>
@@ -531,36 +531,36 @@ code below.</li>
 </ul><div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a></span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="co">#!/bin/sh -l</span></span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="co"># FILENAME:  myjob10_4</span></span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co">#SBATCH -A workshop</span></span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="co">#SBATCH --nodes=1</span></span>
-<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co">#SBATCH --ntasks=1</span></span>
-<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=8 </span></span>
-<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="co">#SBATCH --time=00:10:00</span></span>
-<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="co">#SBATCH --job-name myhydro_job</span></span>
-<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="co">#SBATCH --output=/home/liu4201/jobs/hydro10_4.out    ## replace with your own path</span></span>
-<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a><span class="co">#SBATCH --error=/home/liu4201/jobs/hydro10_4.out     ## replace with your own path</span></span>
-<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a></span>
-<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a><span class="ex">module</span> reset</span>
-<span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a><span class="ex">module</span> load qgis</span>
-<span id="cb12-16"><a href="#cb12-16" tabindex="-1"></a><span class="ex">module</span> load monitor</span>
-<span id="cb12-17"><a href="#cb12-17" tabindex="-1"></a></span>
-<span id="cb12-18"><a href="#cb12-18" tabindex="-1"></a><span class="bu">export</span> <span class="va">QT_QPA_PLATFORM</span><span class="op">=</span>offscreen</span>
-<span id="cb12-19"><a href="#cb12-19" tabindex="-1"></a></span>
-<span id="cb12-20"><a href="#cb12-20" tabindex="-1"></a><span class="ex">monitor</span> cpu percent <span class="at">--sample-rate</span> 10 <span class="at">--total</span> <span class="op">&gt;</span> cpu.log <span class="kw">&amp;</span></span>
-<span id="cb12-21"><a href="#cb12-21" tabindex="-1"></a><span class="ex">monitor</span> cpu memory <span class="at">--sample-rate</span> 10 <span class="at">--percent</span> <span class="op">&gt;</span> mem.log <span class="kw">&amp;</span></span>
-<span id="cb12-22"><a href="#cb12-22" tabindex="-1"></a></span>
-<span id="cb12-23"><a href="#cb12-23" tabindex="-1"></a><span class="va">workdir</span><span class="op">=</span>/scratch/negishi/liu4201/project/code_output  <span class="co">## replace with your own path</span></span>
-<span id="cb12-24"><a href="#cb12-24" tabindex="-1"></a></span>
-<span id="cb12-25"><a href="#cb12-25" tabindex="-1"></a><span class="ex">qgis_process</span> run wbt:FillDepressionsWangAndLiu  <span class="at">--</span> dem=<span class="va">$workdir</span>/merged_dem.tif output=<span class="va">$workdir</span>/fillsinks.tif</span>
-<span id="cb12-26"><a href="#cb12-26" tabindex="-1"></a><span class="ex">qgis_process</span> run wbt:D8Pointer  <span class="at">--</span> dem=<span class="va">$workdir</span>/fillsinks.tif output=<span class="va">$workdir</span>/flowdirect.tif</span>
-<span id="cb12-27"><a href="#cb12-27" tabindex="-1"></a><span class="ex">qgis_process</span> run wbt:D8FlowAccumulation <span class="at">--distance_units</span><span class="op">=</span>meters <span class="at">--area_units</span><span class="op">=</span>m2 <span class="at">--ellipsoid</span><span class="op">=</span>EPSG:7030 <span class="at">--input</span><span class="op">=</span><span class="va">$workdir</span>/flowdirect.tif <span class="at">--out_type</span><span class="op">=</span>0 <span class="at">--log</span><span class="op">=</span>false <span class="at">--clip</span><span class="op">=</span>false <span class="at">--pntr</span><span class="op">=</span>true <span class="at">--esri_pntr</span><span class="op">=</span>false <span class="at">--output</span><span class="op">=</span><span class="va">$workdir</span>/flowaccum.tif</span>
-<span id="cb12-28"><a href="#cb12-28" tabindex="-1"></a><span class="ex">qgis_process</span> run wbt:ExtractStreams <span class="at">--distance_units</span><span class="op">=</span>meters <span class="at">--area_units</span><span class="op">=</span>m2 <span class="at">--ellipsoid</span><span class="op">=</span>EPSG:7030 <span class="at">--flow_accum</span><span class="op">=</span><span class="va">$workdir</span>/flowaccum.tif <span class="at">--threshold</span><span class="op">=</span>10000 <span class="at">--zero_background</span><span class="op">=</span>false <span class="at">--output</span><span class="op">=</span><span class="va">$workdir</span>/stream10_4.tif</span>
-<span id="cb12-29"><a href="#cb12-29" tabindex="-1"></a><span class="ex">qgis_process</span> run wbt:Subbasins <span class="at">--distance_units</span><span class="op">=</span>meters <span class="at">--area_units</span><span class="op">=</span>m2 <span class="at">--ellipsoid</span><span class="op">=</span>EPSG:7030 <span class="at">--d8_pntr</span><span class="op">=</span><span class="va">$workdir</span>/flowdirect.tif <span class="at">--streams</span><span class="op">=</span><span class="va">$workdir</span>/stream10_4.tif <span class="at">--esri_pntr</span><span class="op">=</span>false <span class="at">--output</span><span class="op">=</span><span class="va">$workdir</span>/subbasins10_4.tif</span>
-<span id="cb12-30"><a href="#cb12-30" tabindex="-1"></a><span class="ex">qgis_process</span> run wbt:WetnessIndex <span class="at">--distance_units</span><span class="op">=</span>meters <span class="at">--area_units</span><span class="op">=</span>m2 <span class="at">--ellipsoid</span><span class="op">=</span>EPSG:7030 <span class="at">--sca</span><span class="op">=</span><span class="va">$workdir</span>/subbasins10_4.tif <span class="at">--slope</span><span class="op">=</span><span class="va">$workdir</span>/slope.tif <span class="at">--output</span><span class="op">=</span><span class="va">$workdir</span>/wetnessIndex10_4.tif</span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1" aria-label="code-block-12-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1" aria-label="code-block-12-2"></a><span class="co">#!/bin/sh -l</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1" aria-label="code-block-12-3"></a><span class="co"># FILENAME:  myjob10_4</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1" aria-label="code-block-12-4"></a></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1" aria-label="code-block-12-5"></a><span class="co">#SBATCH -A workshop</span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1" aria-label="code-block-12-6"></a><span class="co">#SBATCH --nodes=1</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1" aria-label="code-block-12-7"></a><span class="co">#SBATCH --ntasks=1</span></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1" aria-label="code-block-12-8"></a><span class="co">#SBATCH --cpus-per-task=8 </span></span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1" aria-label="code-block-12-9"></a><span class="co">#SBATCH --time=00:10:00</span></span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1" aria-label="code-block-12-10"></a><span class="co">#SBATCH --job-name myhydro_job</span></span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1" aria-label="code-block-12-11"></a><span class="co">#SBATCH --output=/home/liu4201/jobs/hydro10_4.out    ## replace with your own path</span></span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1" aria-label="code-block-12-12"></a><span class="co">#SBATCH --error=/home/liu4201/jobs/hydro10_4.out     ## replace with your own path</span></span>
+<span id="cb12-13"><a href="#cb12-13" tabindex="-1" aria-label="code-block-12-13"></a></span>
+<span id="cb12-14"><a href="#cb12-14" tabindex="-1" aria-label="code-block-12-14"></a><span class="ex">module</span> reset</span>
+<span id="cb12-15"><a href="#cb12-15" tabindex="-1" aria-label="code-block-12-15"></a><span class="ex">module</span> load qgis</span>
+<span id="cb12-16"><a href="#cb12-16" tabindex="-1" aria-label="code-block-12-16"></a><span class="ex">module</span> load monitor</span>
+<span id="cb12-17"><a href="#cb12-17" tabindex="-1" aria-label="code-block-12-17"></a></span>
+<span id="cb12-18"><a href="#cb12-18" tabindex="-1" aria-label="code-block-12-18"></a><span class="bu">export</span> <span class="va">QT_QPA_PLATFORM</span><span class="op">=</span>offscreen</span>
+<span id="cb12-19"><a href="#cb12-19" tabindex="-1" aria-label="code-block-12-19"></a></span>
+<span id="cb12-20"><a href="#cb12-20" tabindex="-1" aria-label="code-block-12-20"></a><span class="ex">monitor</span> cpu percent <span class="at">--sample-rate</span> 10 <span class="at">--total</span> <span class="op">&gt;</span> cpu.log <span class="kw">&amp;</span></span>
+<span id="cb12-21"><a href="#cb12-21" tabindex="-1" aria-label="code-block-12-21"></a><span class="ex">monitor</span> cpu memory <span class="at">--sample-rate</span> 10 <span class="at">--percent</span> <span class="op">&gt;</span> mem.log <span class="kw">&amp;</span></span>
+<span id="cb12-22"><a href="#cb12-22" tabindex="-1" aria-label="code-block-12-22"></a></span>
+<span id="cb12-23"><a href="#cb12-23" tabindex="-1" aria-label="code-block-12-23"></a><span class="va">workdir</span><span class="op">=</span>/scratch/negishi/liu4201/project/code_output  <span class="co">## replace with your own path</span></span>
+<span id="cb12-24"><a href="#cb12-24" tabindex="-1" aria-label="code-block-12-24"></a></span>
+<span id="cb12-25"><a href="#cb12-25" tabindex="-1" aria-label="code-block-12-25"></a><span class="ex">qgis_process</span> run wbt:FillDepressionsWangAndLiu  <span class="at">--</span> dem=<span class="va">$workdir</span>/merged_dem.tif output=<span class="va">$workdir</span>/fillsinks.tif</span>
+<span id="cb12-26"><a href="#cb12-26" tabindex="-1" aria-label="code-block-12-26"></a><span class="ex">qgis_process</span> run wbt:D8Pointer  <span class="at">--</span> dem=<span class="va">$workdir</span>/fillsinks.tif output=<span class="va">$workdir</span>/flowdirect.tif</span>
+<span id="cb12-27"><a href="#cb12-27" tabindex="-1" aria-label="code-block-12-27"></a><span class="ex">qgis_process</span> run wbt:D8FlowAccumulation <span class="at">--distance_units</span><span class="op">=</span>meters <span class="at">--area_units</span><span class="op">=</span>m2 <span class="at">--ellipsoid</span><span class="op">=</span>EPSG:7030 <span class="at">--input</span><span class="op">=</span><span class="va">$workdir</span>/flowdirect.tif <span class="at">--out_type</span><span class="op">=</span>0 <span class="at">--log</span><span class="op">=</span>false <span class="at">--clip</span><span class="op">=</span>false <span class="at">--pntr</span><span class="op">=</span>true <span class="at">--esri_pntr</span><span class="op">=</span>false <span class="at">--output</span><span class="op">=</span><span class="va">$workdir</span>/flowaccum.tif</span>
+<span id="cb12-28"><a href="#cb12-28" tabindex="-1" aria-label="code-block-12-28"></a><span class="ex">qgis_process</span> run wbt:ExtractStreams <span class="at">--distance_units</span><span class="op">=</span>meters <span class="at">--area_units</span><span class="op">=</span>m2 <span class="at">--ellipsoid</span><span class="op">=</span>EPSG:7030 <span class="at">--flow_accum</span><span class="op">=</span><span class="va">$workdir</span>/flowaccum.tif <span class="at">--threshold</span><span class="op">=</span>10000 <span class="at">--zero_background</span><span class="op">=</span>false <span class="at">--output</span><span class="op">=</span><span class="va">$workdir</span>/stream10_4.tif</span>
+<span id="cb12-29"><a href="#cb12-29" tabindex="-1" aria-label="code-block-12-29"></a><span class="ex">qgis_process</span> run wbt:Subbasins <span class="at">--distance_units</span><span class="op">=</span>meters <span class="at">--area_units</span><span class="op">=</span>m2 <span class="at">--ellipsoid</span><span class="op">=</span>EPSG:7030 <span class="at">--d8_pntr</span><span class="op">=</span><span class="va">$workdir</span>/flowdirect.tif <span class="at">--streams</span><span class="op">=</span><span class="va">$workdir</span>/stream10_4.tif <span class="at">--esri_pntr</span><span class="op">=</span>false <span class="at">--output</span><span class="op">=</span><span class="va">$workdir</span>/subbasins10_4.tif</span>
+<span id="cb12-30"><a href="#cb12-30" tabindex="-1" aria-label="code-block-12-30"></a><span class="ex">qgis_process</span> run wbt:WetnessIndex <span class="at">--distance_units</span><span class="op">=</span>meters <span class="at">--area_units</span><span class="op">=</span>m2 <span class="at">--ellipsoid</span><span class="op">=</span>EPSG:7030 <span class="at">--sca</span><span class="op">=</span><span class="va">$workdir</span>/subbasins10_4.tif <span class="at">--slope</span><span class="op">=</span><span class="va">$workdir</span>/slope.tif <span class="at">--output</span><span class="op">=</span><span class="va">$workdir</span>/wetnessIndex10_4.tif</span></code></pre>
 </div>
 <div id="accordionSpoiler4" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
@@ -583,7 +583,7 @@ Terminal.</li>
 </ul><div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">sbatch</span> myhydrojob</span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1" aria-label="code-block-13-1"></a><span class="ex">sbatch</span> myhydrojob</span></code></pre>
 </div>
 <div id="callout1" class="callout">
 <div class="callout-square">
@@ -598,13 +598,13 @@ memory. You can look up for help after loading the module, as below.</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">monitor</span> <span class="at">--help</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1" aria-label="code-block-14-1"></a><span class="ex">monitor</span> <span class="at">--help</span></span></code></pre>
 </div>
 <p>To look up help for “qgis_process”, after “module load qgis”, run</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">qgis_process</span> <span class="at">--help</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1" aria-label="code-block-15-1"></a><span class="ex">qgis_process</span> <span class="at">--help</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -618,43 +618,43 @@ noted.</li>
 </ul><div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a><span class="co"># initialize qgis</span></span>
-<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>qgs_app <span class="op">=</span> QgsApplication([], <span class="va">False</span>)</span>
-<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>qgs_app.initQgis()</span>
-<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a></span>
-<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a><span class="co">#add whiteboxTools path</span></span>
-<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a>module_path <span class="op">=</span> <span class="st">"/home/liu4201/apps/qgis_tools/WhiteboxTools_linux_amd64/WBT"</span> <span class="co">## replace with your own path</span></span>
-<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a>sys.path.append(module_path)</span>
-<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a></span>
-<span id="cb16-13"><a href="#cb16-13" tabindex="-1"></a><span class="co">#import processing tools</span></span>
-<span id="cb16-14"><a href="#cb16-14" tabindex="-1"></a><span class="im">import</span> whitebox <span class="im">as</span> wbtool</span>
-<span id="cb16-15"><a href="#cb16-15" tabindex="-1"></a><span class="co">#from qgis import processing</span></span>
-<span id="cb16-16"><a href="#cb16-16" tabindex="-1"></a><span class="co">#from processing.core.Processing import Processing</span></span>
-<span id="cb16-17"><a href="#cb16-17" tabindex="-1"></a></span>
-<span id="cb16-18"><a href="#cb16-18" tabindex="-1"></a><span class="co">#Processing.initialize()</span></span>
-<span id="cb16-19"><a href="#cb16-19" tabindex="-1"></a><span class="co"># change work directory</span></span>
-<span id="cb16-20"><a href="#cb16-20" tabindex="-1"></a>path <span class="op">=</span><span class="st">"/scratch/negishi/liu4201/project/code_output/"</span>  <span class="co">## replace with your own path</span></span>
-<span id="cb16-21"><a href="#cb16-21" tabindex="-1"></a>os.chdir(path)</span>
-<span id="cb16-22"><a href="#cb16-22" tabindex="-1"></a></span>
-<span id="cb16-23"><a href="#cb16-23" tabindex="-1"></a><span class="co">#for alg in QgsApplication.processingRegistry().algorithms():</span></span>
-<span id="cb16-24"><a href="#cb16-24" tabindex="-1"></a><span class="co">#    print(alg.id(), "-&gt;", alg.displayName())</span></span>
-<span id="cb16-25"><a href="#cb16-25" tabindex="-1"></a></span>
-<span id="cb16-26"><a href="#cb16-26" tabindex="-1"></a>wbt <span class="op">=</span> wbtool.WhiteboxTools()</span>
-<span id="cb16-27"><a href="#cb16-27" tabindex="-1"></a></span>
-<span id="cb16-28"><a href="#cb16-28" tabindex="-1"></a><span class="co">#processing.run("native:hillshade", {'INPUT':'merged_dem.tif','Z_FACTOR':1,'AZIMUTH':300,'V_ANGLE':40,'OUTPUT':'hillshade.tif'})</span></span>
-<span id="cb16-29"><a href="#cb16-29" tabindex="-1"></a></span>
-<span id="cb16-30"><a href="#cb16-30" tabindex="-1"></a>wbt.extract_streams(flow_accum <span class="op">=</span> path <span class="op">+</span> <span class="st">"flowdirect.tif"</span>,</span>
-<span id="cb16-31"><a href="#cb16-31" tabindex="-1"></a>                   threshold<span class="op">=</span><span class="dv">100000</span>,</span>
-<span id="cb16-32"><a href="#cb16-32" tabindex="-1"></a>                   zero_background<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb16-33"><a href="#cb16-33" tabindex="-1"></a>                   output<span class="op">=</span> path <span class="op">+</span> <span class="st">"stream10_5.tif"</span>)</span>
-<span id="cb16-34"><a href="#cb16-34" tabindex="-1"></a>wbt.subbasins(d8_pntr<span class="op">=</span> path <span class="op">+</span> <span class="st">"flowdirect.tif"</span>, streams<span class="op">=</span> path <span class="op">+</span> <span class="st">"stream10_5.tif"</span>,esri_pntr<span class="op">=</span><span class="va">False</span>, output<span class="op">=</span> path <span class="op">+</span> <span class="st">"subbasins10_5.tif"</span>)</span>
-<span id="cb16-35"><a href="#cb16-35" tabindex="-1"></a>wbt.wetness_index(sca<span class="op">=</span> path <span class="op">+</span> <span class="st">"subbasins10_5.tif"</span>, slope<span class="op">=</span> path <span class="op">+</span> <span class="st">"slope.tif"</span>, output<span class="op">=</span> path <span class="op">+</span> <span class="st">"wetnessIndex10_5.tif"</span>)</span>
-<span id="cb16-36"><a href="#cb16-36" tabindex="-1"></a></span>
-<span id="cb16-37"><a href="#cb16-37" tabindex="-1"></a>qgs_app.exitQgis()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1" aria-label="code-block-16-1"></a><span class="im">import</span> os</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1" aria-label="code-block-16-2"></a><span class="im">from</span> qgis.core <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1" aria-label="code-block-16-3"></a><span class="im">import</span> sys</span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1" aria-label="code-block-16-4"></a></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1" aria-label="code-block-16-5"></a><span class="co"># initialize qgis</span></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1" aria-label="code-block-16-6"></a>qgs_app <span class="op">=</span> QgsApplication([], <span class="va">False</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1" aria-label="code-block-16-7"></a>qgs_app.initQgis()</span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1" aria-label="code-block-16-8"></a></span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1" aria-label="code-block-16-9"></a><span class="co">#add whiteboxTools path</span></span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1" aria-label="code-block-16-10"></a>module_path <span class="op">=</span> <span class="st">"/home/liu4201/apps/qgis_tools/WhiteboxTools_linux_amd64/WBT"</span> <span class="co">## replace with your own path</span></span>
+<span id="cb16-11"><a href="#cb16-11" tabindex="-1" aria-label="code-block-16-11"></a>sys.path.append(module_path)</span>
+<span id="cb16-12"><a href="#cb16-12" tabindex="-1" aria-label="code-block-16-12"></a></span>
+<span id="cb16-13"><a href="#cb16-13" tabindex="-1" aria-label="code-block-16-13"></a><span class="co">#import processing tools</span></span>
+<span id="cb16-14"><a href="#cb16-14" tabindex="-1" aria-label="code-block-16-14"></a><span class="im">import</span> whitebox <span class="im">as</span> wbtool</span>
+<span id="cb16-15"><a href="#cb16-15" tabindex="-1" aria-label="code-block-16-15"></a><span class="co">#from qgis import processing</span></span>
+<span id="cb16-16"><a href="#cb16-16" tabindex="-1" aria-label="code-block-16-16"></a><span class="co">#from processing.core.Processing import Processing</span></span>
+<span id="cb16-17"><a href="#cb16-17" tabindex="-1" aria-label="code-block-16-17"></a></span>
+<span id="cb16-18"><a href="#cb16-18" tabindex="-1" aria-label="code-block-16-18"></a><span class="co">#Processing.initialize()</span></span>
+<span id="cb16-19"><a href="#cb16-19" tabindex="-1" aria-label="code-block-16-19"></a><span class="co"># change work directory</span></span>
+<span id="cb16-20"><a href="#cb16-20" tabindex="-1" aria-label="code-block-16-20"></a>path <span class="op">=</span><span class="st">"/scratch/negishi/liu4201/project/code_output/"</span>  <span class="co">## replace with your own path</span></span>
+<span id="cb16-21"><a href="#cb16-21" tabindex="-1" aria-label="code-block-16-21"></a>os.chdir(path)</span>
+<span id="cb16-22"><a href="#cb16-22" tabindex="-1" aria-label="code-block-16-22"></a></span>
+<span id="cb16-23"><a href="#cb16-23" tabindex="-1" aria-label="code-block-16-23"></a><span class="co">#for alg in QgsApplication.processingRegistry().algorithms():</span></span>
+<span id="cb16-24"><a href="#cb16-24" tabindex="-1" aria-label="code-block-16-24"></a><span class="co">#    print(alg.id(), "-&gt;", alg.displayName())</span></span>
+<span id="cb16-25"><a href="#cb16-25" tabindex="-1" aria-label="code-block-16-25"></a></span>
+<span id="cb16-26"><a href="#cb16-26" tabindex="-1" aria-label="code-block-16-26"></a>wbt <span class="op">=</span> wbtool.WhiteboxTools()</span>
+<span id="cb16-27"><a href="#cb16-27" tabindex="-1" aria-label="code-block-16-27"></a></span>
+<span id="cb16-28"><a href="#cb16-28" tabindex="-1" aria-label="code-block-16-28"></a><span class="co">#processing.run("native:hillshade", {'INPUT':'merged_dem.tif','Z_FACTOR':1,'AZIMUTH':300,'V_ANGLE':40,'OUTPUT':'hillshade.tif'})</span></span>
+<span id="cb16-29"><a href="#cb16-29" tabindex="-1" aria-label="code-block-16-29"></a></span>
+<span id="cb16-30"><a href="#cb16-30" tabindex="-1" aria-label="code-block-16-30"></a>wbt.extract_streams(flow_accum <span class="op">=</span> path <span class="op">+</span> <span class="st">"flowdirect.tif"</span>,</span>
+<span id="cb16-31"><a href="#cb16-31" tabindex="-1" aria-label="code-block-16-31"></a>                   threshold<span class="op">=</span><span class="dv">100000</span>,</span>
+<span id="cb16-32"><a href="#cb16-32" tabindex="-1" aria-label="code-block-16-32"></a>                   zero_background<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb16-33"><a href="#cb16-33" tabindex="-1" aria-label="code-block-16-33"></a>                   output<span class="op">=</span> path <span class="op">+</span> <span class="st">"stream10_5.tif"</span>)</span>
+<span id="cb16-34"><a href="#cb16-34" tabindex="-1" aria-label="code-block-16-34"></a>wbt.subbasins(d8_pntr<span class="op">=</span> path <span class="op">+</span> <span class="st">"flowdirect.tif"</span>, streams<span class="op">=</span> path <span class="op">+</span> <span class="st">"stream10_5.tif"</span>,esri_pntr<span class="op">=</span><span class="va">False</span>, output<span class="op">=</span> path <span class="op">+</span> <span class="st">"subbasins10_5.tif"</span>)</span>
+<span id="cb16-35"><a href="#cb16-35" tabindex="-1" aria-label="code-block-16-35"></a>wbt.wetness_index(sca<span class="op">=</span> path <span class="op">+</span> <span class="st">"subbasins10_5.tif"</span>, slope<span class="op">=</span> path <span class="op">+</span> <span class="st">"slope.tif"</span>, output<span class="op">=</span> path <span class="op">+</span> <span class="st">"wetnessIndex10_5.tif"</span>)</span>
+<span id="cb16-36"><a href="#cb16-36" tabindex="-1" aria-label="code-block-16-36"></a></span>
+<span id="cb16-37"><a href="#cb16-37" tabindex="-1" aria-label="code-block-16-37"></a>qgs_app.exitQgis()</span></code></pre>
 </div>
 <div id="accordionSpoiler5" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
@@ -674,10 +674,10 @@ place.</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="im">from</span> qgis <span class="im">import</span> processing</span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="im">from</span> processing.core.Processing <span class="im">import</span> Processing</span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>Processing.initialize()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1" aria-label="code-block-17-1"></a><span class="im">from</span> qgis <span class="im">import</span> processing</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1" aria-label="code-block-17-2"></a><span class="im">from</span> processing.core.Processing <span class="im">import</span> Processing</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1" aria-label="code-block-17-3"></a></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1" aria-label="code-block-17-4"></a>Processing.initialize()</span></code></pre>
 </div>
 </div>
 </div>
@@ -689,34 +689,34 @@ parenthesis.</li>
 </ul><div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co">#!/bin/sh -l</span></span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="co"># FILENAME:  myjob10_5</span></span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="co">#SBATCH -A workshop</span></span>
-<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a><span class="co">#SBATCH --nodes=1</span></span>
-<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a><span class="co">#SBATCH --ntasks=1</span></span>
-<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=8 </span></span>
-<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a><span class="co">#SBATCH --time=00:10:00</span></span>
-<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a><span class="co">#SBATCH --job-name myhydro_job</span></span>
-<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a><span class="co">#SBATCH --output=/home/liu4201/jobs/hydro10_5.out  ## replace with your own path</span></span>
-<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a><span class="co">#SBATCH --error=/home/liu4201/jobs/hydro10_5.out   ## replace with your own path</span></span>
-<span id="cb18-12"><a href="#cb18-12" tabindex="-1"></a></span>
-<span id="cb18-13"><a href="#cb18-13" tabindex="-1"></a><span class="ex">module</span> reset</span>
-<span id="cb18-14"><a href="#cb18-14" tabindex="-1"></a><span class="ex">module</span> load qgis</span>
-<span id="cb18-15"><a href="#cb18-15" tabindex="-1"></a><span class="ex">module</span> load monitor</span>
-<span id="cb18-16"><a href="#cb18-16" tabindex="-1"></a></span>
-<span id="cb18-17"><a href="#cb18-17" tabindex="-1"></a><span class="bu">export</span> <span class="va">QT_QPA_PLATFORM</span><span class="op">=</span>offscreen</span>
-<span id="cb18-18"><a href="#cb18-18" tabindex="-1"></a></span>
-<span id="cb18-19"><a href="#cb18-19" tabindex="-1"></a><span class="ex">monitor</span> cpu percent <span class="at">--sample-rate</span> 10 <span class="at">--total</span> <span class="op">&gt;</span> cpu1.log <span class="kw">&amp;</span></span>
-<span id="cb18-20"><a href="#cb18-20" tabindex="-1"></a><span class="ex">monitor</span> cpu memory <span class="at">--sample-rate</span> 10 <span class="at">--percent</span> <span class="op">&gt;</span> mem1.log <span class="kw">&amp;</span></span>
-<span id="cb18-21"><a href="#cb18-21" tabindex="-1"></a></span>
-<span id="cb18-22"><a href="#cb18-22" tabindex="-1"></a><span class="ex">python</span> /home/liu4201/qgis_data/code/hydro_10_5.py  <span class="co">## replace with your own path</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1" aria-label="code-block-18-1"></a><span class="co">#!/bin/sh -l</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1" aria-label="code-block-18-2"></a><span class="co"># FILENAME:  myjob10_5</span></span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1" aria-label="code-block-18-3"></a></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1" aria-label="code-block-18-4"></a><span class="co">#SBATCH -A workshop</span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1" aria-label="code-block-18-5"></a><span class="co">#SBATCH --nodes=1</span></span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1" aria-label="code-block-18-6"></a><span class="co">#SBATCH --ntasks=1</span></span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1" aria-label="code-block-18-7"></a><span class="co">#SBATCH --cpus-per-task=8 </span></span>
+<span id="cb18-8"><a href="#cb18-8" tabindex="-1" aria-label="code-block-18-8"></a><span class="co">#SBATCH --time=00:10:00</span></span>
+<span id="cb18-9"><a href="#cb18-9" tabindex="-1" aria-label="code-block-18-9"></a><span class="co">#SBATCH --job-name myhydro_job</span></span>
+<span id="cb18-10"><a href="#cb18-10" tabindex="-1" aria-label="code-block-18-10"></a><span class="co">#SBATCH --output=/home/liu4201/jobs/hydro10_5.out  ## replace with your own path</span></span>
+<span id="cb18-11"><a href="#cb18-11" tabindex="-1" aria-label="code-block-18-11"></a><span class="co">#SBATCH --error=/home/liu4201/jobs/hydro10_5.out   ## replace with your own path</span></span>
+<span id="cb18-12"><a href="#cb18-12" tabindex="-1" aria-label="code-block-18-12"></a></span>
+<span id="cb18-13"><a href="#cb18-13" tabindex="-1" aria-label="code-block-18-13"></a><span class="ex">module</span> reset</span>
+<span id="cb18-14"><a href="#cb18-14" tabindex="-1" aria-label="code-block-18-14"></a><span class="ex">module</span> load qgis</span>
+<span id="cb18-15"><a href="#cb18-15" tabindex="-1" aria-label="code-block-18-15"></a><span class="ex">module</span> load monitor</span>
+<span id="cb18-16"><a href="#cb18-16" tabindex="-1" aria-label="code-block-18-16"></a></span>
+<span id="cb18-17"><a href="#cb18-17" tabindex="-1" aria-label="code-block-18-17"></a><span class="bu">export</span> <span class="va">QT_QPA_PLATFORM</span><span class="op">=</span>offscreen</span>
+<span id="cb18-18"><a href="#cb18-18" tabindex="-1" aria-label="code-block-18-18"></a></span>
+<span id="cb18-19"><a href="#cb18-19" tabindex="-1" aria-label="code-block-18-19"></a><span class="ex">monitor</span> cpu percent <span class="at">--sample-rate</span> 10 <span class="at">--total</span> <span class="op">&gt;</span> cpu1.log <span class="kw">&amp;</span></span>
+<span id="cb18-20"><a href="#cb18-20" tabindex="-1" aria-label="code-block-18-20"></a><span class="ex">monitor</span> cpu memory <span class="at">--sample-rate</span> 10 <span class="at">--percent</span> <span class="op">&gt;</span> mem1.log <span class="kw">&amp;</span></span>
+<span id="cb18-21"><a href="#cb18-21" tabindex="-1" aria-label="code-block-18-21"></a></span>
+<span id="cb18-22"><a href="#cb18-22" tabindex="-1" aria-label="code-block-18-22"></a><span class="ex">python</span> /home/liu4201/qgis_data/code/hydro_10_5.py  <span class="co">## replace with your own path</span></span></code></pre>
 </div>
 <ul><li>Step 3: Submit your job via running the code below in terminal.</li>
 </ul><div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">sbatch</span> myjob</span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1" aria-label="code-block-19-1"></a><span class="ex">sbatch</span> myjob</span></code></pre>
 </div>
 <div id="accordionSpoiler6" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
@@ -793,7 +793,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.20.0" class="external-link">sandpaper (0.20.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/aseetharam/varnish/tree/aec0ff169ecf0863c0882e93bd191b19f2e7ff1e" class="external-link">varnish (1.0.7)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.20.1" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/aseetharam/varnish/tree/aec0ff169ecf0863c0882e93bd191b19f2e7ff1e" class="external-link">varnish (1.0.7)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -816,7 +816,7 @@ any links that you are not going to use.
   "identifier": "https://rcac-geo.github.io/workshop-qgis/coding.html",
   "dateCreated": "2025-02-18",
   "dateModified": "2025-03-12",
-  "datePublished": "2026-04-14"
+  "datePublished": "2026-04-21"
 }
 
   </script><script>
